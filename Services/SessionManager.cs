@@ -30,6 +30,7 @@ namespace Services
 
         public static SessionManager Login(EntityUser user)
         {
+            if (_instance != null) throw new Exception("Ya hay una sesion iniciada");
             if (_instance is null)
             {
                 _instance = new SessionManager

@@ -11,19 +11,30 @@ namespace BLL
 {
     public class BusinessAuth
     {
-        private readonly DataAccessUser dataAccess;
+        private readonly DAL_User dataAccess;
 
         public BusinessAuth()
         {
-            dataAccess = new DataAccessUser();
+            dataAccess = new DAL_User();
         }
 
         public BusinessResponse<EntityUser> VerificarCredenciales(string username, string password)
         {
             EntityUser user = dataAccess.SelectByUsername(username);
-            bool ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
 
-            string mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+            bool ok;
+            string mensaje;
+            if (user?.IsBlock == true)
+            {
+                ok = false;
+                mensaje = "Usuario Bloqueado";
+            }
+            else
+            {
+                ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
+                password = CryptoManager.EncryptString(password);
+                mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+            }
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }

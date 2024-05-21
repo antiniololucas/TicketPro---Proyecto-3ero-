@@ -12,7 +12,8 @@ namespace DAL
     {
         public static EntityUser MapUser(DataRow row) => new EntityUser()
         {
-            Id = Convert.ToInt32(row["Id"]),
+            Id = Convert.ToInt32(row["ID"]), 
+            Dni = Convert.ToInt32(row["Dni"]),
             Username = row["Username"].ToString(),
             Password = row["Password"].ToString(),
             IsBlock = Convert.ToBoolean(row["IsBlock"].ToString()),

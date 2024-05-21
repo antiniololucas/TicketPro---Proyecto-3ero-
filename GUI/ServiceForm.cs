@@ -22,13 +22,19 @@ namespace GUI
 
         private void InitializeComponent()
         {
-            SuspendLayout();
-            ClientSize = new Size(284, 261);
-            Cursor = Cursors.Default;
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-            Name = "ServiceForm";
+            this.SuspendLayout();
+            // 
+            // ServiceForm
+            // 
+            this.Size = new System.Drawing.Size(893 , 663);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+
+            this.Name = "ServiceForm";
             this.Text = "TicketPro";
-            ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         protected void EsconderLabelError(List<BunifuLabel> ListLbl)
@@ -52,12 +58,10 @@ namespace GUI
                 MessageBox.Show(respuesta.Mensaje, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-
             if (respuesta.Ok && !string.IsNullOrEmpty(respuesta.Mensaje))
             {
                 MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
 
     }
