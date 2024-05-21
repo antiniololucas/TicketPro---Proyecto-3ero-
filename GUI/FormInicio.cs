@@ -55,5 +55,12 @@ namespace GUI
             SessionManager.Logout();
             this.Close();
         }
+
+        private void btnGestionUsuario_Click(object sender, EventArgs e)
+        {
+            FormGestionUsuario frm = new FormGestionUsuario();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

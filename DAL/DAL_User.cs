@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace DAL
 {
@@ -15,6 +16,43 @@ namespace DAL
         public DAL_User()
         {
             conn = DBConnection.GetInstance();
+        }
+
+        public bool DeleteUser(int id_user)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Id", SqlDbType.Int) { Value = id_user }
+            };
+
+            return conn.Write("SP_DeleteUser", parameters);
+        }
+
+        public bool InsertUser(EntityUser user)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_DNI", SqlDbType.Int) { Value = user.Dni },
+                new SqlParameter("@In_Apellido" , SqlDbType.NVarChar) { Value = user.Apellido },
+                new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = user.Nombre},
+                new SqlParameter("@In_Username" , SqlDbType.NVarChar) { Value = user.Username},
+                new SqlParameter("@In_Password" , SqlDbType.NVarChar) {Value = user.Password},
+                new SqlParameter("@In_Rol" , SqlDbType.NVarChar) {Value = user.Rol } 
+            };
+
+            return conn.Write("SP_InsertUser", parameters);
+        }
+
+        public List<EntityUser> SelectAllUsers()
+        {
+            DataTable table = conn.Read("SP_GetUser", null);
+            List<EntityUser> users = new List<EntityUser>();
+            foreach (DataRow row in table.Rows)
+            {
+                EntityUser user = SqlMapper.MapUser(row);
+                users.Add(user);
+            }
+            return users;
         }
 
         public EntityUser SelectByUsername(string username)
@@ -50,5 +88,18 @@ namespace DAL
             return conn.Write("SP_UpdatePassword", parameters);
         }
 
+        public bool UpdateUser(EntityUser user)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Id", SqlDbType.Int) { Value = user.Id },
+                new SqlParameter("@In_DNI", SqlDbType.Int) { Value = user.Dni },
+                new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = user.Nombre},
+                new SqlParameter("@In_Apellido" , SqlDbType.NVarChar) { Value = user.Apellido },
+                new SqlParameter("@In_Rol" , SqlDbType.NVarChar) {Value = user.Rol }
+            };
+
+            return conn.Write("SP_UpdateUser", parameters);
+        }
     }
 }

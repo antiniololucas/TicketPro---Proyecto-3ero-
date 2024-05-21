@@ -1144,6 +1144,7 @@
             this.btnGestionUsuario.TextMarginLeft = 0;
             this.btnGestionUsuario.TextPadding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnGestionUsuario.UseDefaultRadiusAndThickness = true;
+            this.btnGestionUsuario.Click += new System.EventHandler(this.btnGestionUsuario_Click);
             // 
             // PanelBtnAdmin
             // 

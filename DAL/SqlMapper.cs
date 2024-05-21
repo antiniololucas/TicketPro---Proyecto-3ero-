@@ -14,9 +14,12 @@ namespace DAL
         {
             Id = Convert.ToInt32(row["ID"]), 
             Dni = Convert.ToInt32(row["Dni"]),
+            Nombre = row["Nombre"].ToString(),
+            Apellido = row["Apellido"].ToString(),
             Username = row["Username"].ToString(),
             Password = row["Password"].ToString(),
             IsBlock = Convert.ToBoolean(row["IsBlock"].ToString()),
+            Rol = row["Rol"].ToString(),
         };
     }
 }

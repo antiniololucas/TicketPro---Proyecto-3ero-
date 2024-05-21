@@ -157,6 +157,12 @@
     <Compile Include="FormCambiarClave.Designer.cs">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionUsuario.Designer.cs">
+      <DependentUpon>FormGestionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </Compile>
     <EmbeddedResource Include="FormCambiarClave.resx">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestionUsuario.resx">
+      <DependentUpon>FormGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.cs</DependentUpon>
