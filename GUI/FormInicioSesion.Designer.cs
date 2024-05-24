@@ -59,6 +59,7 @@
             this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold);
+            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuLabel1.Location = new System.Drawing.Point(311, 193);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -111,6 +112,7 @@
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel4.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuLabel4.Location = new System.Drawing.Point(342, 243);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -127,6 +129,7 @@
             this.bunifuLabel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.Control;
             this.bunifuLabel5.Location = new System.Drawing.Point(342, 331);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -324,7 +327,7 @@
             this.btnIngresar.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnIngresar.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnIngresar.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.ForeColor = System.Drawing.SystemColors.Control;
             this.btnIngresar.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIngresar.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnIngresar.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -341,7 +344,7 @@
             this.btnIngresar.IdleIconLeftImage = null;
             this.btnIngresar.IdleIconRightImage = null;
             this.btnIngresar.IndicateFocus = false;
-            this.btnIngresar.Location = new System.Drawing.Point(373, 407);
+            this.btnIngresar.Location = new System.Drawing.Point(371, 419);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnIngresar.OnDisabledState.BorderRadius = 1;
@@ -364,7 +367,7 @@
             this.btnIngresar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnIngresar.OnIdleState.BorderThickness = 1;
             this.btnIngresar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
-            this.btnIngresar.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnIngresar.OnIdleState.ForeColor = System.Drawing.SystemColors.Control;
             this.btnIngresar.OnIdleState.IconLeftImage = null;
             this.btnIngresar.OnIdleState.IconRightImage = null;
             this.btnIngresar.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
@@ -398,7 +401,7 @@
             this.btnSalir.BackColor1 = System.Drawing.Color.Red;
             this.btnSalir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.BackgroundImage")));
             this.btnSalir.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSalir.ButtonText = "Salir";
+            this.btnSalir.ButtonText = "X";
             this.btnSalir.ButtonTextMarginLeft = 0;
             this.btnSalir.ColorContrastOnClick = 45;
             this.btnSalir.ColorContrastOnHover = 45;
@@ -413,8 +416,8 @@
             this.btnSalir.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnSalir.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSalir.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSalir.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnSalir.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -431,7 +434,7 @@
             this.btnSalir.IdleIconLeftImage = null;
             this.btnSalir.IdleIconRightImage = null;
             this.btnSalir.IndicateFocus = false;
-            this.btnSalir.Location = new System.Drawing.Point(737, 623);
+            this.btnSalir.Location = new System.Drawing.Point(854, 0);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSalir.OnDisabledState.BorderRadius = 1;
@@ -441,11 +444,11 @@
             this.btnSalir.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSalir.OnDisabledState.IconLeftImage = null;
             this.btnSalir.OnDisabledState.IconRightImage = null;
-            this.btnSalir.onHoverState.BorderColor = System.Drawing.Color.Silver;
+            this.btnSalir.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSalir.onHoverState.BorderRadius = 1;
             this.btnSalir.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSalir.onHoverState.BorderThickness = 1;
-            this.btnSalir.onHoverState.FillColor = System.Drawing.Color.Gray;
+            this.btnSalir.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSalir.onHoverState.ForeColor = System.Drawing.Color.White;
             this.btnSalir.onHoverState.IconLeftImage = null;
             this.btnSalir.onHoverState.IconRightImage = null;
@@ -454,7 +457,7 @@
             this.btnSalir.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.btnSalir.OnIdleState.BorderThickness = 1;
             this.btnSalir.OnIdleState.FillColor = System.Drawing.Color.Red;
-            this.btnSalir.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnSalir.OnIdleState.IconLeftImage = null;
             this.btnSalir.OnIdleState.IconRightImage = null;
             this.btnSalir.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -465,8 +468,8 @@
             this.btnSalir.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSalir.OnPressedState.IconLeftImage = null;
             this.btnSalir.OnPressedState.IconRightImage = null;
-            this.btnSalir.Size = new System.Drawing.Size(135, 26);
-            this.btnSalir.TabIndex = 11;
+            this.btnSalir.Size = new System.Drawing.Size(31, 26);
+            this.btnSalir.TabIndex = 28;
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSalir.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSalir.TextMarginLeft = 0;
@@ -478,7 +481,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresar);
@@ -491,8 +494,6 @@
             this.Controls.Add(this.lblErrorUser);
             this.Controls.Add(this.bunifuLabel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MaximizeBox = false;
             this.Name = "FormInicioSesion";
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

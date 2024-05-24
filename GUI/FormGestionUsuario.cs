@@ -42,6 +42,7 @@ namespace GUI
             TxtDni.Text = DGusers.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
             TxtRol.Text = DGusers.Rows[e.RowIndex].Cells["Rol"].Value.ToString();
             userActual = Convert.ToInt32(DGusers.Rows[e.RowIndex].Cells["Id"].Value);
+            activarButtons();
         }
 
         private void btnDesbloquear_Click(object sender, EventArgs e)
@@ -92,34 +93,56 @@ namespace GUI
         {
             DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes) { }
-            if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
-            EntityUser user = new EntityUser()
+            if (result == DialogResult.Yes)
             {
-                Id = userActual,
-                Dni = val,
-                Apellido = TxtApellido.Text,
-                Nombre = TxtNombre.Text,
-                Rol = TxtRol.Text,
-            };
-            var response = _businessUser.ModificarUsuario(user);
-            RevisarRespuestaServicio(response);
-            if (response.Ok) { llenarDG(); }
+                if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
+                EntityUser user = new EntityUser()
+                {
+                    Id = userActual,
+                    Dni = val,
+                    Apellido = TxtApellido.Text,
+                    Nombre = TxtNombre.Text,
+                    Rol = TxtRol.Text,
+                };
+                var response = _businessUser.ModificarUsuario(user);
+                RevisarRespuestaServicio(response);
+                if (response.Ok) { llenarDG(); }
+            }
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            TxtNombre.Text = string.Empty;
+            TxtApellido.Text = string.Empty;
+            TxtDni.Text = string.Empty;
+            TxtRol.Text = string.Empty;
+            userActual = 0;
+            desactivarButons();
+        }
+
+        private void activarButtons()
+        {
+            btnEliminar.Enabled = true;
+            btnDesbloquear.Enabled = true;
+            btnModificar.Enabled = true;
+            btnAgregar.Enabled = false;
+        }
+
+        private void desactivarButons()
+        {
+            btnEliminar.Enabled = false;
+            btnDesbloquear.Enabled = false;
+            btnModificar.Enabled = false;
+            btnAgregar.Enabled = true;
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            FormInicio frm = new FormInicio();
+            frm.Show();
+            this.Close();
         }
     }
-
-    /* DialogResult result = MessageBox.Show("¿QEstá seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
-
-     if (result == DialogResult.Yes)
-     {
-         Console.WriteLine("Continuar...");
-         // Aquí puedes agregar el código para continuar con la lógica de tu aplicación.
-     }
-     else
-     {
-         Console.WriteLine("No continuar...");
-         // Aquí puedes agregar el código para manejar la negación de continuar.
-     }*/
 }
 
 

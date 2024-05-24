@@ -40,20 +40,22 @@ namespace GUI
         {
             FormInicioSesion frm = new FormInicioSesion();
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCambiarClave_Click(object sender, EventArgs e)
         {
             FormCambiarClave frm = new FormCambiarClave();
             frm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             SessionManager.Logout();
+            FormInicioSesion frm = new FormInicioSesion(); 
             this.Close();
+            frm.Show();    
         }
 
         private void btnGestionUsuario_Click(object sender, EventArgs e)
@@ -61,6 +63,13 @@ namespace GUI
             FormGestionUsuario frm = new FormGestionUsuario();
             frm.Show();
             this.Hide();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FormInicioSesion frm = new FormInicioSesion();
+            frm.Show();
+            this.Close();
         }
     }
 }

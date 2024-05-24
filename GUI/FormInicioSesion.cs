@@ -19,12 +19,12 @@ namespace GUI
         public FormInicioSesion()
         {
             InitializeComponent();
+            AcceptButton = btnIngresar;
         }
 
-        BusinessAuth _businessAuth = new BusinessAuth();
         BusinessUser _businessUser = new BusinessUser();
         SessionManager _sessionManager;
-        int contadorBloqueo = 0;
+        List<EntityUser> ListaErrores = new List<EntityUser>();
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -50,15 +50,15 @@ namespace GUI
 
             if (HuboError) return;
 
-            BusinessResponse<EntityUser> response = _businessAuth.VerificarCredenciales(TxtUser.Text, TxtPassword.Text);
+            BusinessResponse<EntityUser> response = _businessUser.VerificarCredenciales(TxtUser.Text, TxtPassword.Text);
 
             RevisarRespuestaServicio(response);
 
-            //Para el bloqueo a los 3 intentos:
-            if(!response.Ok && response.Data?.Username != null)
+            if (!response.Ok && response.Data?.IsBlock == false)
             {
-                contadorBloqueo++;
-                if(contadorBloqueo == 3)
+                ListaErrores.Add(response.Data);
+
+                if (ListaErrores.Where(users => users.Id == response.Data.Id).Count() == 3)
                 {
                     RevisarRespuestaServicio(_businessUser.BlockUser(response.Data.Id));
                 }
@@ -69,7 +69,6 @@ namespace GUI
             {
                 try
                 {
-                    contadorBloqueo = 0;
                     _sessionManager = SessionManager.Login(response.Data);
                     FormInicio frm = new FormInicio();
                     frm.Show();
@@ -84,7 +83,7 @@ namespace GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

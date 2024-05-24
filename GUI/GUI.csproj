@@ -157,6 +157,18 @@
     <Compile Include="FormCambiarClave.Designer.cs">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCobrarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCobrarFactura.Designer.cs">
+      <DependentUpon>FormCobrarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarFactura.Designer.cs">
+      <DependentUpon>FormGenerarFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestionUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +187,18 @@
     <Compile Include="FormInicioSesion.Designer.cs">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarCliente.Designer.cs">
+      <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSeleccionarEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeleccionarEntradas.Designer.cs">
+      <DependentUpon>FormSeleccionarEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceForm.cs">
@@ -186,6 +210,12 @@
     <EmbeddedResource Include="FormCambiarClave.resx">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCobrarFactura.resx">
+      <DependentUpon>FormCobrarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarFactura.resx">
+      <DependentUpon>FormGenerarFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestionUsuario.resx">
       <DependentUpon>FormGestionUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarCliente.resx">
+      <DependentUpon>FormRegistrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeleccionarEntradas.resx">
+      <DependentUpon>FormSeleccionarEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

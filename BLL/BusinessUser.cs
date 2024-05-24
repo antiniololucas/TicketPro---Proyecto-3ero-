@@ -23,10 +23,25 @@ namespace BLL
             return dataAccess.SelectAllUsers();
         }
 
-        //public EntityUser GetUserByName(string username)
-        //{
-        //    return dataAccess.SelectByUsername(username);
-        //}
+        public BusinessResponse<EntityUser> VerificarCredenciales(string username, string password)
+        {
+            EntityUser user = dataAccess.SelectByUsername(username);
+
+            bool ok;
+            string mensaje;
+            if (user?.IsBlock == true)
+            {
+                ok = false;
+                mensaje = "Usuario Bloqueado";
+            }
+            else
+            {
+                ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
+                mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+            }
+
+            return new BusinessResponse<EntityUser>(ok, user, mensaje);
+        }
 
         public BusinessResponse<bool> BlockUser(int Id_User)
         {

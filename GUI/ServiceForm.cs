@@ -23,18 +23,12 @@ namespace GUI
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
-            // ServiceForm
-            // 
-            this.Size = new System.Drawing.Size(893 , 663);
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.ClientSize = new Size(900, 700);
+            this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;
-
-            this.Name = "ServiceForm";
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "TicketPro";
             this.ResumeLayout(false);
-
         }
 
         protected void EsconderLabelError(List<BunifuLabel> ListLbl)
