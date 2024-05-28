@@ -14,10 +14,10 @@ namespace GUI
 {
     public partial class FormGestionUsuario : ServiceForm
     {
-
         BusinessUser _businessUser = new BusinessUser();
-        List<EntityUser> users = new List<EntityUser>();
-        int userActual;
+        List<EntityUser> users_error = new List<EntityUser>();
+        EntityUser userActual;
+
         public FormGestionUsuario()
         {
             InitializeComponent();
@@ -26,12 +26,14 @@ namespace GUI
 
         private void llenarDG()
         {
-            users = _businessUser.GetUsers();
+            users_error = _businessUser.GetUsers();
             DGusers.DataSource = null;
-            DGusers.DataSource = users;
-            lblCantUser.Text = users.Count.ToString();
+            DGusers.DataSource = users_error;
+            lblCantUser.Text = users_error.Count.ToString();
             DGusers.Columns["Id"].Visible = false;
             DGusers.Columns["Password"].Visible = false;
+            DGusers.Columns["Username"].Visible = false;
+            DGusers.Columns["IsBlock"].HeaderText = "Bloqueado";
         }
 
         private void DGusers_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,64 +43,65 @@ namespace GUI
             TxtApellido.Text = DGusers.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
             TxtDni.Text = DGusers.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
             TxtRol.Text = DGusers.Rows[e.RowIndex].Cells["Rol"].Value.ToString();
-            userActual = Convert.ToInt32(DGusers.Rows[e.RowIndex].Cells["Id"].Value);
+            userActual = DGusers.SelectedRows[0].DataBoundItem as EntityUser;
             activarButtons();
         }
 
         private void btnDesbloquear_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) { return; }
 
-            if (result == DialogResult.Yes)
-            {
-                var response = _businessUser.UnblockUser(userActual);
-                RevisarRespuestaServicio(response);
-                if (response.Ok) { llenarDG(); }
-            }
+            var response = _businessUser.ChangeBlockUser(userActual);
+            RevisarRespuestaServicio(response);
+            if (response.Ok) { llenarDG(); limpiarTxt(); }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) { return; }
 
-            if (result == DialogResult.Yes)
-            {
-                var response = _businessUser.EliminarUsuario(userActual);
-                RevisarRespuestaServicio(response);
-                if (response.Ok) { llenarDG(); }
-            }
+            var response = _businessUser.EliminarUsuario(userActual.Id);
+            RevisarRespuestaServicio(response);
+            if (response.Ok) { llenarDG(); limpiarTxt(); }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.No) { return; }
+
+            if (string.IsNullOrEmpty(TxtApellido.Text) || string.IsNullOrEmpty(TxtNombre.Text) || string.IsNullOrEmpty(TxtRol.Text))
             {
-                if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
-                EntityUser user = new EntityUser()
-                {
-                    Dni = val,
-                    Apellido = TxtApellido.Text,
-                    Nombre = TxtNombre.Text,
-                    Rol = TxtRol.Text,
-                };
-                var response = _businessUser.AgregarUsuario(user);
-                RevisarRespuestaServicio(response);
-                if (response.Ok) { llenarDG(); }
+                MessageBox.Show("Camnpos incompletos"); return;
             }
+
+            if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
+
+            EntityUser user = new EntityUser()
+            {
+                Dni = val,
+                Apellido = TxtApellido.Text,
+                Nombre = TxtNombre.Text,
+                Rol = TxtRol.Text,
+            };
+            var response = _businessUser.AgregarUsuario(user);
+            RevisarRespuestaServicio(response);
+            if (response.Ok) { llenarDG(); limpiarTxt(); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
                 if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
                 EntityUser user = new EntityUser()
                 {
-                    Id = userActual,
+                    Id = userActual.Id,
                     Dni = val,
                     Apellido = TxtApellido.Text,
                     Nombre = TxtNombre.Text,
@@ -106,18 +109,8 @@ namespace GUI
                 };
                 var response = _businessUser.ModificarUsuario(user);
                 RevisarRespuestaServicio(response);
-                if (response.Ok) { llenarDG(); }
+                if (response.Ok) { llenarDG(); limpiarTxt(); }
             }
-        }
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            TxtNombre.Text = string.Empty;
-            TxtApellido.Text = string.Empty;
-            TxtDni.Text = string.Empty;
-            TxtRol.Text = string.Empty;
-            userActual = 0;
-            desactivarButons();
         }
 
         private void activarButtons()
@@ -136,7 +129,21 @@ namespace GUI
             btnAgregar.Enabled = true;
         }
 
-        private void bunifuButton2_Click(object sender, EventArgs e)
+        private void limpiarTxt()
+        {
+            TxtNombre.Text = string.Empty;
+            TxtApellido.Text = string.Empty;
+            TxtDni.Text = string.Empty;
+            TxtRol.Text = string.Empty;
+            desactivarButons();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarTxt();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             FormInicio frm = new FormInicio();
             frm.Show();

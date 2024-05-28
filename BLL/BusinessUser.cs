@@ -37,27 +37,28 @@ namespace BLL
             else
             {
                 ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
+                string pass = CryptoManager.EncryptString(password);
                 mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
             }
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
         }
 
-        public BusinessResponse<bool> BlockUser(int Id_User)
+        public BusinessResponse<bool> ChangeBlockUser(EntityUser user)
         {
-            bool ok = dataAccess.UpdateBlockUser(Id_User);
+            bool ok = dataAccess.UpdateBlockUser(user.Id);
+            string mensaje;
 
-            string mensaje = ok ? "Usuario Bloqueado" : "Ocurrió un error";
-
-            return new BusinessResponse<bool>(ok, false, mensaje);
-        }
-
-        public BusinessResponse<bool> UnblockUser(int Id_User)
-        {
-            bool ok = dataAccess.UpdateBlockUser(Id_User);
-
-            string mensaje = ok ? "Operación confirmada" : "Ocurrió un error";
-
+            if (!user.IsBlock)
+            {
+                mensaje = ok ? "Usuario Bloqueado" : "Ocurrió un error";
+            }
+            else
+            {
+                mensaje = ok ? "Usuario Desbloqueado" : "Ocurrió un error";
+                //Resetea clave
+                dataAccess.UpdatePassword(CryptoManager.EncryptString(user.Dni.ToString() + user.Apellido.ToString()), user.Id);
+            }
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
@@ -82,7 +83,7 @@ namespace BLL
 
         public BusinessResponse<bool> AgregarUsuario ( EntityUser user)
         {
-            user.Password = CryptoManager.EncryptString(user.Dni.ToString());
+            user.Password = CryptoManager.EncryptString(user.Dni.ToString() + user.Apellido.ToString());
             user.Username = user.Nombre + user.Apellido;
             bool ok = dataAccess.InsertUser(user);
 

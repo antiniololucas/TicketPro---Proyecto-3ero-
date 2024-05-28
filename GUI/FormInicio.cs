@@ -52,6 +52,9 @@ namespace GUI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No) { return; }
             SessionManager.Logout();
             FormInicioSesion frm = new FormInicioSesion(); 
             this.Close();

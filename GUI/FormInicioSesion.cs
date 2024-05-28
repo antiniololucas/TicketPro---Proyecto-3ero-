@@ -60,7 +60,7 @@ namespace GUI
 
                 if (ListaErrores.Where(users => users.Id == response.Data.Id).Count() == 3)
                 {
-                    RevisarRespuestaServicio(_businessUser.BlockUser(response.Data.Id));
+                    RevisarRespuestaServicio(_businessUser.ChangeBlockUser(response.Data));
                 }
             }
 
