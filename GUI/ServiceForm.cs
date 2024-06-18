@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using Bunifu.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,25 @@ namespace GUI
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Text = "TicketPro";
             this.ResumeLayout(false);
+        }
+
+        protected void LlenarDG<T>(DataGridView DG, List<T> list, List<string> columnasOcultas)
+        {
+            DG.DataSource = null;
+            DG.DataSource = list;
+            if (columnasOcultas != null)
+            {
+                foreach (string col in columnasOcultas)
+                {
+                    DG.Columns[$"{col}"].Visible = false;
+                }
+            }
+        }
+
+        protected void LLenarCmb<T>(ComboBox cmb , List<T> list , string Display)
+        {
+            cmb.DataSource = list;
+            cmb.DisplayMember = Display;
         }
 
         protected void EsconderLabelError(List<BunifuLabel> ListLbl)

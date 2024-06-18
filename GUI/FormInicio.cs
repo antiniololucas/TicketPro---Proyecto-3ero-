@@ -74,5 +74,34 @@ namespace GUI
             frm.Show();
             this.Close();
         }
+
+        private void btnVentaEntradas_Click(object sender, EventArgs e)
+        {
+            PanelSubMenuEntradas.Visible = !PanelSubMenuEntradas.Visible;
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerarFactura_Click(object sender, EventArgs e)
+        {
+            FormGenerarFactura frm = new FormGenerarFactura();
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnCobrarFactura_Click(object sender, EventArgs e)
+        {
+            FormCobrarFactura frm = new FormCobrarFactura();
+            frm.Show();
+            this.Close();
+        }
+
+        private void btnMaestros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

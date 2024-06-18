@@ -77,7 +77,7 @@
             this.lblErrorUser.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblErrorUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblErrorUser.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorUser.Location = new System.Drawing.Point(359, 298);
+            this.lblErrorUser.Location = new System.Drawing.Point(342, 307);
             this.lblErrorUser.Name = "lblErrorUser";
             this.lblErrorUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblErrorUser.Size = new System.Drawing.Size(25, 15);
@@ -95,7 +95,7 @@
             this.lblErrorPassword.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblErrorPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblErrorPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorPassword.Location = new System.Drawing.Point(362, 386);
+            this.lblErrorPassword.Location = new System.Drawing.Point(342, 395);
             this.lblErrorPassword.Name = "lblErrorPassword";
             this.lblErrorPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblErrorPassword.Size = new System.Drawing.Size(25, 15);

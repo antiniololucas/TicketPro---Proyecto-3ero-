@@ -82,6 +82,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.DGusers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGusers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGusers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.DGusers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DGusers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DGusers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

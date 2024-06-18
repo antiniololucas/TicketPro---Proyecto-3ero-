@@ -42,6 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entity.cs" />
+    <Compile Include="EntityCliente.cs" />
+    <Compile Include="EntityDetalle_Factura.cs" />
+    <Compile Include="EntityEntrada.cs" />
+    <Compile Include="EntityEvento.cs" />
+    <Compile Include="EntityFactura.cs" />
     <Compile Include="EntityUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

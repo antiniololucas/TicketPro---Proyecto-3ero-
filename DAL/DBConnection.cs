@@ -16,7 +16,7 @@ namespace DAL
         private DBConnection()
         {
             _connection = new SqlConnection("Data Source=.; Initial Catalog=TicketPro; Integrated Security=True");
-            }
+        }
 
         public static DBConnection GetInstance()
         {
@@ -101,6 +101,26 @@ namespace DAL
             CloseConnection();
 
             return canInsert != -1;
+        }
+
+        public object WriteWithReturn(string storedProcedure, SqlParameter[] parameters)
+        {
+            try
+            {
+                OpenConnection();
+
+                using (SqlCommand command = new SqlCommand(storedProcedure, _connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddRange(parameters);
+
+                    return command.ExecuteScalar();
+                }
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
     }
 }
