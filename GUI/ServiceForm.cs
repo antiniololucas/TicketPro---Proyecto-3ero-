@@ -78,5 +78,11 @@ namespace GUI
             }
         }
 
+        protected void CambiarForm(ServiceForm form)
+        {
+            form.Show();
+            this.Close();
+        }
+
     }
 }

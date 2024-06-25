@@ -19,8 +19,9 @@ namespace GUI
         public FormCobrarFactura()
         {
             InitializeComponent();
-            ObtenerFacturasSinCobrar();
+            GetFacturasSinCobrarConDNI();
             LlenarDG(DG_Facturas, _facturas, new List<string> { "Id", "Id_Cliente" , "Is_Cobrada" });
+            AcceptButton = btnRegistarCliente;
         }
 
         BusinessFactura _businessFactura = new BusinessFactura();
@@ -28,7 +29,7 @@ namespace GUI
         List<EntityFactura> _facturas;
         EntityFactura facturaActual;
 
-        private void ObtenerFacturasSinCobrar()
+        private void GetFacturasSinCobrarConDNI()
         {
             _facturas = (List<EntityFactura>)_businessFactura.BuscarFacturas().Data.Where(c => !c.Is_Cobrada).ToList();
             foreach (var fac in _facturas)
@@ -61,16 +62,25 @@ namespace GUI
 
         private void btnRegistarCliente_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TxtFechaVto.Text)) { MostrarLabelError("Campo Incompleto", lblErrorFecha); return; }
-            if (string.IsNullOrEmpty(txtNumTarjeta.Text)) { MostrarLabelError("Campo Incompleto", lblErrorNumero); return; }
-            if (string.IsNullOrEmpty(txtNombreTitular.Text)) { MostrarLabelError("Campo Incompleto", lblErrorNombre); return; }
+            bool hayError = false;
 
-            if (!RegexValidation.IsValidCardNumber(txtNumTarjeta.Text)) { MostrarLabelError("Formato Incorrecto", lblErrorNumero); return; }
-            if (!validarFecha()) { MostrarLabelError("Formato Incorrecto", lblErrorFecha); return; }
-            if (!RegexValidation.IsValidName(txtNombreTitular.Text)){ MostrarLabelError("Formato Incorrecto", lblErrorNombre); return; }
+            //Errores inputs vacios.
+            if (string.IsNullOrEmpty(TxtFechaVto.Text)) { MostrarLabelError("Campo Incompleto", lblErrorFecha);  hayError = true; }
+            if (string.IsNullOrEmpty(txtNumTarjeta.Text)) { MostrarLabelError("Campo Incompleto", lblErrorNumero); hayError = true; }
+            if (string.IsNullOrEmpty(txtNombreTitular.Text)) { MostrarLabelError("Campo Incompleto", lblErrorNombre); hayError = true; }
+            if (hayError) { return; }
 
+            //Errores inputs invalidos.
+            if (!RegexValidation.IsValidCardNumber(txtNumTarjeta.Text)) { MostrarLabelError("Formato Incorrecto", lblErrorNumero); hayError = true; }
+            if (!validarFecha()) { MostrarLabelError("Formato Incorrecto", lblErrorFecha); hayError = true; }
+            if (!RegexValidation.IsValidName(txtNombreTitular.Text)){ MostrarLabelError("Formato Incorrecto", lblErrorNombre); hayError = true; }
+            if (hayError) { return; }
+
+            //Confirmación de solicitud.
             DialogResult result = MessageBox.Show($"¿Está seguro que quiere cobrar la factura de {facturaActual.DNI_Cliente}?", "Confirmación", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) { return; }
+
+            //Persistencia y cierre de acción.
             facturaActual.Is_Cobrada = true;
             var response = _businessFactura.ModificarFactura(facturaActual, true);
             RevisarRespuestaServicio(response);
@@ -99,11 +109,9 @@ namespace GUI
             panelCobrar.Enabled = true;
         }
 
-        private void btnInicio_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
-            this.Close();
+            CambiarForm(new FormInicio());
         }
     }
 }

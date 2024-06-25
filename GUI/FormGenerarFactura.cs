@@ -27,7 +27,7 @@ namespace GUI
             _eventos = _businessEvento.BuscarEventos();
             _clientes = _businessCliente.BuscarClientes();
             LlenarDG(DG_Eventos, _eventos, new List<string>() { "Id", "Descripcion", "Horario", "Artista", "Imagen" });
-            LlenarDG(DG_Clientes, _clientes, new List<string>() { "ID" });
+            LlenarDG(DG_Clientes, _clientes, new List<string>() { "ID", "Mail" });
             LLenarCmb(cmbEventos, _eventos, "Nombre");
             LLenarCmb(cmbClientes, _clientes, "DNI");
         }
@@ -37,17 +37,10 @@ namespace GUI
         BusinessFactura _businessFactura = new BusinessFactura();
 
         List<EntityEvento> _eventos;
-        public List<EntityCliente> _clientes;
+        List<EntityCliente> _clientes;
         EntityEvento eventoActual;
-        public EntityCliente clienteActual;
+        EntityCliente clienteActual;
         public List<EntityDetalle_Factura> detalles = new List<EntityDetalle_Factura>();
-
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-            FormInicio frm = new FormInicio();
-            frm.Show();
-            this.Close();
-        }
 
         private void MostrarDetalleEvento()
         {
@@ -66,9 +59,12 @@ namespace GUI
 
         private void btnBuscarEvento_Click(object sender, EventArgs e)
         {
+
             EntityEvento evento = cmbEventos.SelectedItem as EntityEvento;
+            if (evento == null) { MessageBox.Show("Seleccione evento existente"); return; }
             eventoActual = evento;
             MostrarDetalleEvento();
+
         }
 
         private void btnVerEntradas_Click(object sender, EventArgs e)
@@ -111,11 +107,13 @@ namespace GUI
             FormRegistrarCliente frm = new FormRegistrarCliente(this);
             frm.Show();
             this.Hide();
-            btnGenerarFactura.Enabled = true;
         }
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show($"¿Está seguro que quiere generar la factura del cliente {clienteActual.DNI} para el show {eventoActual.Nombre}?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No) { return; }
+
             double monto = 0;
             detalles.ForEach(d => monto += d.Costo_parcial);
 
@@ -127,6 +125,12 @@ namespace GUI
                 Is_Cobrada = false,
             };
             RevisarRespuestaServicio(_businessFactura.RegistrarFactura(factura, detalles));
+            CambiarForm(new FormInicio());
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormInicio());
         }
     }
 }

@@ -16,19 +16,11 @@ namespace GUI
         public FormInicio()
         {
             InitializeComponent();
-            CustomizeDesing();
-        }
-
-        private void CustomizeDesing()
-        {
-            PanelSubMenuAdmin.Visible = false;
-            PanelSubMenuUsuario.Visible = false;
         }
 
         private void BtnAdmin_Click(object sender, EventArgs e)
         {
             PanelSubMenuAdmin.Visible = !PanelSubMenuAdmin.Visible;
-
         }
 
         private void BtnUsuario_Click(object sender, EventArgs e)
@@ -36,18 +28,14 @@ namespace GUI
             PanelSubMenuUsuario.Visible = !PanelSubMenuUsuario.Visible;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnVentaEntradas_Click(object sender, EventArgs e)
         {
-            FormInicioSesion frm = new FormInicioSesion();
-            frm.Show();
-            this.Close();
+            PanelSubMenuEntradas.Visible = !PanelSubMenuEntradas.Visible;
         }
 
-        private void btnCambiarClave_Click(object sender, EventArgs e)
+        private void btnMaestros_Click(object sender, EventArgs e)
         {
-            FormCambiarClave frm = new FormCambiarClave();
-            frm.Show();
-            this.Close();
+            panelSubMenuMaestros.Visible = !panelSubMenuMaestros.Visible;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -56,52 +44,43 @@ namespace GUI
 
             if (result == DialogResult.No) { return; }
             SessionManager.Logout();
-            FormInicioSesion frm = new FormInicioSesion(); 
-            this.Close();
-            frm.Show();    
+            CambiarForm(new FormInicioSesion());  
+        }
+
+        private void btnCambiarClave_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormCambiarClave());
         }
 
         private void btnGestionUsuario_Click(object sender, EventArgs e)
         {
-            FormGestionUsuario frm = new FormGestionUsuario();
-            frm.Show();
-            this.Hide();
+            CambiarForm( new FormGestionUsuario());
+        }
+
+        private void BtnRegistrarCliente_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormRegistrarCliente());
+        }
+
+        private void btnGenerarFactura_Click_1(object sender, EventArgs e)
+        {
+            CambiarForm(new FormGenerarFactura());
+        }
+
+        private void btnCobrarFactura_Click_1(object sender, EventArgs e)
+        {
+            CambiarForm(new FormCobrarFactura());
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            FormInicioSesion frm = new FormInicioSesion();
-            frm.Show();
-            this.Close();
+            Application.Exit();
         }
 
-        private void btnVentaEntradas_Click(object sender, EventArgs e)
+        private void btnMaestroClientes_Click(object sender, EventArgs e)
         {
-            PanelSubMenuEntradas.Visible = !PanelSubMenuEntradas.Visible;
+            CambiarForm(new FormMaestroClientes());
         }
 
-        private void btnAyuda_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGenerarFactura_Click(object sender, EventArgs e)
-        {
-            FormGenerarFactura frm = new FormGenerarFactura();
-            frm.Show();
-            this.Close();
-        }
-
-        private void btnCobrarFactura_Click(object sender, EventArgs e)
-        {
-            FormCobrarFactura frm = new FormCobrarFactura();
-            frm.Show();
-            this.Close();
-        }
-
-        private void btnMaestros_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

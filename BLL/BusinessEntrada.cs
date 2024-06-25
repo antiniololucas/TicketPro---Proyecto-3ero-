@@ -19,7 +19,7 @@ namespace BLL
 
         public List<EntityEntrada> BuscarEntradas(EntityEvento evento)
         {
-            return dataAccess.Buscar(evento);
+            return dataAccess.GetAll(evento);
         }
     }
 }

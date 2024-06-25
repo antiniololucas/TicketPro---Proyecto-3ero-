@@ -18,7 +18,7 @@ namespace DAL
             conn = DBConnection.GetInstance();
         }
 
-        public List<EntityEntrada> Buscar(EntityEvento evento)
+        public List<EntityEntrada> GetAll(EntityEvento evento)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {

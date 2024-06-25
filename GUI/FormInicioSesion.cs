@@ -20,6 +20,7 @@ namespace GUI
         {
             InitializeComponent();
             AcceptButton = btnIngresar;
+            TxtUser.Select();
         }
 
         BusinessUser _businessUser = new BusinessUser();

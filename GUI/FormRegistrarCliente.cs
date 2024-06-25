@@ -21,6 +21,8 @@ namespace GUI
         public FormRegistrarCliente()
         {
             InitializeComponent();
+            AcceptButton = btnRegistarCliente;
+            txtDni.Select();
         }
 
         BusinessCliente _businessCliente = new BusinessCliente();
@@ -31,21 +33,24 @@ namespace GUI
             InitializeComponent();
             _formVolver = formGenerarFactura;
             btnVolver.Visible = true;
-            btnInicio.Visible = false;
         }
 
         private void btnRegistarCliente_Click(object sender, EventArgs e)
         {
-           var response = _businessCliente.RegistrarCliente(txtDni.Text, txtNombre.Text, txtApellido.Text, txtMail.Text);
-           RevisarRespuestaServicio(response);
-            if (response.Ok)
+            var response = _businessCliente.RegistrarCliente(txtDni.Text, txtNombre.Text, txtApellido.Text, txtMail.Text);
+            RevisarRespuestaServicio(response);
+            if (_formVolver != null)
             {
-                _formVolver.clienteActual = response.Data;
-                _formVolver.lblCliente.Text = "Factura actual de: " + (response.Data.Nombre + response.Data.Apellido);
                 List<EntityCliente> clientes = _businessCliente.BuscarClientes();
                 LlenarDG(_formVolver.DG_Clientes, clientes, new List<string>() { "ID" });
                 LLenarCmb(_formVolver.cmbClientes, clientes, "DNI");
-                _formVolver.cmbClientes.SelectedItem = clientes.Last();
+            }
+            if (response.Ok)
+            {
+                txtDni.Text = "";
+                txtNombre.Text = "";
+                txtApellido.Text = "";
+                txtMail.Text = "";
             }
         }
 
@@ -53,6 +58,16 @@ namespace GUI
         {
             _formVolver.Show();
             this.Close();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            if (_formVolver != null)
+            {
+                DialogResult result = MessageBox.Show($"¿Está seguro que quiere abandonar la carga de factura?", "Confirmación", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No) { return; }
+            }
+            CambiarForm(new FormInicio());
         }
     }
 }

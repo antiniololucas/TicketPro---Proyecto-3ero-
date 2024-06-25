@@ -19,6 +19,8 @@ namespace GUI
         public FormCambiarClave()
         {
             InitializeComponent();
+            AcceptButton = btnCambiarClave;
+            TxtPasswordVieja.Select();
         }
 
         EntityUser user = SessionManager.GetInstance().User;
@@ -26,9 +28,7 @@ namespace GUI
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
-            this.Close();
+            CambiarForm(new FormInicio());
         }
 
         private void btnCambiarClave_Click_1(object sender, EventArgs e)

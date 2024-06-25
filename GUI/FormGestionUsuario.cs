@@ -21,18 +21,14 @@ namespace GUI
         public FormGestionUsuario()
         {
             InitializeComponent();
-            llenarDG();
+            ActualizarData();
         }
 
-        private void llenarDG()
+        private void ActualizarData()
         {
             users_error = _businessUser.GetUsers();
-            DGusers.DataSource = null;
-            DGusers.DataSource = users_error;
             lblCantUser.Text = users_error.Count.ToString();
-            DGusers.Columns["Id"].Visible = false;
-            DGusers.Columns["Password"].Visible = false;
-            DGusers.Columns["Username"].Visible = false;
+            LlenarDG(DGusers, users_error, new List<string>() { "Id", "Password", "Username" });
             DGusers.Columns["IsBlock"].HeaderText = "Bloqueado";
         }
 
@@ -54,7 +50,7 @@ namespace GUI
 
             var response = _businessUser.ChangeBlockUser(userActual);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { llenarDG(); limpiarTxt(); }
+            if (response.Ok) { ActualizarData(); limpiarTxt(); }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -64,7 +60,7 @@ namespace GUI
 
             var response = _businessUser.EliminarUsuario(userActual.Id);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { llenarDG(); limpiarTxt(); }
+            if (response.Ok) { ActualizarData(); limpiarTxt(); }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -89,7 +85,7 @@ namespace GUI
             };
             var response = _businessUser.AgregarUsuario(user);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { llenarDG(); limpiarTxt(); }
+            if (response.Ok) { ActualizarData(); limpiarTxt(); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -109,7 +105,7 @@ namespace GUI
                 };
                 var response = _businessUser.ModificarUsuario(user);
                 RevisarRespuestaServicio(response);
-                if (response.Ok) { llenarDG(); limpiarTxt(); }
+                if (response.Ok) { ActualizarData(); limpiarTxt(); }
             }
         }
 
@@ -145,10 +141,9 @@ namespace GUI
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            FormInicio frm = new FormInicio();
-            frm.Show();
-            this.Close();
+            CambiarForm(new FormInicio());
         }
+
     }
 }
 

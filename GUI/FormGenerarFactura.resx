@@ -1505,13 +1505,6 @@
         CYoxS0UWAKKKMUWA/9k=
 </value>
   </data>
-  <data name="btnInicio.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABBSURBVEhL7dahAQAgDAPB339FxqhvAV9LI4g4FfE2JKyC
-        mna7dMMUxyUcl3BcwnEJxyUcl3Bc4uP4Oe/RDa8lxAY2NUWrMaB7+AAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="PanelCliente.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA4QAAAIWCAYAAAAPl0PHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1709,6 +1702,13 @@
         BjFCBjFCBjFCBjFCBjFCBjFCBjFCBjFCBjFCBjFCRojZNrUB0FqJcVUbAC2VK7z9b9pSzFtOR/yvpV2F
         cpeyV3lf3QA04P2tfy6Z9y9H/sNDTPZR2wzMx57iuR1/hfi9yus3+myXXKuMFvzw25R3DvXDeLgrMIRP
         BrqOFVNEVRgAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnVolver.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABBSURBVEhL7dahAQAgDAPB339FxqhvAV9LI4g4FfE2JKyC
+        mna7dMMUxyUcl3BcwnEJxyUcl3Bc4uP4Oe/RDa8lxAY2NUWrMaB7+AAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

@@ -17,7 +17,7 @@ namespace DAL
             conn = DBConnection.GetInstance();
         }
 
-        public bool Alta(EntityCliente cliente)
+        public bool Insert_Cliente(EntityCliente cliente)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {
@@ -30,7 +30,7 @@ namespace DAL
             return conn.Write("SP_InsertCliente", parameters);
         }
 
-        public List<EntityCliente> getAll()
+        public List<EntityCliente> GetAll()
         {
             DataTable table = conn.Read("SP_GetCliente", null);
             List<EntityCliente> users = new List<EntityCliente>();
@@ -40,6 +40,20 @@ namespace DAL
                 users.Add(user);
             }
             return users;
+        }
+
+        public bool UpdateCliente(EntityCliente cliente)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Id", SqlDbType.Int) { Value = cliente.Id },
+                new SqlParameter("@In_DNI", SqlDbType.Int) { Value = cliente.DNI },
+                new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = cliente.Nombre},
+                new SqlParameter("@In_Apellido" , SqlDbType.NVarChar) { Value = cliente.Apellido },
+                new SqlParameter("@In_Mail" , SqlDbType.NVarChar) {Value = cliente.Mail }
+            };
+
+            return conn.Write("SP_UpdateCliente", parameters);
         }
     }
 }
