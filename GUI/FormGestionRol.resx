@@ -1505,47 +1505,63 @@
         CYoxS0UWAKKKMUWA/9k=
 </value>
   </data>
-  <data name="bunifuButton4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnModificar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAK4AAAAnCAYAAACWs3P+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVHhe7dIxEYAwAMDAKqll8FcZ7AUEIIDc/fBT1ox5
-        7jXP+4aOvd5xvwL8m3FJMi5JxiXJuCQZlyTjkmRckoxLknFJMi5JxiXJuCQZlyTjkmRckoxLknFJMi5J
-        xiXJuCQZlyTjkmRckoxLknFJMi5JxiXJuCQZlyTjkmRckoxLknFJMi5JxiXJuCSNeezrK8BvHft6AEFk
-        1w1DY3tsAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAoCAYAAAAmPX7RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVHhe7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
+        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
+        4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxePgsRNXUbYIwAAAABJRU5E
+        rkJggg==
 </value>
   </data>
-  <data name="bunifuButton2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCrear.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAoCAYAAAAiyK7sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVHhe7dExEYAwAMBAlNQy+EMGewsCMNDcDz9lzDGu
-        eY9rLXY272/kX2A3RkYYGWFkhJERRkYYGWFkhJERRkYYGWFkhJERRkYYGWFkhJERRkYYGWFkhJERRkYY
-        GWFkhJERRkYYGWFkhJERRkYYGWFkhJERRkYYGWFkhJERRkYc45zPX2Aj53xe+s+aHPNRG74AAAAASUVO
-        RK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAoCAYAAAAmPX7RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVHhe7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
+        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
+        4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxePgsRNXUbYIwAAAABJRU5E
+        rkJggg==
 </value>
   </data>
-  <data name="bunifuButton3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtNombre.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACUAAAAaCAYAAAAwspV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABKSURBVFhH7c4hAQAgEMBAklAZ+n0M/AMBXsyBmDg1s9Zn
-        Rp97/yPjTlXhLacopyinKKcopyinKKcopyinKKcop6hPp0auKjwzch2vdgqJZC7uoAAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAAaUAAAAVCAYAAADmb/FvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACPSURBVHhe7dVBDQQxEAPB4Y8qUWAcjAWwq5HyOQTjR5Xk
+        jwl0AUCUc85vrfWamZlNrDt0k1TVBwBM6Q7dJIkSALNECYAYogRADFECIIYoARBDlACIIUoAxBAlAGKI
+        EgAxRAmAGKIEQAxRAiCGKAEQQ5QAiCFKAMQQJQBi/EVp7/30YWZmNrHu0E0SACSo+gDx2Wqk9Crz4AAA
+        AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnInicio.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACUAAAAaCAYAAAAwspV7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABKSURBVFhH7c4hAQAgEMBAklAZ+n0M/AMBXsyBmDg1s9Zn
-        Rp97/yPjTlXhLacopyinKKcopyinKKcopyinKKcop6hPp0auKjwzch2vdgqJZC7uoAAAAABJRU5ErkJg
-        gg==
+        iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABBSURBVEhL7dahAQAgDAPB339FxqhvAV9LI4g4FfE2JKyC
+        mna7dMMUxyUcl3BcwnEJxyUcl3Bc4uP4Oe/RDa8lxAY2NUWrMaB7+AAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLimpiar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAQQAAAAlCAYAAACkj5ctAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAChSURBVHhe7dRRCQMxAETB+FeVIzIqowJaAuHBacgM7M8K
-        eAPgZa31mXP+zOzO7QacHIyxD+BeuwEnB4IAtxMEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQ
-        QQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAYggABEEIIIARBCACAIQQQAiCEAEAcgrCM/zfPdhZndu
-        N+DkAGAb4w+nE+UJeFzTQQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAoCAYAAAAmPX7RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVHhe7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
+        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
+        4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxePgsRNXUbYIwAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="btnElegirCmb.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADwAAAAVCAYAAAAaX42MAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABGSURBVFhH7c8xAQAgDMAwlMwy84cM/g0EoKD0yNWrI7JW
+        ZPcfat3hV+BymM5hOofpHKZzmM5hOofpHKZzmG7ErP0KSLP2ATCvJu6XDfdGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnEliminar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAF0AAAArCAYAAAAaCoQfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACMSURBVGhD7dChAYAwAMAwLtnL8B9n4Dc4AAs1EVF13cYx
+        z3GsxV/m+Ux/C3zJ9IDpAdMDpgdMD5geMD1gesD0gOkB0wOmB0wPmB4wPWB6wPSA6QHTA6YHTA+YHjA9
+        YHrA9IDpAdMDpgdMD5geMD1gesD0gOkB0wOmB0wPmB4wPWB6YBv7vN4CH9nndQOqt77W7a79uQAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
 </root>

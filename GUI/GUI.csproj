@@ -151,6 +151,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormCambiarClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +225,9 @@
     <Compile Include="ServiceForm.Designer.cs">
       <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAyuda.resx">
+      <DependentUpon>FormAyuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCambiarClave.resx">
       <DependentUpon>FormCambiarClave.cs</DependentUpon>
     </EmbeddedResource>

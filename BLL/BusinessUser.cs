@@ -12,7 +12,6 @@ namespace BLL
     public class BusinessUser
     {
         private readonly DAL_User dataAccess;
-
         public BusinessUser()
         {
             dataAccess = new DAL_User();

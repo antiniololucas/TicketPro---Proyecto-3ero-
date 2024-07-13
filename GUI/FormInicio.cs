@@ -1,4 +1,5 @@
-﻿using Services;
+﻿using BLL;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,26 @@ namespace GUI
 {
     public partial class FormInicio : ServiceForm
     {
+        private readonly SessionManager _sessionManager = SessionManager.GetInstance();
+        private BusinessPermiso _businessPermiso;
+
         public FormInicio()
         {
             InitializeComponent();
+            _businessPermiso = new BusinessPermiso();
+            validateRol();
+        }
+
+        private void validateRol()
+        {
+            _sessionManager.User.Rol.Permisos = _businessPermiso.getPermisosPorUser(_sessionManager.User).Data;
+            
+            PanelBtnAdmin.Visible = _sessionManager.HasPermission(7);
+            PanelBtnVenta.Visible = _sessionManager.HasPermission(1);
+            PanelBtnCobranza.Visible = _sessionManager.HasPermission(2);
+            PanelBtnUsuario.Visible = _sessionManager.HasPermission(3);
+            PanelBtnMaestros.Visible = _sessionManager.HasPermission(4);
+            //Falta btn reporte
         }
 
         private void BtnAdmin_Click(object sender, EventArgs e)
@@ -33,9 +51,19 @@ namespace GUI
             PanelSubMenuEntradas.Visible = !PanelSubMenuEntradas.Visible;
         }
 
+        private void btnCobranza_Click(object sender, EventArgs e)
+        {
+            panelSubMenuCobranza.Visible = !panelSubMenuCobranza.Visible;
+        }
+
         private void btnMaestros_Click(object sender, EventArgs e)
         {
             panelSubMenuMaestros.Visible = !panelSubMenuMaestros.Visible;
+        }
+
+        private void btnCobranza_Click_1(object sender, EventArgs e)
+        {
+            panelSubMenuCobranza.Visible = !panelSubMenuCobranza.Visible;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -67,9 +95,25 @@ namespace GUI
             CambiarForm(new FormGenerarFactura());
         }
 
-        private void btnCobrarFactura_Click_1(object sender, EventArgs e)
+        private void btnMaestroClientes_Click(object sender, EventArgs e)
         {
-            CambiarForm(new FormCobrarFactura());
+            CambiarForm(new FormMaestroClientes());
+        }
+
+        private void btnCobrarFactura_Click(object sender, EventArgs e)
+        {
+            CambiarForm( new FormCobrarFactura());
+        }
+
+        private void btnMaestrosCliente_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormMaestroClientes());
+        }
+
+        private void BtnAyuda_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Comuniquese con el administrador por medio del siguiente mail:\nLucasPablo.Antinolo@alumnos.uai.edu.ar", 
+                "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -77,10 +121,14 @@ namespace GUI
             Application.Exit();
         }
 
-        private void btnMaestroClientes_Click(object sender, EventArgs e)
+        private void btnGestionPefiles_Click(object sender, EventArgs e)
         {
-            CambiarForm(new FormMaestroClientes());
+            CambiarForm(new FormGestionRol());
         }
 
+        private void btnGestionFamilias_Click(object sender, EventArgs e)
+        {
+            CambiarForm( new FormGestionFamilias());
+        }
     }
 }

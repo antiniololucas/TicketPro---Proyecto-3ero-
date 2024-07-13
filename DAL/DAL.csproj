@@ -45,6 +45,8 @@
     <Compile Include="DAL_Entrada.cs" />
     <Compile Include="DAL_Evento.cs" />
     <Compile Include="DAL_Factura.cs" />
+    <Compile Include="DAL_Permiso.cs" />
+    <Compile Include="DAL_Rol.cs" />
     <Compile Include="DAL_User.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

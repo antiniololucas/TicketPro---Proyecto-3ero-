@@ -45,6 +45,8 @@
     <Compile Include="BusinessEntrada.cs" />
     <Compile Include="BusinessEvento.cs" />
     <Compile Include="BusinessFactura.cs" />
+    <Compile Include="BusinessPermiso.cs" />
+    <Compile Include="BusinessRol.cs" />
     <Compile Include="BusinessResponse.cs" />
     <Compile Include="BusinessUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

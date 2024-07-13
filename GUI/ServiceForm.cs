@@ -32,18 +32,22 @@ namespace GUI
             this.ResumeLayout(false);
         }
 
-        protected void LlenarDG<T>(DataGridView DG, List<T> list, List<string> columnasOcultas)
+        public void LlenarDG<T>(DataGridView dgv, List<T> data, List<string> columnsToHide)
         {
-            DG.DataSource = null;
-            DG.DataSource = list;
-            if (columnasOcultas != null)
+            dgv.DataSource = null;
+            dgv.DataSource = data;
+
+            foreach (var column in columnsToHide)
             {
-                foreach (string col in columnasOcultas)
+                if (dgv.Columns[column] != null)
                 {
-                    DG.Columns[$"{col}"].Visible = false;
+                    dgv.Columns[column].Visible = false;
                 }
             }
+
+            dgv.ClearSelection();
         }
+
 
         protected void LLenarCmb<T>(ComboBox cmb , List<T> list , string Display)
         {

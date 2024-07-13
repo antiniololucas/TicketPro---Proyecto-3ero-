@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,14 +13,24 @@ namespace DAL
     {
         public static EntityUser MapUser(DataRow row) => new EntityUser()
         {
-            Id = Convert.ToInt32(row["ID"]), 
+            Id = Convert.ToInt32(row["ID"]),
             Dni = Convert.ToInt32(row["Dni"]),
             Nombre = row["Nombre"].ToString(),
             Apellido = row["Apellido"].ToString(),
             Username = row["Username"].ToString(),
             Password = row["Password"].ToString(),
             IsBlock = Convert.ToBoolean(row["IsBlock"].ToString()),
-            Rol = row["Rol"].ToString(),
+            Rol = new EntityRol()
+            {
+                Id = Convert.ToInt32(row["Id_Rol"]),
+                Nombre = row["NombreRol"].ToString()
+            },
+        };
+
+        public static EntityRol MapRol(DataRow row) => new EntityRol()
+        {
+            Id = Convert.ToInt32(row["Id_Rol"]),
+            Nombre = row["Nombre"].ToString(),
         };
 
         public static EntityEvento MapEvento(DataRow row) => new EntityEvento()
@@ -54,11 +65,25 @@ namespace DAL
 
         internal static EntityFactura MapFactura(DataRow row) => new EntityFactura()
         {
-            Id  = Convert.ToInt32(row["ID"].ToString()),
-            Id_Cliente  = Convert.ToInt32(row["Id_Cliente"].ToString()),
-            Fecha  = DateTime.Parse(row["Fecha"].ToString()),
-            Monto_Total  = double.Parse(row["Monto_Total"].ToString()),
+            Id = Convert.ToInt32(row["ID"].ToString()),
+            Id_Cliente = Convert.ToInt32(row["Id_Cliente"].ToString()),
+            Fecha = DateTime.Parse(row["Fecha"].ToString()),
+            Monto_Total = double.Parse(row["Monto_Total"].ToString()),
             Is_Cobrada = bool.Parse(row["Is_Cobrada"].ToString()),
         };
+
+
+        internal static EntityPermiso MapPermiso(DataRow row) => new EntityPermiso()
+        {
+            Nombre = row["Nombre"].ToString(),
+            Id = Convert.ToInt32(row["Id_Permiso"].ToString()),
+        };
+
+        internal static EntityFamilia MapFamilia(DataRow row) => new EntityFamilia()
+        {
+            Nombre = row["Nombre"].ToString(),
+            Id = Convert.ToInt32(row["Id_Permiso"].ToString()),
+        };
+
     }
 }
