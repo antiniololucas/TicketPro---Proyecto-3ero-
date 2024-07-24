@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL;
 using BE;
+using System.Data;
 
 namespace BLL
 {
@@ -16,12 +17,19 @@ namespace BLL
         {
             dataAcces = new DAL_Factura();
         }
-
+            
+        public BusinessResponse<EntityDetalle_Factura> getDetalleFactura(EntityFactura factura)
+        {
+            var data = dataAcces.getDetalle(factura);
+            bool ok = data is null;
+            string mensaje = ok is true ? "Obtenido" : "Error";
+            return new BusinessResponse<EntityDetalle_Factura> ( ok, data, mensaje );
+        }
         public BusinessResponse<List<EntityFactura>> BuscarFacturas()
         {
             List<EntityFactura> facturas = dataAcces.GetAll();
             bool ok = facturas.Count() == 0;
-            string Mensaje = ok == true ? "Facturas obtenidas" : "Ocurrió un error";
+            string Mensaje = ok == true ? "Obtenido" : "Error";
             return new BusinessResponse<List<EntityFactura>>(ok, facturas, Mensaje);
         }
 
@@ -29,7 +37,7 @@ namespace BLL
         {
             bool ok = dataAcces.Registrar(factura , detalles);
 
-            string mensaje = ok == true ? "Factura registrada" : "Ocurrió un error";
+            string mensaje = ok == true ? "Alta" : "Error";
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
@@ -37,8 +45,14 @@ namespace BLL
         public BusinessResponse<bool> ModificarFactura(EntityFactura factura, bool isCobranza)
         {   
             bool ok = dataAcces.Update(factura);
-            string Mensaje = ok == true ? isCobranza == true ? "Factura cobrada" : "Factura Modificada" : "Ocurrió un error";
+            string Mensaje = ok == true ? isCobranza == true ? "Cobrada" : "Modificada" : "Error";
             return new BusinessResponse<bool>(ok, false, Mensaje);
         }
+
+        public DataTable ObtenerInforme()
+        {
+            return dataAcces.GetInforme();
+        }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿using BE;
 using BLL;
 using Bunifu.UI.WinForms;
+using Bunifu.UI.WinForms.BunifuButton;
+using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +15,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class ServiceForm : Form
+    public partial class ServiceForm : Form, IObserver
     {
+        protected readonly BusinessIdioma _businessIdioma;
+        protected SessionManager _sessionManager;
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
+            _sessionManager = SessionManager.GetInstance();
+
+            _businessIdioma = new BusinessIdioma();
             InitializeComponent();
         }
 
@@ -49,7 +56,7 @@ namespace GUI
         }
 
 
-        protected void LLenarCmb<T>(ComboBox cmb , List<T> list , string Display)
+        protected void LLenarCmb<T>(ComboBox cmb, List<T> list, string Display)
         {
             cmb.DataSource = list;
             cmb.DisplayMember = Display;
@@ -63,22 +70,21 @@ namespace GUI
             }
         }
 
-        protected void MostrarLabelError(string mensaje, BunifuLabel label)
+        protected void MostrarLabelError(BunifuLabel label)
         {
-            label.Text = mensaje;
             label.Visible = true;
         }
 
-        protected void RevisarRespuestaServicio<T>(BusinessResponse<T> respuesta)
+        protected void RevisarRespuestaServicio<T>(BusinessResponse<T> respuesta, EntityIdioma idioma = null)
         {
             if (!respuesta.Ok)
             {
-                MessageBox.Show(respuesta.Mensaje, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(SearchTraduccion( respuesta.Mensaje , idioma ), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (respuesta.Ok && !string.IsNullOrEmpty(respuesta.Mensaje))
             {
-                MessageBox.Show(respuesta.Mensaje, "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(SearchTraduccion(respuesta.Mensaje, idioma), "Great!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -88,5 +94,32 @@ namespace GUI
             this.Close();
         }
 
+        public void Notify(EntityIdioma idioma)
+        {
+            ChangeTranslation(idioma);
+        }
+
+        protected void ChangeTranslation(EntityIdioma idioma = null, Control.ControlCollection collectionPanel = null)
+        {
+            if (idioma == null) idioma = _sessionManager.Idioma;
+
+            Control.ControlCollection controlCollection = collectionPanel ?? Controls;
+
+            foreach (Control item in controlCollection)
+            {
+                if (item is Panel || item is BunifuPanel) ChangeTranslation(idioma, item.Controls);
+
+                if (item is Label || item is BunifuLabel || item is Button || item is BunifuButton || item is CheckBox)
+                {
+                    // Buscar por name en la tabla junto con el id y setear el text del idioma seleccionado
+                    item.Text = _businessIdioma.GetTraduccion(idioma, item.Name).Data;
+                }
+            }
+        }
+
+        protected string SearchTraduccion(string controlName, EntityIdioma idioma = null)
+        {
+            return _businessIdioma.GetTraduccion(idioma ?? _sessionManager.Idioma, controlName).Data;
+        }
     }
 }

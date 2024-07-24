@@ -23,7 +23,7 @@ namespace BLL
         {
             bool ok = dataAcces.InsertRol(nombre, permisos);
 
-            string mensaje = ok == true ? "Rol registrado" : "Ocurrió un error";
+            string mensaje = ok == true ? "Alta" : "Error";
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
@@ -32,7 +32,7 @@ namespace BLL
         {
             bool ok = ok = dataAcces.UpdateRol(rol);
 
-            string mensaje = ok == true ? "Rol modificado" : "Ocurrió un error";
+            string mensaje = ok == true ? "Modificada" : "Error";
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
@@ -41,14 +41,14 @@ namespace BLL
         {
             List<EntityRol> roles = dataAcces.GetAll();
             bool ok = roles.Count > 0;
-            string mensaje = ok is true ? "Lista obtenida" : "Error al traer roles";
+            string mensaje = ok is true ? "Obtenido" : "Error";
             return new BusinessResponse<List<EntityRol>>(ok, roles, mensaje);
         }
 
         public BusinessResponse<bool> EliminarRol(EntityRol rol)
         {
             bool ok = dataAcces.deleteRol(rol);
-            string mensaje = ok is true ? "Rol eliminado" : "Un usuario tiene asignado este rol";
+            string mensaje = ok is true ? "Borrada" : "Error";
             bool data = false;
             return new BusinessResponse<bool>(ok, data, mensaje);
 

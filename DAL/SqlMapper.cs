@@ -85,5 +85,19 @@ namespace DAL
             Id = Convert.ToInt32(row["Id_Permiso"].ToString()),
         };
 
+        internal static EntityDetalle_Factura MapDetalleFactura(DataRow row) => new EntityDetalle_Factura()
+        {
+            Id_Detalle = Convert.ToInt32( row["Id_detalle"].ToString()),
+            Id_Factura = Convert.ToInt32(row["Id_Factura"].ToString()),
+            Id_Entrada = Convert.ToInt32(row["Id_Entrada"].ToString()),
+            Cantidad_Entradas = Convert.ToInt32(row["Cantidad_Entradas"].ToString()),
+            Costo_parcial = double.Parse(row["Costo_Parcial"].ToString())
+        };
+
+        public static EntityIdioma MapIdioma(DataRow row) => new EntityIdioma()
+        {
+            Id = Convert.ToInt32(row["Id_Idioma"]),
+            Idioma = row["Idioma"].ToString()
+        };
     }
 }

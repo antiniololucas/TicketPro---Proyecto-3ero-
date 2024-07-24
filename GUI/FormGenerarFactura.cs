@@ -20,11 +20,12 @@ namespace GUI
         {
             InitializeComponent();
             CargaInicio();
+            ChangeTranslation();
         }
 
         private void CargaInicio()
         {
-            _eventos = _businessEvento.BuscarEventos();
+            _eventos = _businessEvento.BuscarEventos().Where(E => E.Fecha > DateTime.Now).ToList();
             _clientes = _businessCliente.BuscarClientes();
             LlenarDG(DG_Eventos, _eventos, new List<string>() { "Id", "Descripcion", "Horario", "Artista", "Imagen" });
             LlenarDG(DG_Clientes, _clientes, new List<string>() { "ID", "Mail" });
@@ -45,9 +46,9 @@ namespace GUI
         private void MostrarDetalleEvento()
         {
             panelSeleccionEvento.Visible = true;
-            lblNombre.Text = eventoActual.Nombre.ToUpper();
+            lblNombreEvento.Text = eventoActual.Nombre.ToUpper();
             lblArtista.Text = eventoActual.Artista;
-            LblDescripcion.Text = eventoActual.Descripcion;
+            LblDescripcionEvento.Text = eventoActual.Descripcion;
             lblUbicacion.Text = eventoActual.Ubicacion;
             lblFecha.Text = eventoActual.Fecha.ToString();
             lblHorario.Text = eventoActual.Horario.ToString();
@@ -88,7 +89,7 @@ namespace GUI
 
         private void btnAsociarCliente_Click(object sender, EventArgs e)
         {
-            lblCliente.Text = "Cliente Asociado: " + (clienteActual.Nombre.ToString() + " " + clienteActual.Apellido);
+            lblCliente.Text =  (clienteActual.Nombre.ToString() + " " + clienteActual.Apellido);
             btnGenerarFactura.Enabled = true;
         }
 
@@ -111,7 +112,7 @@ namespace GUI
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"¿Está seguro que quiere generar la factura del cliente {clienteActual.DNI} para el show {eventoActual.Nombre}?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($" {SearchTraduccion("preguntaConfirmacion1")} { clienteActual.DNI} { SearchTraduccion("preguntaConfirmacion2")}  {eventoActual.Nombre}?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) { return; }
 
             double monto = 0;

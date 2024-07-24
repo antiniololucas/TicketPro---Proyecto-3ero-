@@ -31,13 +31,13 @@ namespace BLL
             if (user?.IsBlock == true)
             {
                 ok = false;
-                mensaje = "Usuario Bloqueado";
+                mensaje = "UsuarioBloqueado";
             }
             else
             {
                 ok = user?.Password == CryptoManager.EncryptString(password) && user?.Username == username;
                 string pass = CryptoManager.EncryptString(password);
-                mensaje = user?.Username != username ? "Usuario Incorrecto" : !ok ? "Contraseña Incorrecta" : string.Empty;
+                mensaje = user?.Username != username ? "UsuarioIncorrecto" : !ok ? "ContraseñaIncorrecta" : string.Empty;
             }
 
             return new BusinessResponse<EntityUser>(ok, user, mensaje);
@@ -50,11 +50,11 @@ namespace BLL
 
             if (!user.IsBlock)
             {
-                mensaje = ok ? "Usuario Bloqueado" : "Ocurrió un error";
+                mensaje = ok ? "UsuarioBloqueado" : "Error";
             }
             else
             {
-                mensaje = ok ? "Usuario Desbloqueado" : "Ocurrió un error";
+                mensaje = ok ? "UsuarioDesbloqueado" : "Error";
                 //Resetea clave
                 dataAccess.UpdatePassword(CryptoManager.EncryptString(user.Dni.ToString() + user.Apellido.ToString()), user.Id);
             }
@@ -66,7 +66,7 @@ namespace BLL
             password = CryptoManager.EncryptString(password);
             bool ok = dataAccess.UpdatePassword(password, id_User);
 
-            string mensaje = ok ? "Contraseña Modificada\nIngresa sesion con tu nueva contraseña" : "La contraseña no se pudo modificar";
+            string mensaje = ok ? "UpdatePassword" : "Error";
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
@@ -75,7 +75,7 @@ namespace BLL
         {
             bool ok = dataAccess.DeleteUser(id_user);
 
-            string mensaje = ok ? "Usuario eliminado" : "Ocurrió un error";
+            string mensaje = ok ? "Borrada" : "Error";
 
             return new BusinessResponse<bool>(ok , false, mensaje);
         }
@@ -86,7 +86,7 @@ namespace BLL
             user.Username = user.Nombre + user.Apellido;
             bool ok = dataAccess.InsertUser(user);
 
-            string mensaje = ok ? "Se agregó el usuario" : "Ocurrió un error, verifique campos y pruebe agregando un segundo nombre";
+            string mensaje = ok ? "Alta" : "Error";
 
             return new BusinessResponse<bool> ( ok, false, mensaje );
         }
@@ -95,7 +95,7 @@ namespace BLL
         {
             bool ok = dataAccess.UpdateUser(user);
 
-            string mensaje = ok ? "Se modificó el usuario" : "Ocurrió un error";
+            string mensaje = ok ? "Modificada" : "Error";
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }

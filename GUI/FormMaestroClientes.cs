@@ -20,6 +20,7 @@ namespace GUI
             InitializeComponent();
             _clientes = _businessCliente.BuscarClientes();
             ActualizarInformacion();
+            ChangeTranslation();
         }
 
         BusinessCliente _businessCliente = new BusinessCliente();
@@ -44,14 +45,14 @@ namespace GUI
             TxtNombre.Text = DG_Clientes.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
             TxtApellido.Text = DG_Clientes.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
             TxtDni.Text = DG_Clientes.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
-            TxtMail.Text = DG_Clientes.Rows[e.RowIndex].Cells["Mail"].Value.ToString();
+            txtMail.Text = DG_Clientes.Rows[e.RowIndex].Cells["Mail"].Value.ToString();
             _clienteActual = DG_Clientes.SelectedRows[0].DataBoundItem as EntityCliente;
             btnModificar.Enabled = true;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var response = _businessCliente.ModificarCliente(_clienteActual.Id ,TxtDni.Text, TxtNombre.Text, TxtApellido.Text, TxtMail.Text);
+            var response = _businessCliente.ModificarCliente(_clienteActual.Id ,TxtDni.Text, TxtNombre.Text, TxtApellido.Text, txtMail.Text);
             RevisarRespuestaServicio(response);
             if (response.Ok) 
             {
@@ -66,7 +67,7 @@ namespace GUI
             TxtNombre.Text = string.Empty;
             TxtApellido.Text = string.Empty;
             TxtDni.Text = string.Empty;
-            TxtMail.Text = string.Empty;
+            txtMail.Text = string.Empty;
             btnModificar.Enabled = false;
         }
 

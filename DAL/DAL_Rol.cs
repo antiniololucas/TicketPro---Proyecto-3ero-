@@ -28,7 +28,7 @@ namespace DAL
 
             var result = conn.WriteWithReturn("SP_InsertRol", parameters);
             int newId = Convert.ToInt32(result);
-
+            insertRolPermiso(permisos, newId);
             if (result is null) { return false; }
 
             return true;

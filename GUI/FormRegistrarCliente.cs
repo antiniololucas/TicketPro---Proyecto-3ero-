@@ -22,6 +22,7 @@ namespace GUI
         {
             InitializeComponent();
             AcceptButton = btnRegistarCliente;
+            ChangeTranslation();
             txtDni.Select();
         }
 
@@ -32,7 +33,8 @@ namespace GUI
         {
             InitializeComponent();
             _formVolver = formGenerarFactura;
-            btnVolver.Visible = true;
+            btnVolverFactura.Visible = true;
+            ChangeTranslation();
         }
 
         private void btnRegistarCliente_Click(object sender, EventArgs e)
@@ -64,7 +66,7 @@ namespace GUI
         {
             if (_formVolver != null)
             {
-                DialogResult result = MessageBox.Show($"¿Está seguro que quiere abandonar la carga de factura?", "Confirmación", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No) { return; }
             }
             CambiarForm(new FormInicio());

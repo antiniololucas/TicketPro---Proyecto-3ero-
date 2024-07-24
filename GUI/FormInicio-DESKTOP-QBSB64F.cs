@@ -38,6 +38,7 @@ namespace GUI
             PanelBtnReporte.Visible = _sessionManager.HasPermission(5);
             PanelBtnAdmin.Visible = _sessionManager.HasPermission(7);
             PánelBtnAyuda.Visible = _sessionManager.HasPermission(8);
+            //Falta btn reporte
         }
 
         private void BtnAdmin_Click(object sender, EventArgs e)
@@ -147,7 +148,7 @@ namespace GUI
             string nombreArchivo = SearchTraduccion("NombreSalidaInforme");
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"..\\..\\..\\{nombreArchivo}.xlsx");
             PDFGenerator.SaveToExcel(dt, filePath);
-            MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo + ".xlsx");
+            MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo);
         }
     }
 }

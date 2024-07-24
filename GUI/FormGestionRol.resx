@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
+  <data name="lblGestionRoles.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 39px;font-family: 'Arial Rounded MT Bold'; font-size: 20,25pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(240, 240, 240); text-align: center; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -1541,11 +1541,10 @@
   </data>
   <data name="btnLimpiar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHAAAAAoCAYAAAAmPX7RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVHhe7dExEYAwAMBAlNRy8YeM7i0IwMDfZfgpY65x
-        72fc50S0n2/gX4iigbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG
-        4hqIayCugbgG4hqIayCugbgG4hqIayCugbgG4hqIayCugbhrzL3+QgBzrxePgsRNXUbYIwAAAABJRU5E
-        rkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAAKsAAAAdCAYAAADVe5xxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVHhe7dIxEYAwAMBAlNQy+EMGewsCENDc/fBT1hzj
+        mve41oK9zfub9S/AfsxKhlnJMCsZZiXDrGSYlQyzkmFWMsxKhlnJMCsZZiXDrGSYlQyzkmFWMsxKhlnJ
+        MCsZZiXDrGSYlQyzkmFWMsxKhlnJOMY5n78AWznn8wLcD8Rsm3yLOQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnElegirCmb.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

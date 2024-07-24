@@ -21,6 +21,7 @@ namespace GUI
             InitializeComponent();
             AcceptButton = btnCambiarClave;
             TxtPasswordVieja.Select();
+            ChangeTranslation();
         }
 
         EntityUser user = SessionManager.GetInstance().User;
@@ -36,33 +37,36 @@ namespace GUI
             bool huboError = false;
             EsconderLabelError(new List<Bunifu.UI.WinForms.BunifuLabel> { lblErrorActual, lblErrorNueva, lblErrorRepetida });
             //Campos vacíos
-
-            if (string.IsNullOrEmpty(TxtPasswordVieja.Text)) { MostrarLabelError("Campos incompleto", lblErrorActual); huboError = true; }
-            if (string.IsNullOrEmpty(TxtPasswordNueva.Text)) { MostrarLabelError("Campo Incompleto", lblErrorNueva); huboError = true; }
-            if (string.IsNullOrEmpty(TxtPasswordRepetida.Text)) { MostrarLabelError("Campo Incompleto", lblErrorRepetida); huboError = true; }
+            MessageBox.Show(SearchTraduccion("Campos_Incompletos"));
+            if (string.IsNullOrEmpty(TxtPasswordVieja.Text)) { MostrarLabelError( lblErrorActual); huboError = true; }
+            if (string.IsNullOrEmpty(TxtPasswordNueva.Text)) { MostrarLabelError( lblErrorNueva); huboError = true; }
+            if (string.IsNullOrEmpty(TxtPasswordRepetida.Text)) { MostrarLabelError( lblErrorRepetida); huboError = true; }
 
             if(huboError) { return; }
 
             //Contraseñas nuevas no coinciden
             if (TxtPasswordNueva.Text != TxtPasswordRepetida.Text)
             {
-                MostrarLabelError("No coinciden", lblErrorNueva);
-                MostrarLabelError("No coinciden", lblErrorRepetida);
+                MessageBox.Show(SearchTraduccion("ContraseñasDiferentes"));
+                MostrarLabelError( lblErrorNueva);
+                MostrarLabelError( lblErrorRepetida);
                 return;
             }
 
             //Validar regex de la nueva contraseña
             if (!RegexValidation.IsValidPassword(TxtPasswordNueva.Text))
             {
-                MostrarLabelError("No cumplen con los requisitos", lblErrorNueva);
-                MostrarLabelError("No cumplen con los requisitos", lblErrorRepetida);
+                MessageBox.Show(SearchTraduccion("FormatoIncorrecto"));
+                MostrarLabelError( lblErrorNueva);
+                MostrarLabelError( lblErrorRepetida);
                 return;
             }
 
             //Contraseña original coincide con la del user (Ultimo para brindar está información la menor cantidad de veces)
             if (CryptoManager.EncryptString(TxtPasswordVieja.Text) != user.Password)
             {
-                MostrarLabelError("Incorrecta", lblErrorActual); return;
+                MessageBox.Show(SearchTraduccion("ContraOriginal"));
+                MostrarLabelError( lblErrorActual); return;
             }
 
             var response = _businessUser.CambiarClave(user.Id, TxtPasswordNueva.Text);

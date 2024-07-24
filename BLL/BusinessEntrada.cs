@@ -21,5 +21,10 @@ namespace BLL
         {
             return dataAccess.GetAll(evento);
         }
+
+        public List<EntityEntrada> selectAllEntrads()
+        {
+            return dataAccess.getAllEntradas();
+        }
     }
 }

@@ -48,6 +48,7 @@
     <Compile Include="EntityEvento.cs" />
     <Compile Include="EntityFactura.cs" />
     <Compile Include="EntityFamilia.cs" />
+    <Compile Include="EntityIdioma.cs" />
     <Compile Include="EntityPermiso.cs" />
     <Compile Include="EntityRol.cs" />
     <Compile Include="EntityUser.cs" />

@@ -29,6 +29,26 @@ namespace DAL
             return facturas;
         }
 
+        public EntityDetalle_Factura getDetalle(EntityFactura factura)
+        {
+            EntityDetalle_Factura detalle = new EntityDetalle_Factura();
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_IdFactura", SqlDbType.Int) {Value =  factura.Id}
+            };
+            DataTable DR = conn.Read("SP_GetDetalle", parameters);
+            foreach(DataRow item in DR.Rows)
+            {
+                detalle = SqlMapper.MapDetalleFactura(item);
+            }
+            return detalle;
+        }
+
+        public DataTable GetInforme()
+        {
+            return conn.Read("SP_GetInforme", null);
+        }
+
         public bool Registrar(EntityFactura factura, List<EntityDetalle_Factura> detalles)
         {
             SqlParameter[] parameters = new SqlParameter[]

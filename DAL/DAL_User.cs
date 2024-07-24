@@ -37,7 +37,7 @@ namespace DAL
                 new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = user.Nombre},
                 new SqlParameter("@In_Username" , SqlDbType.NVarChar) { Value = user.Username},
                 new SqlParameter("@In_Password" , SqlDbType.NVarChar) {Value = user.Password},
-                new SqlParameter("@In_Rol" , SqlDbType.NVarChar) {Value = user.Rol } 
+                new SqlParameter("@In_Rol" , SqlDbType.Int) {Value = user.Rol.Id } 
             };
 
             return conn.Write("SP_InsertUser", parameters);
@@ -45,7 +45,7 @@ namespace DAL
 
         public List<EntityUser> SelectAllUsers()
         {
-            DataTable table = conn.Read("SP_GetUser", null);
+            DataTable table = conn.Read("SP_GetUsers", null);
             List<EntityUser> users = new List<EntityUser>();
             foreach (DataRow row in table.Rows)
             {
@@ -96,7 +96,7 @@ namespace DAL
                 new SqlParameter("@In_DNI", SqlDbType.Int) { Value = user.Dni },
                 new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = user.Nombre},
                 new SqlParameter("@In_Apellido" , SqlDbType.NVarChar) { Value = user.Apellido },
-                new SqlParameter("@In_Rol" , SqlDbType.NVarChar) {Value = user.Rol }
+                new SqlParameter("@In_Rol" , SqlDbType.Int) {Value = user.Rol.Id }
             };
 
             return conn.Write("SP_UpdateUser", parameters);

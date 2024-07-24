@@ -17,7 +17,6 @@ namespace GUI
 
         BusinessRol _businessRol;
         BusinessPermiso _businessPermiso;
-        bool modificar;
         List<EntityRol> _roles;
         List<IPermiso> _permisosExistentes;
         List<IPermiso> _permisosRolElegido;
@@ -32,6 +31,8 @@ namespace GUI
             _businessPermiso = new BusinessPermiso();
             cargarRoles();
             setData();
+
+            ChangeTranslation();
         }
 
         private void cargarRoles()
@@ -51,6 +52,7 @@ namespace GUI
             _permisosRolElegido = new List<IPermiso>();
             rolActual = new EntityRol();
             btnCrear.Enabled = true;
+            btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             txtNombre.Text = "";
             llenarDG_Pantalla();
@@ -72,7 +74,7 @@ namespace GUI
 
             // Obtener todos los permisos de las familias en el rol elegido
             var permisosDeFamiliasRolElegido = _permisosRolElegido.OfType<EntityFamilia>()
-                .SelectMany(f => f.Permisos) // Suponiendo que la clase EntityFamilia tiene una propiedad Permisos
+                .SelectMany(f => f.Permisos) 
                 .ToList();
 
             // Filtrar los permisos para excluir los que están en los permisos de las familias del rol elegido
@@ -80,8 +82,12 @@ namespace GUI
 
             // Filtrar las familias para excluir aquellas que contienen permisos ya presentes en _permisosRolElegido
             _familias = _familias.Where(f =>
-                !f.Permisos.Any(fp => _permisosRolElegido.OfType<EntityPermiso>().Any(rp => rp.Id == fp.Id))
+                !f.Permisos.Any(fp => permisosDeFamiliasRolElegido.OfType<EntityPermiso>().Any(rp => rp.Id == fp.Id))
             ).ToList();
+
+            _familias = _familias.Where(f =>
+               !f.Permisos.Any(fp => _permisosRolElegido.OfType<EntityPermiso>().Any(rp => rp.Id == fp.Id))
+           ).ToList();
 
 
             LlenarDG(DG_Familias, _familias, new List<string>() { "Id" });
@@ -105,12 +111,12 @@ namespace GUI
         {
             if (e.RowIndex is -1) { return; }
             EntityFamilia familiaElegida = DG_Familias.SelectedRows[0].DataBoundItem as EntityFamilia;
-            DialogResult result = MessageBox.Show("¿Desea agregar familia al rol? Presione Si. \nSi presiona NO, podrá ver los permisos que tiene la familia", "Confirmación", MessageBoxButtons.YesNoCancel);
+            DialogResult result = MessageBox.Show(SearchTraduccion("DialogFamiliaRol"), "", MessageBoxButtons.YesNoCancel);
 
             if (result == DialogResult.No)
             {
                 string permisosNombres = String.Join("\n", familiaElegida.Permisos.Select(x => x.Nombre));
-                MessageBox.Show(permisosNombres, "Permisos:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(permisosNombres, "List:", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (result == DialogResult.Yes)
@@ -133,16 +139,10 @@ namespace GUI
         {
             bool changeName = false;
             if (!string.IsNullOrEmpty(txtNombre.Text)) rolActual.Nombre = txtNombre.Text; changeName = true;
+            if (_permisosRolElegido.Count < 1) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
+            if (_roles.Any(R => R.Nombre == txtNombre.Text)) { MessageBox.Show(SearchTraduccion("NombreRolRepetido")); return; }
             rolActual.Permisos = _permisosRolElegido;
             RevisarRespuestaServicio(_businessRol.ModificarRol(rolActual, changeName));
-            llenarDG_Pantalla();
-            setData();
-        }
-
-        private void btnCrear_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtNombre.Text)) { MessageBox.Show("Ingrese un nombre", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
-            RevisarRespuestaServicio(_businessRol.AgregarRol(_permisosRolElegido, txtNombre.Text));
             llenarDG_Pantalla();
             setData();
         }
@@ -167,12 +167,12 @@ namespace GUI
         private void ListBox_PermisosRolActual_DoubleClick(object sender, EventArgs e)
         {
             if (ListBox_PermisosRolActual.SelectedIndex is -1) { return; }
-            DialogResult result = MessageBox.Show("¿Desea remover este permiso?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("RemoverSeleccion"), "Confirmación", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 IPermiso permisoElegido = ListBox_PermisosRolActual.SelectedItem as IPermiso;
                 _permisosRolElegido.Remove(permisoElegido);
-                llenarListBox();
+                llenarDG_Pantalla();
             }
             return;
         }
@@ -180,13 +180,23 @@ namespace GUI
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea eliminar este rol?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                  RevisarRespuestaServicio(_businessRol.EliminarRol(rolActual));
                 setData();
             }
             return;
+        }
+
+        private void btnCrear_Click_1(object sender, EventArgs e)
+        {
+            if (_roles.Any(R => R.Nombre == txtNombre.Text)) { MessageBox.Show(SearchTraduccion("NombreRolRepetido")); return; }
+            if (_permisosRolElegido.Count < 1) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
+            if (string.IsNullOrEmpty(txtNombre.Text)) { MessageBox.Show("Ingrese un nombre", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
+            RevisarRespuestaServicio(_businessRol.AgregarRol(_permisosRolElegido, txtNombre.Text));
+            llenarDG_Pantalla();
+            setData();
         }
     }
 }

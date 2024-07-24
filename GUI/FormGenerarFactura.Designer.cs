@@ -44,14 +44,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPrincipalGenerarFactura = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PanelCliente = new Bunifu.UI.WinForms.BunifuPanel();
             this.lblFacturaActual = new System.Windows.Forms.Label();
             this.DG_FacturaActual = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.cmbClientes = new System.Windows.Forms.ComboBox();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblIndicadorDni = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblCliente = new System.Windows.Forms.Label();
             this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
             this.DG_Clientes = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -64,8 +64,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblUbicacion = new System.Windows.Forms.Label();
             this.lblArtista = new System.Windows.Forms.Label();
-            this.LblDescripcion = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
+            this.LblDescripcionEvento = new System.Windows.Forms.Label();
+            this.lblNombreEvento = new System.Windows.Forms.Label();
             this.PanelEventos = new Bunifu.UI.WinForms.BunifuPanel();
             this.cmbEventos = new System.Windows.Forms.ComboBox();
             this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -85,24 +85,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG_Eventos)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // lblPrincipalGenerarFactura
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(900, 112);
-            this.bunifuLabel1.TabIndex = 2;
-            this.bunifuLabel1.Text = "GENERAR FACTURA";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPrincipalGenerarFactura.AllowParentOverrides = false;
+            this.lblPrincipalGenerarFactura.AutoEllipsis = false;
+            this.lblPrincipalGenerarFactura.AutoSize = false;
+            this.lblPrincipalGenerarFactura.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalGenerarFactura.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalGenerarFactura.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPrincipalGenerarFactura.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrincipalGenerarFactura.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPrincipalGenerarFactura.Location = new System.Drawing.Point(0, 0);
+            this.lblPrincipalGenerarFactura.Name = "lblPrincipalGenerarFactura";
+            this.lblPrincipalGenerarFactura.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPrincipalGenerarFactura.Size = new System.Drawing.Size(900, 112);
+            this.lblPrincipalGenerarFactura.TabIndex = 2;
+            this.lblPrincipalGenerarFactura.Text = "GENERAR FACTURA";
+            this.lblPrincipalGenerarFactura.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrincipalGenerarFactura.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPanel1
             // 
@@ -141,7 +141,7 @@
             this.PanelCliente.Controls.Add(this.lblFacturaActual);
             this.PanelCliente.Controls.Add(this.DG_FacturaActual);
             this.PanelCliente.Controls.Add(this.cmbClientes);
-            this.PanelCliente.Controls.Add(this.bunifuLabel2);
+            this.PanelCliente.Controls.Add(this.lblIndicadorDni);
             this.PanelCliente.Controls.Add(this.lblCliente);
             this.PanelCliente.Controls.Add(this.bunifuLabel6);
             this.PanelCliente.Controls.Add(this.DG_Clientes);
@@ -239,21 +239,21 @@
             this.cmbClientes.TabIndex = 53;
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
             // 
-            // bunifuLabel2
+            // lblIndicadorDni
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.CursorType = null;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel2.Location = new System.Drawing.Point(32, 293);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(23, 15);
-            this.bunifuLabel2.TabIndex = 46;
-            this.bunifuLabel2.Text = "DNI:";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblIndicadorDni.AllowParentOverrides = false;
+            this.lblIndicadorDni.AutoEllipsis = false;
+            this.lblIndicadorDni.CursorType = null;
+            this.lblIndicadorDni.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblIndicadorDni.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIndicadorDni.Location = new System.Drawing.Point(32, 293);
+            this.lblIndicadorDni.Name = "lblIndicadorDni";
+            this.lblIndicadorDni.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblIndicadorDni.Size = new System.Drawing.Size(23, 15);
+            this.lblIndicadorDni.TabIndex = 46;
+            this.lblIndicadorDni.Text = "DNI:";
+            this.lblIndicadorDni.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblIndicadorDni.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblCliente
             // 
@@ -539,8 +539,8 @@
             this.panelSeleccionEvento.Controls.Add(this.lblFecha);
             this.panelSeleccionEvento.Controls.Add(this.lblUbicacion);
             this.panelSeleccionEvento.Controls.Add(this.lblArtista);
-            this.panelSeleccionEvento.Controls.Add(this.LblDescripcion);
-            this.panelSeleccionEvento.Controls.Add(this.lblNombre);
+            this.panelSeleccionEvento.Controls.Add(this.LblDescripcionEvento);
+            this.panelSeleccionEvento.Controls.Add(this.lblNombreEvento);
             this.panelSeleccionEvento.Location = new System.Drawing.Point(29, 274);
             this.panelSeleccionEvento.Name = "panelSeleccionEvento";
             this.panelSeleccionEvento.ShowBorders = true;
@@ -693,28 +693,28 @@
             this.lblArtista.TabIndex = 44;
             this.lblArtista.Text = "Artista";
             // 
-            // LblDescripcion
+            // LblDescripcionEvento
             // 
-            this.LblDescripcion.BackColor = System.Drawing.Color.Transparent;
-            this.LblDescripcion.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDescripcion.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.LblDescripcion.Location = new System.Drawing.Point(19, 59);
-            this.LblDescripcion.Name = "LblDescripcion";
-            this.LblDescripcion.Size = new System.Drawing.Size(239, 170);
-            this.LblDescripcion.TabIndex = 43;
-            this.LblDescripcion.Text = "DESCRIPCION";
+            this.LblDescripcionEvento.BackColor = System.Drawing.Color.Transparent;
+            this.LblDescripcionEvento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDescripcionEvento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LblDescripcionEvento.Location = new System.Drawing.Point(19, 59);
+            this.LblDescripcionEvento.Name = "LblDescripcionEvento";
+            this.LblDescripcionEvento.Size = new System.Drawing.Size(239, 170);
+            this.LblDescripcionEvento.TabIndex = 43;
+            this.LblDescripcionEvento.Text = "DESCRIPCION";
             // 
-            // lblNombre
+            // lblNombreEvento
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
-            this.lblNombre.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNombre.Location = new System.Drawing.Point(144, 9);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(160, 22);
-            this.lblNombre.TabIndex = 42;
-            this.lblNombre.Text = "NOMBRE EVENTO";
+            this.lblNombreEvento.AutoSize = true;
+            this.lblNombreEvento.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombreEvento.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEvento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblNombreEvento.Location = new System.Drawing.Point(144, 9);
+            this.lblNombreEvento.Name = "lblNombreEvento";
+            this.lblNombreEvento.Size = new System.Drawing.Size(160, 22);
+            this.lblNombreEvento.TabIndex = 42;
+            this.lblNombreEvento.Text = "NOMBRE EVENTO";
             // 
             // PanelEventos
             // 
@@ -1122,7 +1122,7 @@
             this.Controls.Add(this.PanelEventos);
             this.Controls.Add(this.btnGenerarFactura);
             this.Controls.Add(this.bunifuPanel1);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblPrincipalGenerarFactura);
             this.Name = "FormGenerarFactura";
             this.Text = "FormGenerarFactura";
             this.bunifuPanel1.ResumeLayout(false);
@@ -1143,11 +1143,11 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblPrincipalGenerarFactura;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.UI.WinForms.BunifuPanel PanelCliente;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel lblIndicadorDni;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAsociarCliente;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegistarCliente;
@@ -1157,8 +1157,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnVerEntradas;
         private Bunifu.UI.WinForms.BunifuDataGridView DG_Eventos;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label LblDescripcion;
+        private System.Windows.Forms.Label lblNombreEvento;
+        private System.Windows.Forms.Label LblDescripcionEvento;
         private System.Windows.Forms.Label lblHorario;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblUbicacion;

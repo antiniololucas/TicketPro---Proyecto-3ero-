@@ -45,6 +45,7 @@
     <Compile Include="BusinessEntrada.cs" />
     <Compile Include="BusinessEvento.cs" />
     <Compile Include="BusinessFactura.cs" />
+    <Compile Include="BusinessIdioma.cs" />
     <Compile Include="BusinessPermiso.cs" />
     <Compile Include="BusinessRol.cs" />
     <Compile Include="BusinessResponse.cs" />
@@ -64,6 +65,9 @@
       <Project>{c0417eea-8c5b-46d0-bf51-6141162a537d}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

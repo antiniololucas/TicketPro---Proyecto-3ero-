@@ -21,31 +21,37 @@ namespace GUI
             InitializeComponent();
             AcceptButton = btnIngresar;
             TxtUser.Select();
+            FillIdiomas();
         }
 
         BusinessUser _businessUser = new BusinessUser();
         SessionManager _sessionManager;
         List<EntityUser> ListaErrores = new List<EntityUser>();
 
+
+        private void FillIdiomas()
+        {
+            cmbCambiarIdioma.Items.Clear();
+            BusinessResponse<List<EntityIdioma>> response = _businessIdioma.GetAll();
+            cmbCambiarIdioma.Items.AddRange(response.Data.ToArray());
+            cmbCambiarIdioma.DisplayMember = "Idioma";
+            cmbCambiarIdioma.SelectedIndex = 0;
+        }
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            EsconderLabelError(new List<BunifuLabel>()
-            {
-                lblErrorUser,
-                lblErrorPassword
-            });
 
             bool HuboError = false;
 
             if (string.IsNullOrEmpty(TxtUser.Text))
             {
-                MostrarLabelError("Debe ingresar usuario", lblErrorUser);
+                MessageBox.Show(SearchTraduccion("Campos_incompletos", cmbCambiarIdioma.SelectedItem as EntityIdioma));
                 HuboError = true;
             }
 
             if (string.IsNullOrEmpty(TxtPassword.Text))
             {
-                MostrarLabelError("Debe ingresar contraseña", lblErrorPassword);
+                MessageBox.Show(SearchTraduccion("Campos_incompletos", cmbCambiarIdioma.SelectedItem as EntityIdioma));
                 HuboError = true;
             }
 
@@ -53,7 +59,7 @@ namespace GUI
 
             BusinessResponse<EntityUser> response = _businessUser.VerificarCredenciales(TxtUser.Text, TxtPassword.Text);
 
-            RevisarRespuestaServicio(response);
+            RevisarRespuestaServicio(response , cmbCambiarIdioma.SelectedItem as EntityIdioma);
 
             if (!response.Ok && response.Data?.IsBlock == false)
             {
@@ -61,7 +67,7 @@ namespace GUI
 
                 if (ListaErrores.Where(users => users.Id == response.Data.Id).Count() == 3)
                 {
-                    RevisarRespuestaServicio(_businessUser.ChangeBlockUser(response.Data));
+                    RevisarRespuestaServicio(_businessUser.ChangeBlockUser(response.Data) , cmbCambiarIdioma.SelectedItem as EntityIdioma);
                 }
             }
 
@@ -70,14 +76,14 @@ namespace GUI
             {
                 try
                 {
-                    _sessionManager = SessionManager.Login(response.Data);
+                    _sessionManager = SessionManager.Login(response.Data, cmbCambiarIdioma.SelectedItem as EntityIdioma);
                     FormInicio frm = new FormInicio();
                     frm.Show();
                     this.Hide();
                 }
                 catch (Exception ex)
                 {
-                    RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, ex.Message));
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, ex.Message) , cmbCambiarIdioma.SelectedItem as EntityIdioma);
                 }
             }
         }
@@ -85,6 +91,15 @@ namespace GUI
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cmbCambiarIdioma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            EntityIdioma idioma = cmbCambiarIdioma.SelectedItem as EntityIdioma;
+
+            IPublisher publisher = new LanguageManager();
+            publisher.AddObserver(this);
+            publisher.NotifyAll(idioma);
         }
     }
 }

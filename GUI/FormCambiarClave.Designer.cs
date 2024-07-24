@@ -47,17 +47,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblErrorRepetida = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblErrorNueva = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblIndicacion = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblErrorActual = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnCambiarClave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblRepeticionNuevaContra = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblNuevaContraseña = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblContraActual = new Bunifu.UI.WinForms.BunifuLabel();
             this.TxtPasswordVieja = new Bunifu.UI.WinForms.BunifuTextBox();
             this.TxtPasswordRepetida = new Bunifu.UI.WinForms.BunifuTextBox();
             this.TxtPasswordNueva = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnVolver = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPrincipalCambiarContraseña = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -122,23 +122,23 @@
             this.lblErrorNueva.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             this.lblErrorNueva.Visible = false;
             // 
-            // bunifuLabel6
+            // lblIndicacion
             // 
-            this.bunifuLabel6.AllowParentOverrides = false;
-            this.bunifuLabel6.AutoEllipsis = false;
-            this.bunifuLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel6.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel6.Location = new System.Drawing.Point(114, 118);
-            this.bunifuLabel6.Name = "bunifuLabel6";
-            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel6.Size = new System.Drawing.Size(643, 15);
-            this.bunifuLabel6.TabIndex = 39;
-            this.bunifuLabel6.Text = "La nueva contraseña debe tener como minimo 8 caracteres y además debe contener al" +
+            this.lblIndicacion.AllowParentOverrides = false;
+            this.lblIndicacion.AutoEllipsis = false;
+            this.lblIndicacion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblIndicacion.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblIndicacion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblIndicacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblIndicacion.Location = new System.Drawing.Point(114, 118);
+            this.lblIndicacion.Name = "lblIndicacion";
+            this.lblIndicacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblIndicacion.Size = new System.Drawing.Size(643, 15);
+            this.lblIndicacion.TabIndex = 39;
+            this.lblIndicacion.Text = "La nueva contraseña debe tener como minimo 8 caracteres y además debe contener al" +
     " menos 1 numero y una mayuscula.";
-            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblIndicacion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblIndicacion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lblErrorActual
             // 
@@ -248,54 +248,54 @@
             this.btnCambiarClave.UseDefaultRadiusAndThickness = true;
             this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click_1);
             // 
-            // bunifuLabel4
+            // lblRepeticionNuevaContra
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel4.Location = new System.Drawing.Point(292, 362);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(97, 15);
-            this.bunifuLabel4.TabIndex = 35;
-            this.bunifuLabel4.Text = " Nueva Contraseña";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblRepeticionNuevaContra.AllowParentOverrides = false;
+            this.lblRepeticionNuevaContra.AutoEllipsis = false;
+            this.lblRepeticionNuevaContra.CursorType = null;
+            this.lblRepeticionNuevaContra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblRepeticionNuevaContra.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRepeticionNuevaContra.Location = new System.Drawing.Point(292, 362);
+            this.lblRepeticionNuevaContra.Name = "lblRepeticionNuevaContra";
+            this.lblRepeticionNuevaContra.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblRepeticionNuevaContra.Size = new System.Drawing.Size(97, 15);
+            this.lblRepeticionNuevaContra.TabIndex = 35;
+            this.lblRepeticionNuevaContra.Text = " Nueva Contraseña";
+            this.lblRepeticionNuevaContra.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblRepeticionNuevaContra.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel3
+            // lblNuevaContraseña
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel3.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel3.Location = new System.Drawing.Point(292, 277);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(97, 15);
-            this.bunifuLabel3.TabIndex = 34;
-            this.bunifuLabel3.Text = " Nueva Contraseña";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblNuevaContraseña.AllowParentOverrides = false;
+            this.lblNuevaContraseña.AutoEllipsis = false;
+            this.lblNuevaContraseña.CursorType = null;
+            this.lblNuevaContraseña.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNuevaContraseña.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNuevaContraseña.Location = new System.Drawing.Point(292, 277);
+            this.lblNuevaContraseña.Name = "lblNuevaContraseña";
+            this.lblNuevaContraseña.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNuevaContraseña.Size = new System.Drawing.Size(97, 15);
+            this.lblNuevaContraseña.TabIndex = 34;
+            this.lblNuevaContraseña.Text = " Nueva Contraseña";
+            this.lblNuevaContraseña.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNuevaContraseña.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel2
+            // lblContraActual
             // 
-            this.bunifuLabel2.AllowParentOverrides = false;
-            this.bunifuLabel2.AutoEllipsis = false;
-            this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel2.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel2.Location = new System.Drawing.Point(292, 192);
-            this.bunifuLabel2.Name = "bunifuLabel2";
-            this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(97, 15);
-            this.bunifuLabel2.TabIndex = 33;
-            this.bunifuLabel2.Text = "Contraseña Actual";
-            this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblContraActual.AllowParentOverrides = false;
+            this.lblContraActual.AutoEllipsis = false;
+            this.lblContraActual.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblContraActual.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblContraActual.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblContraActual.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblContraActual.Location = new System.Drawing.Point(292, 192);
+            this.lblContraActual.Name = "lblContraActual";
+            this.lblContraActual.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblContraActual.Size = new System.Drawing.Size(97, 15);
+            this.lblContraActual.TabIndex = 33;
+            this.lblContraActual.Text = "Contraseña Actual";
+            this.lblContraActual.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblContraActual.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // TxtPasswordVieja
             // 
@@ -611,24 +611,24 @@
             this.btnVolver.UseDefaultRadiusAndThickness = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // bunifuLabel1
+            // lblPrincipalCambiarContraseña
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(884, 112);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "CAMBIAR CONTRASEÑA";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPrincipalCambiarContraseña.AllowParentOverrides = false;
+            this.lblPrincipalCambiarContraseña.AutoEllipsis = false;
+            this.lblPrincipalCambiarContraseña.AutoSize = false;
+            this.lblPrincipalCambiarContraseña.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalCambiarContraseña.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalCambiarContraseña.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPrincipalCambiarContraseña.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrincipalCambiarContraseña.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPrincipalCambiarContraseña.Location = new System.Drawing.Point(0, 0);
+            this.lblPrincipalCambiarContraseña.Name = "lblPrincipalCambiarContraseña";
+            this.lblPrincipalCambiarContraseña.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPrincipalCambiarContraseña.Size = new System.Drawing.Size(884, 112);
+            this.lblPrincipalCambiarContraseña.TabIndex = 0;
+            this.lblPrincipalCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
+            this.lblPrincipalCambiarContraseña.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrincipalCambiarContraseña.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // FormCambiarClave
             // 
@@ -639,17 +639,17 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.lblErrorRepetida);
             this.Controls.Add(this.lblErrorNueva);
-            this.Controls.Add(this.bunifuLabel6);
+            this.Controls.Add(this.lblIndicacion);
             this.Controls.Add(this.lblErrorActual);
             this.Controls.Add(this.btnCambiarClave);
-            this.Controls.Add(this.bunifuLabel4);
-            this.Controls.Add(this.bunifuLabel3);
-            this.Controls.Add(this.bunifuLabel2);
+            this.Controls.Add(this.lblRepeticionNuevaContra);
+            this.Controls.Add(this.lblNuevaContraseña);
+            this.Controls.Add(this.lblContraActual);
             this.Controls.Add(this.TxtPasswordVieja);
             this.Controls.Add(this.TxtPasswordRepetida);
             this.Controls.Add(this.TxtPasswordNueva);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblPrincipalCambiarContraseña);
             this.Name = "FormCambiarClave";
             this.Text = "FormCambiarClave";
             this.bunifuPanel1.ResumeLayout(false);
@@ -661,16 +661,16 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblPrincipalCambiarContraseña;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnVolver;
         private Bunifu.UI.WinForms.BunifuLabel lblErrorRepetida;
         private Bunifu.UI.WinForms.BunifuLabel lblErrorNueva;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
+        private Bunifu.UI.WinForms.BunifuLabel lblIndicacion;
         private Bunifu.UI.WinForms.BunifuLabel lblErrorActual;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCambiarClave;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
+        private Bunifu.UI.WinForms.BunifuLabel lblRepeticionNuevaContra;
+        private Bunifu.UI.WinForms.BunifuLabel lblNuevaContraseña;
+        private Bunifu.UI.WinForms.BunifuLabel lblContraActual;
         private Bunifu.UI.WinForms.BunifuTextBox TxtPasswordVieja;
         private Bunifu.UI.WinForms.BunifuTextBox TxtPasswordRepetida;
         private Bunifu.UI.WinForms.BunifuTextBox TxtPasswordNueva;

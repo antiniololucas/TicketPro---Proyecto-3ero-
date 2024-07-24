@@ -12,6 +12,7 @@ namespace Services
         public Guid SessionId { get; private set; }
         public DateTime LoginTime { get; private set; }
         public EntityUser User { get; private set; }
+        public EntityIdioma Idioma { get; set; }
 
         private static SessionManager _instance;
 
@@ -24,19 +25,18 @@ namespace Services
 
         public static SessionManager GetInstance()
         {
-            if (_instance is null) throw new Exception("Sesion no iniciada");
-
             return _instance;
         }
 
-        public static SessionManager Login(EntityUser user)
+        public static SessionManager Login(EntityUser user, EntityIdioma idioma)
         {
             if (_instance != null) throw new Exception("Ya hay una sesion iniciada");
             if (_instance is null)
             {
                 _instance = new SessionManager
                 {
-                    User = user
+                    User = user,
+                    Idioma = idioma
                 };
             }
 

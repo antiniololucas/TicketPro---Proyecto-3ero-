@@ -15,13 +15,18 @@ namespace GUI
     public partial class FormGestionUsuario : ServiceForm
     {
         BusinessUser _businessUser = new BusinessUser();
+        List<EntityRol> roles;
+        BusinessRol businessRol = new BusinessRol();
         List<EntityUser> users_error = new List<EntityUser>();
         EntityUser userActual;
 
         public FormGestionUsuario()
         {
             InitializeComponent();
+            roles = businessRol.BuscarRoles().Data;
+            LLenarCmb(cmbRoles, roles, "Nombre");
             ActualizarData();
+            ChangeTranslation();
         }
 
         private void ActualizarData()
@@ -38,14 +43,14 @@ namespace GUI
             TxtNombre.Text = DGusers.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
             TxtApellido.Text = DGusers.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
             TxtDni.Text = DGusers.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
-            TxtRol.Text = DGusers.Rows[e.RowIndex].Cells["Rol"].Value.ToString();
             userActual = DGusers.SelectedRows[0].DataBoundItem as EntityUser;
+            if (userActual.IsBlock == true) { btnDesbloquear.Enabled = false; }
             activarButtons();
         }
 
         private void btnDesbloquear_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro que quiere concretar la operación?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) { return; }
 
             var response = _businessUser.ChangeBlockUser(userActual);
@@ -55,7 +60,7 @@ namespace GUI
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) { return; }
 
             var response = _businessUser.EliminarUsuario(userActual.Id);
@@ -65,23 +70,23 @@ namespace GUI
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.No) { return; }
 
-            if (string.IsNullOrEmpty(TxtApellido.Text) || string.IsNullOrEmpty(TxtNombre.Text) || string.IsNullOrEmpty(TxtRol.Text))
+            if (string.IsNullOrEmpty(TxtApellido.Text) || string.IsNullOrEmpty(TxtNombre.Text) )
             {
                 MessageBox.Show("Camnpos incompletos"); return;
             }
 
-            if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
+            if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show(SearchTraduccion("FormatoIncorrecto")); return; }
 
             EntityUser user = new EntityUser()
             {
                 Dni = val,
                 Apellido = TxtApellido.Text,
                 Nombre = TxtNombre.Text,
-                ///Agregar Rol dinamico
+                Rol = cmbRoles.SelectedItem as EntityRol
             };
             var response = _businessUser.AgregarUsuario(user);
             RevisarRespuestaServicio(response);
@@ -90,18 +95,18 @@ namespace GUI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Está seguro?", "Confirmación", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "Confirmación", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
-                if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show("El dni debe ser numerico"); return; }
+                if (!int.TryParse(TxtDni.Text, out int val)) { MessageBox.Show(SearchTraduccion("FormatoIncorrecto")); return; }
                 EntityUser user = new EntityUser()
                 {
                     Id = userActual.Id,
                     Dni = val,
                     Apellido = TxtApellido.Text,
                     Nombre = TxtNombre.Text,
-                    //Agregar Rol Dinamico
+                    Rol = cmbRoles.SelectedItem as EntityRol
                 };
                 var response = _businessUser.ModificarUsuario(user);
                 RevisarRespuestaServicio(response);
@@ -112,7 +117,6 @@ namespace GUI
         private void activarButtons()
         {
             btnEliminar.Enabled = true;
-            btnDesbloquear.Enabled = true;
             btnModificar.Enabled = true;
             btnAgregar.Enabled = false;
         }
@@ -130,7 +134,7 @@ namespace GUI
             TxtNombre.Text = string.Empty;
             TxtApellido.Text = string.Empty;
             TxtDni.Text = string.Empty;
-            TxtRol.Text = string.Empty;
+            cmbRoles.SelectedIndex = -1;
             desactivarButons();
         }
 

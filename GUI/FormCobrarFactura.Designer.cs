@@ -46,18 +46,18 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblPrincipalCobrar = new Bunifu.UI.WinForms.BunifuLabel();
             this.DG_Facturas = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblFacAcobrar = new Bunifu.UI.WinForms.BunifuLabel();
             this.txtNombreTitular = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txtNumTarjeta = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel4 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblNumTarjeta = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblNombreTitular = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblFechaVto = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnRegistarCliente = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnCobrarFactura = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.TxtFechaVto = new Bunifu.UI.WinForms.BunifuTextBox();
             this.lblErrorFecha = new Bunifu.UI.WinForms.BunifuLabel();
             this.lblErrorNombre = new Bunifu.UI.WinForms.BunifuLabel();
@@ -70,24 +70,24 @@
             this.panelCobrar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // lblPrincipalCobrar
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(884, 112);
-            this.bunifuLabel1.TabIndex = 16;
-            this.bunifuLabel1.Text = "COBRAR FACTURA";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblPrincipalCobrar.AllowParentOverrides = false;
+            this.lblPrincipalCobrar.AutoEllipsis = false;
+            this.lblPrincipalCobrar.AutoSize = false;
+            this.lblPrincipalCobrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalCobrar.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblPrincipalCobrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblPrincipalCobrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblPrincipalCobrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPrincipalCobrar.Location = new System.Drawing.Point(0, 0);
+            this.lblPrincipalCobrar.Name = "lblPrincipalCobrar";
+            this.lblPrincipalCobrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblPrincipalCobrar.Size = new System.Drawing.Size(884, 112);
+            this.lblPrincipalCobrar.TabIndex = 16;
+            this.lblPrincipalCobrar.Text = "COBRAR FACTURA";
+            this.lblPrincipalCobrar.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrincipalCobrar.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // DG_Facturas
             // 
@@ -144,6 +144,7 @@
             this.DG_Facturas.Name = "DG_Facturas";
             this.DG_Facturas.ReadOnly = true;
             this.DG_Facturas.RowHeadersVisible = false;
+            this.DG_Facturas.RowHeadersWidth = 51;
             this.DG_Facturas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DG_Facturas.RowTemplate.Height = 40;
             this.DG_Facturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -167,21 +168,21 @@
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel5
+            // lblFacAcobrar
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel5.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel5.Location = new System.Drawing.Point(12, 118);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(92, 15);
-            this.bunifuLabel5.TabIndex = 19;
-            this.bunifuLabel5.Text = "Facturas a Cobrar";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblFacAcobrar.AllowParentOverrides = false;
+            this.lblFacAcobrar.AutoEllipsis = false;
+            this.lblFacAcobrar.CursorType = null;
+            this.lblFacAcobrar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblFacAcobrar.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFacAcobrar.Location = new System.Drawing.Point(12, 118);
+            this.lblFacAcobrar.Name = "lblFacAcobrar";
+            this.lblFacAcobrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFacAcobrar.Size = new System.Drawing.Size(92, 15);
+            this.lblFacAcobrar.TabIndex = 19;
+            this.lblFacAcobrar.Text = "Facturas a Cobrar";
+            this.lblFacAcobrar.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblFacAcobrar.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txtNombreTitular
             // 
@@ -236,7 +237,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNombreTitular.OnIdleState = stateProperties4;
-            this.txtNombreTitular.Padding = new System.Windows.Forms.Padding(3);
+            this.txtNombreTitular.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtNombreTitular.PasswordChar = '\0';
             this.txtNombreTitular.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNombreTitular.PlaceholderText = "Enter text";
@@ -310,7 +311,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNumTarjeta.OnIdleState = stateProperties8;
-            this.txtNumTarjeta.Padding = new System.Windows.Forms.Padding(3);
+            this.txtNumTarjeta.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtNumTarjeta.PasswordChar = '\0';
             this.txtNumTarjeta.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNumTarjeta.PlaceholderText = "Enter text";
@@ -331,53 +332,53 @@
             this.txtNumTarjeta.UseSystemPasswordChar = false;
             this.txtNumTarjeta.WordWrap = true;
             // 
-            // bunifuLabel3
+            // lblNumTarjeta
             // 
-            this.bunifuLabel3.AllowParentOverrides = false;
-            this.bunifuLabel3.AutoEllipsis = false;
-            this.bunifuLabel3.CursorType = null;
-            this.bunifuLabel3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel3.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel3.Location = new System.Drawing.Point(29, 6);
-            this.bunifuLabel3.Name = "bunifuLabel3";
-            this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(98, 15);
-            this.bunifuLabel3.TabIndex = 25;
-            this.bunifuLabel3.Text = "Numero de Tarjeta";
-            this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblNumTarjeta.AllowParentOverrides = false;
+            this.lblNumTarjeta.AutoEllipsis = false;
+            this.lblNumTarjeta.CursorType = null;
+            this.lblNumTarjeta.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNumTarjeta.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNumTarjeta.Location = new System.Drawing.Point(29, 6);
+            this.lblNumTarjeta.Name = "lblNumTarjeta";
+            this.lblNumTarjeta.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNumTarjeta.Size = new System.Drawing.Size(98, 15);
+            this.lblNumTarjeta.TabIndex = 25;
+            this.lblNumTarjeta.Text = "Numero de Tarjeta";
+            this.lblNumTarjeta.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNumTarjeta.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel4
+            // lblNombreTitular
             // 
-            this.bunifuLabel4.AllowParentOverrides = false;
-            this.bunifuLabel4.AutoEllipsis = false;
-            this.bunifuLabel4.CursorType = null;
-            this.bunifuLabel4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel4.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel4.Location = new System.Drawing.Point(29, 161);
-            this.bunifuLabel4.Name = "bunifuLabel4";
-            this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel4.Size = new System.Drawing.Size(151, 15);
-            this.bunifuLabel4.TabIndex = 23;
-            this.bunifuLabel4.Text = "Nombre completo del titular";
-            this.bunifuLabel4.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel4.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblNombreTitular.AllowParentOverrides = false;
+            this.lblNombreTitular.AutoEllipsis = false;
+            this.lblNombreTitular.CursorType = null;
+            this.lblNombreTitular.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNombreTitular.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNombreTitular.Location = new System.Drawing.Point(29, 161);
+            this.lblNombreTitular.Name = "lblNombreTitular";
+            this.lblNombreTitular.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombreTitular.Size = new System.Drawing.Size(151, 15);
+            this.lblNombreTitular.TabIndex = 23;
+            this.lblNombreTitular.Text = "Nombre completo del titular";
+            this.lblNombreTitular.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNombreTitular.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel7
+            // lblFechaVto
             // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bunifuLabel7.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel7.Location = new System.Drawing.Point(29, 83);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(117, 15);
-            this.bunifuLabel7.TabIndex = 22;
-            this.bunifuLabel7.Text = "Fecha de Vencimiento";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblFechaVto.AllowParentOverrides = false;
+            this.lblFechaVto.AutoEllipsis = false;
+            this.lblFechaVto.CursorType = null;
+            this.lblFechaVto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblFechaVto.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFechaVto.Location = new System.Drawing.Point(29, 83);
+            this.lblFechaVto.Name = "lblFechaVto";
+            this.lblFechaVto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblFechaVto.Size = new System.Drawing.Size(117, 15);
+            this.lblFechaVto.TabIndex = 22;
+            this.lblFechaVto.Text = "Fecha de Vencimiento";
+            this.lblFechaVto.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblFechaVto.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPanel1
             // 
@@ -405,95 +406,95 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // btnRegistarCliente
+            // btnCobrarFactura
             // 
-            this.btnRegistarCliente.AllowAnimations = true;
-            this.btnRegistarCliente.AllowMouseEffects = true;
-            this.btnRegistarCliente.AllowToggling = false;
-            this.btnRegistarCliente.AnimationSpeed = 200;
-            this.btnRegistarCliente.AutoGenerateColors = false;
-            this.btnRegistarCliente.AutoRoundBorders = false;
-            this.btnRegistarCliente.AutoSizeLeftIcon = true;
-            this.btnRegistarCliente.AutoSizeRightIcon = true;
-            this.btnRegistarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistarCliente.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.btnRegistarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRegistarCliente.BackgroundImage")));
-            this.btnRegistarCliente.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRegistarCliente.ButtonText = "Cobrar";
-            this.btnRegistarCliente.ButtonTextMarginLeft = 0;
-            this.btnRegistarCliente.ColorContrastOnClick = 45;
-            this.btnRegistarCliente.ColorContrastOnHover = 45;
-            this.btnRegistarCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCobrarFactura.AllowAnimations = true;
+            this.btnCobrarFactura.AllowMouseEffects = true;
+            this.btnCobrarFactura.AllowToggling = false;
+            this.btnCobrarFactura.AnimationSpeed = 200;
+            this.btnCobrarFactura.AutoGenerateColors = false;
+            this.btnCobrarFactura.AutoRoundBorders = false;
+            this.btnCobrarFactura.AutoSizeLeftIcon = true;
+            this.btnCobrarFactura.AutoSizeRightIcon = true;
+            this.btnCobrarFactura.BackColor = System.Drawing.Color.Transparent;
+            this.btnCobrarFactura.BackColor1 = System.Drawing.Color.DodgerBlue;
+            this.btnCobrarFactura.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCobrarFactura.BackgroundImage")));
+            this.btnCobrarFactura.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnCobrarFactura.ButtonText = "Cobrar";
+            this.btnCobrarFactura.ButtonTextMarginLeft = 0;
+            this.btnCobrarFactura.ColorContrastOnClick = 45;
+            this.btnCobrarFactura.ColorContrastOnHover = 45;
+            this.btnCobrarFactura.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges1.BottomLeft = true;
             borderEdges1.BottomRight = true;
             borderEdges1.TopLeft = true;
             borderEdges1.TopRight = true;
-            this.btnRegistarCliente.CustomizableEdges = borderEdges1;
-            this.btnRegistarCliente.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnRegistarCliente.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRegistarCliente.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRegistarCliente.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRegistarCliente.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnRegistarCliente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnRegistarCliente.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistarCliente.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRegistarCliente.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnRegistarCliente.IconMarginLeft = 11;
-            this.btnRegistarCliente.IconPadding = 10;
-            this.btnRegistarCliente.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistarCliente.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnRegistarCliente.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnRegistarCliente.IconSize = 25;
-            this.btnRegistarCliente.IdleBorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRegistarCliente.IdleBorderRadius = 10;
-            this.btnRegistarCliente.IdleBorderThickness = 1;
-            this.btnRegistarCliente.IdleFillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRegistarCliente.IdleIconLeftImage = null;
-            this.btnRegistarCliente.IdleIconRightImage = null;
-            this.btnRegistarCliente.IndicateFocus = false;
-            this.btnRegistarCliente.Location = new System.Drawing.Point(72, 244);
-            this.btnRegistarCliente.Name = "btnRegistarCliente";
-            this.btnRegistarCliente.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRegistarCliente.OnDisabledState.BorderRadius = 10;
-            this.btnRegistarCliente.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRegistarCliente.OnDisabledState.BorderThickness = 1;
-            this.btnRegistarCliente.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnRegistarCliente.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnRegistarCliente.OnDisabledState.IconLeftImage = null;
-            this.btnRegistarCliente.OnDisabledState.IconRightImage = null;
-            this.btnRegistarCliente.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRegistarCliente.onHoverState.BorderRadius = 10;
-            this.btnRegistarCliente.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRegistarCliente.onHoverState.BorderThickness = 1;
-            this.btnRegistarCliente.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.btnRegistarCliente.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btnRegistarCliente.onHoverState.IconLeftImage = null;
-            this.btnRegistarCliente.onHoverState.IconRightImage = null;
-            this.btnRegistarCliente.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnRegistarCliente.OnIdleState.BorderRadius = 10;
-            this.btnRegistarCliente.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRegistarCliente.OnIdleState.BorderThickness = 1;
-            this.btnRegistarCliente.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnRegistarCliente.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btnRegistarCliente.OnIdleState.IconLeftImage = null;
-            this.btnRegistarCliente.OnIdleState.IconRightImage = null;
-            this.btnRegistarCliente.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRegistarCliente.OnPressedState.BorderRadius = 10;
-            this.btnRegistarCliente.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnRegistarCliente.OnPressedState.BorderThickness = 1;
-            this.btnRegistarCliente.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btnRegistarCliente.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btnRegistarCliente.OnPressedState.IconLeftImage = null;
-            this.btnRegistarCliente.OnPressedState.IconRightImage = null;
-            this.btnRegistarCliente.Size = new System.Drawing.Size(157, 31);
-            this.btnRegistarCliente.TabIndex = 50;
-            this.btnRegistarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRegistarCliente.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnRegistarCliente.TextMarginLeft = 0;
-            this.btnRegistarCliente.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnRegistarCliente.UseDefaultRadiusAndThickness = true;
-            this.btnRegistarCliente.Click += new System.EventHandler(this.btnRegistarCliente_Click);
+            this.btnCobrarFactura.CustomizableEdges = borderEdges1;
+            this.btnCobrarFactura.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCobrarFactura.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnCobrarFactura.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnCobrarFactura.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnCobrarFactura.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnCobrarFactura.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrarFactura.ForeColor = System.Drawing.Color.White;
+            this.btnCobrarFactura.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCobrarFactura.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnCobrarFactura.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnCobrarFactura.IconMarginLeft = 11;
+            this.btnCobrarFactura.IconPadding = 10;
+            this.btnCobrarFactura.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCobrarFactura.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnCobrarFactura.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnCobrarFactura.IconSize = 25;
+            this.btnCobrarFactura.IdleBorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnCobrarFactura.IdleBorderRadius = 10;
+            this.btnCobrarFactura.IdleBorderThickness = 1;
+            this.btnCobrarFactura.IdleFillColor = System.Drawing.Color.DodgerBlue;
+            this.btnCobrarFactura.IdleIconLeftImage = null;
+            this.btnCobrarFactura.IdleIconRightImage = null;
+            this.btnCobrarFactura.IndicateFocus = false;
+            this.btnCobrarFactura.Location = new System.Drawing.Point(72, 244);
+            this.btnCobrarFactura.Name = "btnCobrarFactura";
+            this.btnCobrarFactura.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnCobrarFactura.OnDisabledState.BorderRadius = 10;
+            this.btnCobrarFactura.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnCobrarFactura.OnDisabledState.BorderThickness = 1;
+            this.btnCobrarFactura.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnCobrarFactura.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnCobrarFactura.OnDisabledState.IconLeftImage = null;
+            this.btnCobrarFactura.OnDisabledState.IconRightImage = null;
+            this.btnCobrarFactura.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnCobrarFactura.onHoverState.BorderRadius = 10;
+            this.btnCobrarFactura.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnCobrarFactura.onHoverState.BorderThickness = 1;
+            this.btnCobrarFactura.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnCobrarFactura.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnCobrarFactura.onHoverState.IconLeftImage = null;
+            this.btnCobrarFactura.onHoverState.IconRightImage = null;
+            this.btnCobrarFactura.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnCobrarFactura.OnIdleState.BorderRadius = 10;
+            this.btnCobrarFactura.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnCobrarFactura.OnIdleState.BorderThickness = 1;
+            this.btnCobrarFactura.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnCobrarFactura.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnCobrarFactura.OnIdleState.IconLeftImage = null;
+            this.btnCobrarFactura.OnIdleState.IconRightImage = null;
+            this.btnCobrarFactura.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnCobrarFactura.OnPressedState.BorderRadius = 10;
+            this.btnCobrarFactura.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnCobrarFactura.OnPressedState.BorderThickness = 1;
+            this.btnCobrarFactura.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnCobrarFactura.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnCobrarFactura.OnPressedState.IconLeftImage = null;
+            this.btnCobrarFactura.OnPressedState.IconRightImage = null;
+            this.btnCobrarFactura.Size = new System.Drawing.Size(157, 31);
+            this.btnCobrarFactura.TabIndex = 50;
+            this.btnCobrarFactura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCobrarFactura.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCobrarFactura.TextMarginLeft = 0;
+            this.btnCobrarFactura.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnCobrarFactura.UseDefaultRadiusAndThickness = true;
+            this.btnCobrarFactura.Click += new System.EventHandler(this.btnCobrarFactura_Click);
             // 
             // TxtFechaVto
             // 
@@ -548,7 +549,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtFechaVto.OnIdleState = stateProperties12;
-            this.TxtFechaVto.Padding = new System.Windows.Forms.Padding(3);
+            this.TxtFechaVto.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.TxtFechaVto.PasswordChar = '\0';
             this.TxtFechaVto.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtFechaVto.PlaceholderText = "";
@@ -633,13 +634,13 @@
             this.panelCobrar.BorderColor = System.Drawing.Color.Transparent;
             this.panelCobrar.BorderRadius = 3;
             this.panelCobrar.BorderThickness = 1;
-            this.panelCobrar.Controls.Add(this.btnRegistarCliente);
+            this.panelCobrar.Controls.Add(this.btnCobrarFactura);
             this.panelCobrar.Controls.Add(this.lblErrorNumero);
-            this.panelCobrar.Controls.Add(this.bunifuLabel7);
+            this.panelCobrar.Controls.Add(this.lblFechaVto);
             this.panelCobrar.Controls.Add(this.lblErrorNombre);
-            this.panelCobrar.Controls.Add(this.bunifuLabel4);
+            this.panelCobrar.Controls.Add(this.lblNombreTitular);
             this.panelCobrar.Controls.Add(this.lblErrorFecha);
-            this.panelCobrar.Controls.Add(this.bunifuLabel3);
+            this.panelCobrar.Controls.Add(this.lblNumTarjeta);
             this.panelCobrar.Controls.Add(this.TxtFechaVto);
             this.panelCobrar.Controls.Add(this.txtNumTarjeta);
             this.panelCobrar.Controls.Add(this.txtNombreTitular);
@@ -749,10 +750,10 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.panelCobrar);
             this.Controls.Add(this.bunifuPanel1);
-            this.Controls.Add(this.bunifuLabel5);
+            this.Controls.Add(this.lblFacAcobrar);
             this.Controls.Add(this.bunifuLabel2);
             this.Controls.Add(this.DG_Facturas);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblPrincipalCobrar);
             this.Name = "FormCobrarFactura";
             this.Text = "FormCobrarFactura";
             ((System.ComponentModel.ISupportInitialize)(this.DG_Facturas)).EndInit();
@@ -767,18 +768,18 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblPrincipalCobrar;
         private Bunifu.UI.WinForms.BunifuDataGridView DG_Facturas;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
+        private Bunifu.UI.WinForms.BunifuLabel lblFacAcobrar;
         private Bunifu.UI.WinForms.BunifuTextBox txtNombreTitular;
         private Bunifu.UI.WinForms.BunifuTextBox txtNumTarjeta;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel4;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private Bunifu.UI.WinForms.BunifuLabel lblNumTarjeta;
+        private Bunifu.UI.WinForms.BunifuLabel lblNombreTitular;
+        private Bunifu.UI.WinForms.BunifuLabel lblFechaVto;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRegistarCliente;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCobrarFactura;
         private Bunifu.UI.WinForms.BunifuTextBox TxtFechaVto;
         private Bunifu.UI.WinForms.BunifuLabel lblErrorFecha;
         private Bunifu.UI.WinForms.BunifuLabel lblErrorNombre;

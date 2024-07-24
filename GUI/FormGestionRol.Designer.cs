@@ -45,16 +45,16 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lblGestionRoles = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnModificar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.lblFacturaActual = new System.Windows.Forms.Label();
+            this.lblNombreRol = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.DG_Familias = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.DG_Permisos = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPermisos = new System.Windows.Forms.Label();
+            this.lblFamilias = new System.Windows.Forms.Label();
             this.btnCrear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtNombre = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnInicio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -68,24 +68,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.DG_Permisos)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuLabel1
+            // lblGestionRoles
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.AutoSize = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(900, 112);
-            this.bunifuLabel1.TabIndex = 3;
-            this.bunifuLabel1.Text = "GESTION ROLES";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lblGestionRoles.AllowParentOverrides = false;
+            this.lblGestionRoles.AutoEllipsis = false;
+            this.lblGestionRoles.AutoSize = false;
+            this.lblGestionRoles.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblGestionRoles.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblGestionRoles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGestionRoles.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblGestionRoles.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblGestionRoles.Location = new System.Drawing.Point(0, 0);
+            this.lblGestionRoles.Name = "lblGestionRoles";
+            this.lblGestionRoles.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblGestionRoles.Size = new System.Drawing.Size(900, 112);
+            this.lblGestionRoles.TabIndex = 3;
+            this.lblGestionRoles.Text = "GESTION ROLES";
+            this.lblGestionRoles.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblGestionRoles.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // bunifuPanel1
             // 
@@ -203,16 +203,16 @@
             this.btnModificar.UseDefaultRadiusAndThickness = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // lblFacturaActual
+            // lblNombreRol
             // 
-            this.lblFacturaActual.AutoSize = true;
-            this.lblFacturaActual.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturaActual.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFacturaActual.Location = new System.Drawing.Point(12, 131);
-            this.lblFacturaActual.Name = "lblFacturaActual";
-            this.lblFacturaActual.Size = new System.Drawing.Size(96, 18);
-            this.lblFacturaActual.TabIndex = 66;
-            this.lblFacturaActual.Text = "Nombre Rol:";
+            this.lblNombreRol.AutoSize = true;
+            this.lblNombreRol.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreRol.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblNombreRol.Location = new System.Drawing.Point(12, 131);
+            this.lblNombreRol.Name = "lblNombreRol";
+            this.lblNombreRol.Size = new System.Drawing.Size(96, 18);
+            this.lblNombreRol.TabIndex = 66;
+            this.lblNombreRol.Text = "Nombre Rol:";
             // 
             // cmbRol
             // 
@@ -347,27 +347,27 @@
             this.DG_Permisos.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DG_Permisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Permisos_CellContentClick);
             // 
-            // label1
+            // lblPermisos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(467, 360);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 18);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "Permisos";
+            this.lblPermisos.AutoSize = true;
+            this.lblPermisos.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPermisos.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPermisos.Location = new System.Drawing.Point(467, 360);
+            this.lblPermisos.Name = "lblPermisos";
+            this.lblPermisos.Size = new System.Drawing.Size(74, 18);
+            this.lblPermisos.TabIndex = 75;
+            this.lblPermisos.Text = "Permisos";
             // 
-            // label2
+            // lblFamilias
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(467, 182);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 18);
-            this.label2.TabIndex = 76;
-            this.label2.Text = "Familias";
+            this.lblFamilias.AutoSize = true;
+            this.lblFamilias.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFamilias.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFamilias.Location = new System.Drawing.Point(467, 182);
+            this.lblFamilias.Name = "lblFamilias";
+            this.lblFamilias.Size = new System.Drawing.Size(65, 18);
+            this.lblFamilias.TabIndex = 76;
+            this.lblFamilias.Text = "Familias";
             // 
             // btnCrear
             // 
@@ -457,6 +457,7 @@
             this.btnCrear.TextMarginLeft = 0;
             this.btnCrear.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnCrear.UseDefaultRadiusAndThickness = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click_1);
             // 
             // txtNombre
             // 
@@ -669,7 +670,7 @@
             this.btnLimpiar.IdleIconLeftImage = null;
             this.btnLimpiar.IdleIconRightImage = null;
             this.btnLimpiar.IndicateFocus = false;
-            this.btnLimpiar.Location = new System.Drawing.Point(701, 133);
+            this.btnLimpiar.Location = new System.Drawing.Point(642, 144);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLimpiar.OnDisabledState.BorderRadius = 1;
@@ -703,7 +704,7 @@
             this.btnLimpiar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.OnPressedState.IconLeftImage = null;
             this.btnLimpiar.OnPressedState.IconRightImage = null;
-            this.btnLimpiar.Size = new System.Drawing.Size(112, 40);
+            this.btnLimpiar.Size = new System.Drawing.Size(171, 29);
             this.btnLimpiar.TabIndex = 80;
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -916,15 +917,15 @@
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnCrear);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblFamilias);
+            this.Controls.Add(this.lblPermisos);
             this.Controls.Add(this.DG_Permisos);
             this.Controls.Add(this.DG_Familias);
             this.Controls.Add(this.cmbRol);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.lblFacturaActual);
+            this.Controls.Add(this.lblNombreRol);
             this.Controls.Add(this.bunifuPanel1);
-            this.Controls.Add(this.bunifuLabel1);
+            this.Controls.Add(this.lblGestionRoles);
             this.Name = "FormGestionRol";
             this.Text = "FormGestionRol";
             this.bunifuPanel1.ResumeLayout(false);
@@ -938,16 +939,16 @@
 
         #endregion
 
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private Bunifu.UI.WinForms.BunifuLabel lblGestionRoles;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnModificar;
-        private System.Windows.Forms.Label lblFacturaActual;
+        private System.Windows.Forms.Label lblNombreRol;
         private System.Windows.Forms.ComboBox cmbRol;
         private Bunifu.UI.WinForms.BunifuDataGridView DG_Familias;
         private Bunifu.UI.WinForms.BunifuDataGridView DG_Permisos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPermisos;
+        private System.Windows.Forms.Label lblFamilias;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnCrear;
         private Bunifu.UI.WinForms.BunifuTextBox txtNombre;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnInicio;
