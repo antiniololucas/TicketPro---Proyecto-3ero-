@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -120,6 +121,52 @@ namespace DAL
             finally
             {
                 CloseConnection();
+            }
+        }
+
+        public bool RealizarBackup(string backupPath)
+        {
+            string nombreArchivo = $"TicketPro.BCK_{DateTime.Now:ddMMyy_HHmm}.bak";
+            string rutaCompleta = System.IO.Path.Combine(backupPath, nombreArchivo);
+            string comandoBackup = $"BACKUP DATABASE TicketPro TO DISK='{rutaCompleta}'";
+            SqlCommand cmd = new SqlCommand(comandoBackup, _connection);
+            _connection.Open();
+            cmd.ExecuteNonQuery();
+            _connection.Close();
+            return true;
+        }
+        public bool RealizarRestore(string backupFilePath)
+        {
+            try
+            {
+                _connection.Open();
+
+                using (SqlCommand setMaster = new SqlCommand("USE master;", _connection))
+                {
+                    setMaster.ExecuteNonQuery();
+                }
+
+                using (SqlCommand setSingleUser = new SqlCommand("ALTER DATABASE TicketPro SET SINGLE_USER WITH ROLLBACK IMMEDIATE;", _connection))
+                {
+                    setSingleUser.ExecuteNonQuery();
+                }
+
+                string query = $"RESTORE DATABASE TicketPro FROM DISK = '{backupFilePath}' WITH REPLACE;";
+                using (SqlCommand cmd = new SqlCommand(query, _connection))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+
+                using (SqlCommand setMultiUser = new SqlCommand("ALTER DATABASE TicketPro SET MULTI_USER;", _connection))
+                {
+                    setMultiUser.ExecuteNonQuery();
+                }
+                _connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

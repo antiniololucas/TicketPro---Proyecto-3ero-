@@ -27,6 +27,7 @@ namespace GUI
             LLenarCmb(cmbTipoEntrada, entradas, "Tipo");
             _formVolver = formVolver;
             ChangeTranslation();
+            this.nombre_modulo = "Ventas";
         }
 
         FormGenerarFactura _formVolver;

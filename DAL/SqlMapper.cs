@@ -99,5 +99,24 @@ namespace DAL
             Id = Convert.ToInt32(row["Id_Idioma"]),
             Idioma = row["Idioma"].ToString()
         };
+
+        public static EntityEventoBitacora MapEventoBitacora(DataRow row) => new EntityEventoBitacora()
+        {
+            Id = Convert.ToInt32(row["Id"]),
+            Fecha = Convert.ToDateTime(row["Fecha"]),
+            Modulo = row["Modulo"].ToString(),
+            Evento = row["Evento"].ToString(),
+            Criticidad = Convert.ToInt32(row["Criticidad"]),
+            Login = new EntityUser()
+            {
+                Id = Convert.ToInt32(row["Id_User"]),
+                Username = row["Username"].ToString(),
+                Password = row["Password"].ToString(),
+                IsBlock = Convert.ToBoolean(row["IsBlock"]),
+                Dni = Convert.ToInt32(row["DNI"]),
+                Nombre = row["Nombre"].ToString(),
+                Apellido = row["Apellido"].ToString()
+            }
+        };
     }
 }

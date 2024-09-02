@@ -31,6 +31,7 @@ namespace GUI
             _businessPermiso = new BusinessPermiso();
             cargarRoles();
             setData();
+            this.nombre_modulo = "Admin";
 
             ChangeTranslation();
         }
@@ -142,7 +143,9 @@ namespace GUI
             if (_permisosRolElegido.Count < 1) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
             if (_roles.Any(R => R.Nombre == txtNombre.Text)) { MessageBox.Show(SearchTraduccion("NombreRolRepetido")); return; }
             rolActual.Permisos = _permisosRolElegido;
-            RevisarRespuestaServicio(_businessRol.ModificarRol(rolActual, changeName));
+            var response = _businessRol.ModificarRol(rolActual, changeName);
+            RevisarRespuestaServicio(response);
+            if (response.Ok is true) guardarEventoBitacora("Se modificó un rol", 4);
             llenarDG_Pantalla();
             setData();
         }
@@ -183,7 +186,9 @@ namespace GUI
             DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                 RevisarRespuestaServicio(_businessRol.EliminarRol(rolActual));
+                var response = _businessRol.EliminarRol(rolActual);
+                RevisarRespuestaServicio(response);
+                if ( response.Ok is true ){ guardarEventoBitacora("Se elimnó un rol", 3); }
                 setData();
             }
             return;
@@ -194,7 +199,9 @@ namespace GUI
             if (_roles.Any(R => R.Nombre == txtNombre.Text)) { MessageBox.Show(SearchTraduccion("NombreRolRepetido")); return; }
             if (_permisosRolElegido.Count < 1) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
             if (string.IsNullOrEmpty(txtNombre.Text)) { MessageBox.Show("Ingrese un nombre", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
-            RevisarRespuestaServicio(_businessRol.AgregarRol(_permisosRolElegido, txtNombre.Text));
+            var response = _businessRol.AgregarRol(_permisosRolElegido, txtNombre.Text);
+            RevisarRespuestaServicio(response);
+            if (response.Ok is true) guardarEventoBitacora("Creación de un rol", 3);
             llenarDG_Pantalla();
             setData();
         }

@@ -44,7 +44,7 @@ namespace BLL
             EntityCliente cliente = new EntityCliente() {Id = id, DNI = DNI, Apellido = Apellido, Nombre = Nombre, Mail = Mail };
 
             bool ok = dataAccess.UpdateCliente(cliente);
-            string mensaje = ok == true ? "Alta" : "Error"; //Nombre del control
+            string mensaje = ok == true ? "Modificada" : "Error"; //Nombre del control
 
             return new BusinessResponse<bool>(ok, false, mensaje);
         }

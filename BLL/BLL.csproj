@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessBackupRestore.cs" />
     <Compile Include="BusinessCliente.cs" />
     <Compile Include="BusinessEntrada.cs" />
     <Compile Include="BusinessEvento.cs" />
+    <Compile Include="BusinessEventoBitacora.cs" />
     <Compile Include="BusinessFactura.cs" />
     <Compile Include="BusinessIdioma.cs" />
     <Compile Include="BusinessPermiso.cs" />

@@ -95,7 +95,7 @@
             this.lblErrorRepetida.CursorType = null;
             this.lblErrorRepetida.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblErrorRepetida.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorRepetida.Location = new System.Drawing.Point(292, 426);
+            this.lblErrorRepetida.Location = new System.Drawing.Point(317, 462);
             this.lblErrorRepetida.Name = "lblErrorRepetida";
             this.lblErrorRepetida.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblErrorRepetida.Size = new System.Drawing.Size(69, 15);
@@ -112,7 +112,7 @@
             this.lblErrorNueva.CursorType = null;
             this.lblErrorNueva.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblErrorNueva.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorNueva.Location = new System.Drawing.Point(292, 341);
+            this.lblErrorNueva.Location = new System.Drawing.Point(317, 377);
             this.lblErrorNueva.Name = "lblErrorNueva";
             this.lblErrorNueva.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblErrorNueva.Size = new System.Drawing.Size(69, 15);
@@ -130,7 +130,7 @@
             this.lblIndicacion.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblIndicacion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblIndicacion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblIndicacion.Location = new System.Drawing.Point(114, 118);
+            this.lblIndicacion.Location = new System.Drawing.Point(139, 154);
             this.lblIndicacion.Name = "lblIndicacion";
             this.lblIndicacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblIndicacion.Size = new System.Drawing.Size(643, 15);
@@ -148,7 +148,7 @@
             this.lblErrorActual.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblErrorActual.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblErrorActual.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorActual.Location = new System.Drawing.Point(292, 256);
+            this.lblErrorActual.Location = new System.Drawing.Point(317, 292);
             this.lblErrorActual.Name = "lblErrorActual";
             this.lblErrorActual.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblErrorActual.Size = new System.Drawing.Size(69, 15);
@@ -205,7 +205,7 @@
             this.btnCambiarClave.IdleIconLeftImage = null;
             this.btnCambiarClave.IdleIconRightImage = null;
             this.btnCambiarClave.IndicateFocus = false;
-            this.btnCambiarClave.Location = new System.Drawing.Point(342, 452);
+            this.btnCambiarClave.Location = new System.Drawing.Point(376, 498);
             this.btnCambiarClave.Name = "btnCambiarClave";
             this.btnCambiarClave.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCambiarClave.OnDisabledState.BorderRadius = 1;
@@ -255,7 +255,7 @@
             this.lblRepeticionNuevaContra.CursorType = null;
             this.lblRepeticionNuevaContra.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblRepeticionNuevaContra.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRepeticionNuevaContra.Location = new System.Drawing.Point(292, 362);
+            this.lblRepeticionNuevaContra.Location = new System.Drawing.Point(317, 398);
             this.lblRepeticionNuevaContra.Name = "lblRepeticionNuevaContra";
             this.lblRepeticionNuevaContra.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblRepeticionNuevaContra.Size = new System.Drawing.Size(97, 15);
@@ -271,7 +271,7 @@
             this.lblNuevaContraseña.CursorType = null;
             this.lblNuevaContraseña.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblNuevaContraseña.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNuevaContraseña.Location = new System.Drawing.Point(292, 277);
+            this.lblNuevaContraseña.Location = new System.Drawing.Point(317, 313);
             this.lblNuevaContraseña.Name = "lblNuevaContraseña";
             this.lblNuevaContraseña.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblNuevaContraseña.Size = new System.Drawing.Size(97, 15);
@@ -288,7 +288,7 @@
             this.lblContraActual.CursorType = System.Windows.Forms.Cursors.Default;
             this.lblContraActual.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblContraActual.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblContraActual.Location = new System.Drawing.Point(292, 192);
+            this.lblContraActual.Location = new System.Drawing.Point(317, 228);
             this.lblContraActual.Name = "lblContraActual";
             this.lblContraActual.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblContraActual.Size = new System.Drawing.Size(97, 15);
@@ -324,7 +324,7 @@
             this.TxtPasswordVieja.IconRight = null;
             this.TxtPasswordVieja.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPasswordVieja.Lines = new string[0];
-            this.TxtPasswordVieja.Location = new System.Drawing.Point(292, 213);
+            this.TxtPasswordVieja.Location = new System.Drawing.Point(317, 249);
             this.TxtPasswordVieja.MaxLength = 32767;
             this.TxtPasswordVieja.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtPasswordVieja.Modified = false;
@@ -399,7 +399,7 @@
             this.TxtPasswordRepetida.IconRight = null;
             this.TxtPasswordRepetida.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPasswordRepetida.Lines = new string[0];
-            this.TxtPasswordRepetida.Location = new System.Drawing.Point(292, 383);
+            this.TxtPasswordRepetida.Location = new System.Drawing.Point(317, 419);
             this.TxtPasswordRepetida.MaxLength = 32767;
             this.TxtPasswordRepetida.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtPasswordRepetida.Modified = false;
@@ -474,7 +474,7 @@
             this.TxtPasswordNueva.IconRight = null;
             this.TxtPasswordNueva.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtPasswordNueva.Lines = new string[0];
-            this.TxtPasswordNueva.Location = new System.Drawing.Point(292, 298);
+            this.TxtPasswordNueva.Location = new System.Drawing.Point(317, 334);
             this.TxtPasswordNueva.MaxLength = 32767;
             this.TxtPasswordNueva.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtPasswordNueva.Modified = false;
@@ -568,7 +568,7 @@
             this.btnVolver.IdleIconLeftImage = null;
             this.btnVolver.IdleIconRightImage = null;
             this.btnVolver.IndicateFocus = false;
-            this.btnVolver.Location = new System.Drawing.Point(853, 0);
+            this.btnVolver.Location = new System.Drawing.Point(869, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnVolver.OnDisabledState.BorderRadius = 1;
@@ -624,7 +624,7 @@
             this.lblPrincipalCambiarContraseña.Location = new System.Drawing.Point(0, 0);
             this.lblPrincipalCambiarContraseña.Name = "lblPrincipalCambiarContraseña";
             this.lblPrincipalCambiarContraseña.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrincipalCambiarContraseña.Size = new System.Drawing.Size(884, 112);
+            this.lblPrincipalCambiarContraseña.Size = new System.Drawing.Size(900, 112);
             this.lblPrincipalCambiarContraseña.TabIndex = 0;
             this.lblPrincipalCambiarContraseña.Text = "CAMBIAR CONTRASEÑA";
             this.lblPrincipalCambiarContraseña.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -635,7 +635,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.lblErrorRepetida);
             this.Controls.Add(this.lblErrorNueva);

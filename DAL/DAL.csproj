@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_BackupRestore.cs" />
     <Compile Include="DAL_Cliente.cs" />
     <Compile Include="DAL_Entrada.cs" />
     <Compile Include="DAL_Evento.cs" />
+    <Compile Include="DAL_EventoBitacora.cs" />
     <Compile Include="DAL_Factura.cs" />
     <Compile Include="DAL_Idioma.cs" />
     <Compile Include="DAL_Permiso.cs" />

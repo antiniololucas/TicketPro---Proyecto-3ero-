@@ -27,6 +27,7 @@ namespace GUI
             LLenarCmb(cmbRoles, roles, "Nombre");
             ActualizarData();
             ChangeTranslation();
+            this.nombre_modulo = "Admin";
         }
 
         private void ActualizarData()
@@ -55,7 +56,7 @@ namespace GUI
 
             var response = _businessUser.ChangeBlockUser(userActual);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { ActualizarData(); limpiarTxt(); }
+            if (response.Ok) { guardarEventoBitacora("Bloqueo de un usuario", 4); ActualizarData(); limpiarTxt(); }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace GUI
 
             var response = _businessUser.EliminarUsuario(userActual.Id);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { ActualizarData(); limpiarTxt(); }
+            if (response.Ok) {guardarEventoBitacora("Eliminación de un usuario" , 5); ActualizarData(); limpiarTxt(); }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -90,7 +91,8 @@ namespace GUI
             };
             var response = _businessUser.AgregarUsuario(user);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { ActualizarData(); limpiarTxt(); }
+            
+            if (response.Ok) { guardarEventoBitacora("Se creó un usuario" , 4); ActualizarData(); limpiarTxt(); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace GUI
                 };
                 var response = _businessUser.ModificarUsuario(user);
                 RevisarRespuestaServicio(response);
-                if (response.Ok) { ActualizarData(); limpiarTxt(); }
+                if (response.Ok) {guardarEventoBitacora("Modificación de un usuario" , 5); ActualizarData(); limpiarTxt(); }
             }
         }
 

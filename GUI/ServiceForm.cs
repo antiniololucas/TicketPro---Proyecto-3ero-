@@ -18,12 +18,15 @@ namespace GUI
     public partial class ServiceForm : Form, IObserver
     {
         protected readonly BusinessIdioma _businessIdioma;
+        protected readonly BusinessEventoBitacora _businessEventoBitacora;
         protected SessionManager _sessionManager;
+        protected string nombre_modulo;
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
             _sessionManager = SessionManager.GetInstance();
 
+            _businessEventoBitacora = new BusinessEventoBitacora();
             _businessIdioma = new BusinessIdioma();
             InitializeComponent();
         }
@@ -120,6 +123,47 @@ namespace GUI
         protected string SearchTraduccion(string controlName, EntityIdioma idioma = null)
         {
             return _businessIdioma.GetTraduccion(idioma ?? _sessionManager.Idioma, controlName).Data;
+        }
+
+        protected void guardarEventoBitacora(string evento, int criticidad)
+        {
+            _sessionManager = SessionManager.GetInstance();
+            int user = _sessionManager.User.Id;
+            var response = _businessEventoBitacora.guardarEventoBitacora(user,this.nombre_modulo,evento,criticidad);
+            if (!response.Ok) { MessageBox.Show("Error con la bitacora de eventos"); }
+        }
+
+        // Método para convertir DataGridView a DataTable
+        protected DataTable DataGridViewToDataTable(DataGridView dataGridView)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Agregar columnas al DataTable
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                dataTable.Columns.Add(column.HeaderText);
+            }
+
+            // Agregar filas al DataTable
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    for (int i = 0; i < dataGridView.Columns.Count; i++)
+                    {
+                        dataRow[i] = row.Cells[i].Value;
+                    }
+                    dataTable.Rows.Add(dataRow);
+                }
+            }
+           
+            if (dataTable.Columns.Contains("Id"))
+            {
+                dataTable.Columns.Remove("Id");
+            }
+
+            return dataTable;
         }
     }
 }

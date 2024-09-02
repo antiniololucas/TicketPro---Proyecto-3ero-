@@ -46,6 +46,7 @@
     <Compile Include="EntityDetalle_Factura.cs" />
     <Compile Include="EntityEntrada.cs" />
     <Compile Include="EntityEvento.cs" />
+    <Compile Include="EntityEventoBitacora.cs" />
     <Compile Include="EntityFactura.cs" />
     <Compile Include="EntityFamilia.cs" />
     <Compile Include="EntityIdioma.cs" />

@@ -25,6 +25,7 @@ namespace GUI
             _businessPermiso = new BusinessPermiso();
             validateRol();
             ChangeTranslation();
+            this.nombre_modulo = "Admin";
         }
 
         private void validateRol()
@@ -75,6 +76,7 @@ namespace GUI
             DialogResult result = MessageBox.Show("¿Está seguro que desea cerrar la sesión?", "Confirmación", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.No) { return; }
+            guardarEventoBitacora("Logout", 1);
             SessionManager.Logout();
             CambiarForm(new FormInicioSesion());
         }
@@ -148,6 +150,16 @@ namespace GUI
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"..\\..\\..\\{nombreArchivo}.xlsx");
             PDFGenerator.SaveToExcel(dt, filePath);
             MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo + ".xlsx");
+        }
+
+        private void btn_bitacoraEventos_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormBitacoraEventos());
+        }
+
+        private void btn_RestoreInicio_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormBackupRestore());
         }
     }
 }

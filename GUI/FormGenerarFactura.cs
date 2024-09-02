@@ -21,6 +21,7 @@ namespace GUI
             InitializeComponent();
             CargaInicio();
             ChangeTranslation();
+            this.nombre_modulo = "Ventas";
         }
 
         private void CargaInicio()
@@ -125,7 +126,9 @@ namespace GUI
                 Monto_Total = monto,
                 Is_Cobrada = false,
             };
-            RevisarRespuestaServicio(_businessFactura.RegistrarFactura(factura, detalles));
+            var response = _businessFactura.RegistrarFactura(factura, detalles);
+            RevisarRespuestaServicio(response);
+            if (response.Ok) guardarEventoBitacora("Creación de Factura", 5);
             CambiarForm(new FormInicio());
         }
 

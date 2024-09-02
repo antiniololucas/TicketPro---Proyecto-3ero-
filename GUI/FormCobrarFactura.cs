@@ -23,6 +23,7 @@ namespace GUI
             LlenarDG(DG_Facturas, _facturas, new List<string> { "Id", "Id_Cliente" , "Is_Cobrada" });
             AcceptButton = btnCobrarFactura;
             ChangeTranslation();
+            this.nombre_modulo = "Cobranza";
         }
 
         BusinessFactura _businessFactura = new BusinessFactura();
@@ -115,7 +116,11 @@ namespace GUI
             facturaActual.Is_Cobrada = true;
             var response = _businessFactura.ModificarFactura(facturaActual, true);
             RevisarRespuestaServicio(response);
-            if (response.Ok) { FormCobrarFactura frm = new FormCobrarFactura(); frm.Show(); this.Close(); }
+            if (response.Ok) 
+            { 
+                FormCobrarFactura frm = new FormCobrarFactura(); frm.Show(); this.Close();
+                guardarEventoBitacora("Factura Cobrada", 4);
+            }
             EntityDetalle_Factura detalle = _businessFactura.getDetalleFactura(facturaActual).Data;
             EntityEntrada entrada = businessEntrada.selectAllEntrads().Find(E => E.Id == detalle.Id_Entrada);
             EntityEvento evento = businessEvento.BuscarEventos().Find(E => E.Id == entrada.Id_Evento);

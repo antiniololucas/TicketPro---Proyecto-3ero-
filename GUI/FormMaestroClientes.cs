@@ -1,11 +1,13 @@
 ﻿using BE;
 using BLL;
+using Newtonsoft.Json;
 using Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,7 @@ namespace GUI
             _clientes = _businessCliente.BuscarClientes();
             ActualizarInformacion();
             ChangeTranslation();
+            this.nombre_modulo = "Maestros";
         }
 
         BusinessCliente _businessCliente = new BusinessCliente();
@@ -56,6 +59,7 @@ namespace GUI
             RevisarRespuestaServicio(response);
             if (response.Ok) 
             {
+                guardarEventoBitacora("Modificación de un cliente", 5);
                 _clientes = _businessCliente.BuscarClientes();
                 isEncripted = false;
                 ActualizarInformacion();
@@ -90,6 +94,49 @@ namespace GUI
                 isEncripted = true;
             }
             ActualizarInformacion();
+        }
+
+        private void btnSerializar_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    // Serializar la lista de servicios a JSON
+                    string json = JsonConvert.SerializeObject(_clientes, Newtonsoft.Json.Formatting.Indented);
+
+                    // Construir la ruta completa del archivo JSON
+                    string filePath = Path.Combine(folderDialog.SelectedPath, $"{SearchTraduccion("LblServiciosSerializar")}_{DateTime.Now.ToString("yyyy_MM_dd")}.json");
+
+                    // Guardar el archivo JSON en la ruta especificada
+                    File.WriteAllText(filePath, json);
+                    guardarEventoBitacora("Serializacion Clientes", 4);
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageSerializadoCorrectamente"));
+                }
+            }
+
+        }
+
+        private void btnDeserializar_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON Files (*.json)|*.json";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string json = File.ReadAllText(openFileDialog.FileName);
+
+                    _clientes = JsonConvert.DeserializeObject<List<EntityCliente>>(json);
+
+                    ActualizarInformacion();
+
+                    guardarEventoBitacora("Serializacion Clientes", 4);
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageDeserializadoCorrectamente"));
+                }
+            }
+
         }
     }
 }

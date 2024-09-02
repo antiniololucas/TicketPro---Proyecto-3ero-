@@ -24,6 +24,7 @@ namespace GUI
             AcceptButton = btnRegistarCliente;
             ChangeTranslation();
             txtDni.Select();
+            this.nombre_modulo = "Ventas";
         }
 
         BusinessCliente _businessCliente = new BusinessCliente();
@@ -49,6 +50,7 @@ namespace GUI
             }
             if (response.Ok)
             {
+                guardarEventoBitacora("Registro de un Cliente", 4);
                 txtDni.Text = "";
                 txtNombre.Text = "";
                 txtApellido.Text = "";

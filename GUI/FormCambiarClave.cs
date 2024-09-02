@@ -22,6 +22,7 @@ namespace GUI
             AcceptButton = btnCambiarClave;
             TxtPasswordVieja.Select();
             ChangeTranslation();
+            this.nombre_modulo = "Usuario";
         }
 
         EntityUser user = SessionManager.GetInstance().User;
@@ -73,6 +74,7 @@ namespace GUI
             RevisarRespuestaServicio(response);
             if (response.Ok)
             {
+                guardarEventoBitacora("Cambio de Clave", 2);
                 SessionManager.Logout();
                 FormInicioSesion frm = new FormInicioSesion();
                 frm.Show();

@@ -22,6 +22,7 @@ namespace GUI
             AcceptButton = btnIngresar;
             TxtUser.Select();
             FillIdiomas();
+            this.nombre_modulo = "Inicio";
         }
 
         BusinessUser _businessUser = new BusinessUser();
@@ -80,6 +81,7 @@ namespace GUI
                     FormInicio frm = new FormInicio();
                     frm.Show();
                     this.Hide();
+                    guardarEventoBitacora("Inicio de Sesión", 1);
                 }
                 catch (Exception ex)
                 {

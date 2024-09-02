@@ -22,6 +22,7 @@ namespace GUI
             _businessPermiso = new BusinessPermiso();
             setData();
             ChangeTranslation();
+            this.nombre_modulo = "Admin";
         }
 
         private void setData()

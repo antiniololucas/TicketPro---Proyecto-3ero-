@@ -15,5 +15,12 @@ namespace BE
         public string Password { get; set; }
         public bool IsBlock { get; set; }
         public EntityRol Rol { get; set; }
+
+        public override string ToString()
+        {
+            return Username;
+        }
     }
+
+    
 }
