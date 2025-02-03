@@ -2,12 +2,7 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -45,6 +40,7 @@ namespace GUI
             TxtApellido.Text = DGusers.Rows[e.RowIndex].Cells["Apellido"].Value.ToString();
             TxtDni.Text = DGusers.Rows[e.RowIndex].Cells["Dni"].Value.ToString();
             userActual = DGusers.SelectedRows[0].DataBoundItem as EntityUser;
+            cmbRoles.SelectedIndex = roles.IndexOf(roles.FirstOrDefault(Rol => Rol.Id == userActual.Rol.Id));
             if (userActual.IsBlock == true) { btnDesbloquear.Enabled = false; }
             activarButtons();
         }
@@ -66,7 +62,7 @@ namespace GUI
 
             var response = _businessUser.EliminarUsuario(userActual.Id);
             RevisarRespuestaServicio(response);
-            if (response.Ok) {guardarEventoBitacora("Eliminación de un usuario" , 5); ActualizarData(); limpiarTxt(); }
+            if (response.Ok) { guardarEventoBitacora("Eliminación de un usuario", 5); ActualizarData(); limpiarTxt(); }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -75,7 +71,7 @@ namespace GUI
 
             if (result == DialogResult.No) { return; }
 
-            if (string.IsNullOrEmpty(TxtApellido.Text) || string.IsNullOrEmpty(TxtNombre.Text) )
+            if (string.IsNullOrEmpty(TxtApellido.Text) || string.IsNullOrEmpty(TxtNombre.Text))
             {
                 MessageBox.Show("Camnpos incompletos"); return;
             }
@@ -91,8 +87,8 @@ namespace GUI
             };
             var response = _businessUser.AgregarUsuario(user);
             RevisarRespuestaServicio(response);
-            
-            if (response.Ok) { guardarEventoBitacora("Se creó un usuario" , 4); ActualizarData(); limpiarTxt(); }
+
+            if (response.Ok) { guardarEventoBitacora("Se creó un usuario", 4); ActualizarData(); limpiarTxt(); }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -112,7 +108,7 @@ namespace GUI
                 };
                 var response = _businessUser.ModificarUsuario(user);
                 RevisarRespuestaServicio(response);
-                if (response.Ok) {guardarEventoBitacora("Modificación de un usuario" , 5); ActualizarData(); limpiarTxt(); }
+                if (response.Ok) { guardarEventoBitacora("Modificación de un usuario", 5); ActualizarData(); limpiarTxt(); }
             }
         }
 

@@ -2,14 +2,10 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -26,10 +22,10 @@ namespace GUI
 
         private void CargaInicio()
         {
-            _eventos = _businessEvento.BuscarEventos().Where(E => E.Fecha > DateTime.Now).ToList();
-            _clientes = _businessCliente.BuscarClientes();
-            LlenarDG(DG_Eventos, _eventos, new List<string>() { "Id", "Descripcion", "Horario", "Artista", "Imagen" });
-            LlenarDG(DG_Clientes, _clientes, new List<string>() { "ID", "Mail" });
+            _eventos = _businessEvento.BuscarEventos().Where(E => E.Fecha > DateTime.Now && E.Is_Paga is false).ToList();
+            _clientes = (List<EntityCliente>)_businessCliente.BuscarClientes().Where(C => C.Is_Planificador is false).ToList();
+            LlenarDG(DG_Eventos, _eventos, new List<string>() { "Id", "Descripcion", "Horario", "Artista", "Imagen", "Act", "Fecha_Modificacion", "Is_Paga" });
+            LlenarDG(DG_Clientes, _clientes, new List<string>() { "ID", "Mail", "Is_Planificador" });
             LLenarCmb(cmbEventos, _eventos, "Nombre");
             LLenarCmb(cmbClientes, _clientes, "DNI");
         }
@@ -90,8 +86,11 @@ namespace GUI
 
         private void btnAsociarCliente_Click(object sender, EventArgs e)
         {
-            lblCliente.Text =  (clienteActual.Nombre.ToString() + " " + clienteActual.Apellido);
-            btnGenerarFactura.Enabled = true;
+            if (clienteActual != null)
+            {
+                lblCliente.Text = (clienteActual.Nombre.ToString() + " " + clienteActual.Apellido);
+                btnGenerarFactura.Enabled = true;
+            }
         }
 
         private void DG_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -113,7 +112,7 @@ namespace GUI
 
         private void btnGenerarFactura_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($" {SearchTraduccion("preguntaConfirmacion1")} { clienteActual.DNI} { SearchTraduccion("preguntaConfirmacion2")}  {eventoActual.Nombre}?", "", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show($" {SearchTraduccion("preguntaConfirmacion1")} {clienteActual.DNI} {SearchTraduccion("preguntaConfirmacion2")}  {eventoActual.Nombre}?", "", MessageBoxButtons.YesNo);
             if (result == DialogResult.No) { return; }
 
             double monto = 0;
@@ -128,7 +127,13 @@ namespace GUI
             };
             var response = _businessFactura.RegistrarFactura(factura, detalles);
             RevisarRespuestaServicio(response);
-            if (response.Ok) guardarEventoBitacora("Creación de Factura", 5);
+            BusinessEvento businessEvento = new BusinessEvento();
+            if (response.Ok)
+            {
+                guardarEventoBitacora("Creación de Factura", 5);
+                businessEvento.AgregarGustoCliente(clienteActual.Id, eventoActual.PublicoObjetivo);
+            }
+            UpdateDigitoVerificador();
             CambiarForm(new FormInicio());
         }
 

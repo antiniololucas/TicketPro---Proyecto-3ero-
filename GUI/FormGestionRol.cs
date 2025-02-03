@@ -2,12 +2,8 @@
 using BLL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -75,7 +71,7 @@ namespace GUI
 
             // Obtener todos los permisos de las familias en el rol elegido
             var permisosDeFamiliasRolElegido = _permisosRolElegido.OfType<EntityFamilia>()
-                .SelectMany(f => f.Permisos) 
+                .SelectMany(f => f.Permisos)
                 .ToList();
 
             // Filtrar los permisos para excluir los que están en los permisos de las familias del rol elegido
@@ -188,7 +184,7 @@ namespace GUI
             {
                 var response = _businessRol.EliminarRol(rolActual);
                 RevisarRespuestaServicio(response);
-                if ( response.Ok is true ){ guardarEventoBitacora("Se elimnó un rol", 3); }
+                if (response.Ok is true) { guardarEventoBitacora("Se elimnó un rol", 3); }
                 setData();
             }
             return;

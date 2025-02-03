@@ -1,15 +1,10 @@
 ﻿using BE;
 using BLL;
-using Bunifu.UI.WinForms;
 using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -28,7 +23,7 @@ namespace GUI
         BusinessUser _businessUser = new BusinessUser();
         SessionManager _sessionManager;
         List<EntityUser> ListaErrores = new List<EntityUser>();
-
+        private BusinessPermiso _businessPermiso = new BusinessPermiso();
 
         private void FillIdiomas()
         {
@@ -60,7 +55,7 @@ namespace GUI
 
             BusinessResponse<EntityUser> response = _businessUser.VerificarCredenciales(TxtUser.Text, TxtPassword.Text);
 
-            RevisarRespuestaServicio(response , cmbCambiarIdioma.SelectedItem as EntityIdioma);
+            RevisarRespuestaServicio(response, cmbCambiarIdioma.SelectedItem as EntityIdioma);
 
             if (!response.Ok && response.Data?.IsBlock == false)
             {
@@ -68,7 +63,7 @@ namespace GUI
 
                 if (ListaErrores.Where(users => users.Id == response.Data.Id).Count() == 3)
                 {
-                    RevisarRespuestaServicio(_businessUser.ChangeBlockUser(response.Data) , cmbCambiarIdioma.SelectedItem as EntityIdioma);
+                    RevisarRespuestaServicio(_businessUser.ChangeBlockUser(response.Data), cmbCambiarIdioma.SelectedItem as EntityIdioma);
                 }
             }
 
@@ -78,14 +73,23 @@ namespace GUI
                 try
                 {
                     _sessionManager = SessionManager.Login(response.Data, cmbCambiarIdioma.SelectedItem as EntityIdioma);
-                    FormInicio frm = new FormInicio();
-                    frm.Show();
-                    this.Hide();
-                    guardarEventoBitacora("Inicio de Sesión", 1);
+                    _sessionManager.User.Rol.Permisos = _businessPermiso.getPermisosPorUser(_sessionManager.User).Data;
+                    if (ValidarDigitoVerificador())
+                    {
+                        guardarEventoBitacora("Inicio de Sesión", 1);
+                        FormInicio frm = new FormInicio();
+                        frm.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        FormError frm = new FormError();
+                        frm.Show();
+                    }
                 }
                 catch (Exception ex)
                 {
-                    RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, ex.Message) , cmbCambiarIdioma.SelectedItem as EntityIdioma);
+                    RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, ex.Message), cmbCambiarIdioma.SelectedItem as EntityIdioma);
                 }
             }
         }

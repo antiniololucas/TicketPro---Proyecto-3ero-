@@ -1,8 +1,6 @@
 ﻿using BE;
 using DAL;
-using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace BLL
 {
@@ -18,7 +16,7 @@ namespace BLL
         public BusinessResponse<bool> EliminarFamilia(IPermiso permisoActual)
         {
             bool ok = dataAccess.deleteFamilia(permisoActual);
-            string mensaje = ok is true  ? "Borrada" : "Error";
+            string mensaje = ok is true ? "Borrada" : "Error";
             bool data = false;
             return new BusinessResponse<bool>(ok, data, mensaje);
         }
@@ -34,7 +32,7 @@ namespace BLL
 
         public BusinessResponse<bool> ModificarFamilia(EntityFamilia familiaActual, bool changeName)
         {
-            bool ok = dataAccess.UpdateFamilia(familiaActual , changeName);
+            bool ok = dataAccess.UpdateFamilia(familiaActual, changeName);
             string mensaje = ok is true ? "Modificada" : "Error";
             bool data = false;
 

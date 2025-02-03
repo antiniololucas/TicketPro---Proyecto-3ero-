@@ -4,13 +4,10 @@ using Newtonsoft.Json;
 using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -20,7 +17,6 @@ namespace GUI
         public FormMaestroClientes()
         {
             InitializeComponent();
-            _clientes = _businessCliente.BuscarClientes();
             ActualizarInformacion();
             ChangeTranslation();
             this.nombre_modulo = "Maestros";
@@ -36,10 +32,20 @@ namespace GUI
             CambiarForm(new FormInicio());
         }
 
+        private void Limpiar()
+        {
+            TxtNombre.Text = string.Empty;
+            TxtApellido.Text = string.Empty;
+            TxtDni.Text = string.Empty;
+            txtMail.Text = string.Empty;
+            btnModificar.Enabled = false;
+        }
+
         private void ActualizarInformacion()
         {
-            LlenarDG(DG_Clientes, _clientes, new List<string>() { "Id" });
-            lblCantClientes.Text = _clientes.Count.ToString(); 
+            _clientes = _businessCliente.BuscarClientes().Where(C => C.Is_Planificador is false).ToList();
+            LlenarDG(DG_Clientes, _clientes, new List<string>() { "Id", "Is_Planificador" });
+            lblCantClientes.Text = _clientes.Count.ToString();
         }
 
         private void DG_Clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -55,24 +61,21 @@ namespace GUI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var response = _businessCliente.ModificarCliente(_clienteActual.Id ,TxtDni.Text, TxtNombre.Text, TxtApellido.Text, txtMail.Text);
+            var response = _businessCliente.ModificarCliente(_clienteActual.Id, TxtDni.Text, TxtNombre.Text, TxtApellido.Text, txtMail.Text);
             RevisarRespuestaServicio(response);
-            if (response.Ok) 
+            if (response.Ok)
             {
                 guardarEventoBitacora("Modificación de un cliente", 5);
-                _clientes = _businessCliente.BuscarClientes();
+                UpdateDigitoVerificador();
                 isEncripted = false;
                 ActualizarInformacion();
+                Limpiar();
             }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            TxtNombre.Text = string.Empty;
-            TxtApellido.Text = string.Empty;
-            TxtDni.Text = string.Empty;
-            txtMail.Text = string.Empty;
-            btnModificar.Enabled = false;
+            Limpiar();
         }
 
         private void btnChangeEncrypt_Click(object sender, EventArgs e)
@@ -93,7 +96,7 @@ namespace GUI
                 }
                 isEncripted = true;
             }
-            ActualizarInformacion();
+            LlenarDG(DG_Clientes, _clientes, new List<string>() { "Id", "Is_Planificador" });
         }
 
         private void btnSerializar_Click(object sender, EventArgs e)
@@ -102,7 +105,7 @@ namespace GUI
             {
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
-                    
+
                     // Serializar la lista de servicios a JSON
                     string json = JsonConvert.SerializeObject(_clientes, Newtonsoft.Json.Formatting.Indented);
 
@@ -111,6 +114,7 @@ namespace GUI
 
                     // Guardar el archivo JSON en la ruta especificada
                     File.WriteAllText(filePath, json);
+                    Process.Start("notepad.exe", filePath);
                     guardarEventoBitacora("Serializacion Clientes", 4);
                     RevisarRespuestaServicio(new BusinessResponse<bool>(true, true, "MessageSerializadoCorrectamente"));
                 }

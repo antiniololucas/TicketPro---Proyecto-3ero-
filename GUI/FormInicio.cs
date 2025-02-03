@@ -1,16 +1,13 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ClosedXML.Excel;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -23,14 +20,16 @@ namespace GUI
         {
             InitializeComponent();
             _businessPermiso = new BusinessPermiso();
+            _businesEvento = new BusinessEvento();
+            eventos = _businesEvento.BuscarEventos().Where(x => x.Fecha > DateTime.Today).OrderBy(x => x.Fecha).Take(3).ToList();
             validateRol();
             ChangeTranslation();
+            UpdateEventoMostrado();
             this.nombre_modulo = "Admin";
         }
 
         private void validateRol()
         {
-            _sessionManager.User.Rol.Permisos = _businessPermiso.getPermisosPorUser(_sessionManager.User).Data;
 
             PanelBtnVenta.Visible = _sessionManager.HasPermission(1);
             PanelBtnCobranza.Visible = _sessionManager.HasPermission(2);
@@ -39,6 +38,7 @@ namespace GUI
             PanelBtnReporte.Visible = _sessionManager.HasPermission(5);
             PanelBtnAdmin.Visible = _sessionManager.HasPermission(7);
             PánelBtnAyuda.Visible = _sessionManager.HasPermission(8);
+            PanelBtnPlanificar.Visible = _sessionManager.HasPermission(18);
         }
 
         private void BtnAdmin_Click(object sender, EventArgs e)
@@ -69,6 +69,16 @@ namespace GUI
         private void btnCobranza_Click_1(object sender, EventArgs e)
         {
             panelSubMenuCobranza.Visible = !panelSubMenuCobranza.Visible;
+        }
+
+        private void btnReporteClick(object sender, EventArgs e)
+        {
+            panelSubMenuReportes.Visible = !panelSubMenuReportes.Visible;
+        }
+
+        private void btnPlanificarEvento_Click(object sender, EventArgs e)
+        {
+            subPanelPlanificar.Visible = !subPanelPlanificar.Visible;
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -118,8 +128,20 @@ namespace GUI
 
         private void BtnAyuda_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"{SearchTraduccion("ComuniqueseAyuda")}\nLucasPablo.Antinolo@alumnos.uai.edu.ar",
-                "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string pdfPath = Path.Combine(Application.StartupPath, "Resources", "GUIA DE AYUDA AL USUARIO.pdf");
+            string desktopPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "GUIA DE AYUDA AL USUARIO.pdf");
+
+            if (File.Exists(pdfPath))
+            {
+                // Copia el archivo al escritorio si no existe allí
+                if (!File.Exists(desktopPath))
+                {
+                    File.Copy(pdfPath, desktopPath);
+                }
+
+                // Abre el archivo PDF en la ruta original
+                System.Diagnostics.Process.Start(pdfPath);
+            }
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -137,20 +159,7 @@ namespace GUI
             CambiarForm(new FormGestionFamilia());
         }
 
-        private void btnReporteClick(object sender, EventArgs e)
-        {
-            panelSubMenuReportes.Visible = !panelSubMenuReportes.Visible;
-        }
 
-        private void btnReportFactura_Click(object sender, EventArgs e)
-        {
-            BusinessFactura businessFactura = new BusinessFactura();
-            DataTable dt = businessFactura.ObtenerInforme();
-            string nombreArchivo = SearchTraduccion("NombreSalidaInforme");
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"..\\..\\..\\{nombreArchivo}.xlsx");
-            PDFGenerator.SaveToExcel(dt, filePath);
-            MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo + ".xlsx");
-        }
 
         private void btn_bitacoraEventos_Click(object sender, EventArgs e)
         {
@@ -161,6 +170,81 @@ namespace GUI
         {
             CambiarForm(new FormBackupRestore());
         }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormMaestroEventos());
+        }
+
+        private void btnBitacoraCambios_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormAuditarCambios());
+        }
+
+        private void btnReportFactura_Click(object sender, EventArgs e)
+        {
+            BusinessFactura businessFactura = new BusinessFactura();
+            DataTable dt = businessFactura.ObtenerInforme();
+            string nombreArchivo = SearchTraduccion("NombreSalidaInforme");
+            PDFGenerator.SaveToExcel(dt,nombreArchivo);
+            MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo + ".xlsx");
+        }
+
+        private void btnGenerarOrdenPagoMenu_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormGenerarOrdenPago());
+        }
+
+        private void btnRegistrarAsociadoGeneral_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormRegistrarAsociado());
+        }
+
+        private void btnPagarOrdenAsociado_Click(object sender, EventArgs e)
+        {
+            CambiarForm(new FormPagarOrdenAsociado());
+        }
+
+        private void btnReportEventos_Click(object sender, EventArgs e)
+        {
+            BusinessEvento businessFactura = new BusinessEvento();
+            DataTable dt = businessFactura.ObtenerInforme();
+            string nombreArchivo = SearchTraduccion("NombreSalidaInformeEvento");
+            PDFGenerator.SaveToExcel(dt,nombreArchivo);
+            MessageBox.Show(SearchTraduccion("ExcelCompleto") + nombreArchivo + ".xlsx");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateEventoMostrado();
+        }
+
+        BusinessEvento _businesEvento;
+        List<EntityEvento> eventos;
+        int counter = 0;
+
+        private void UpdateEventoMostrado()
+        {
+            if (eventos.Count == 0)
+            {
+                return; //Foto IA, lbl FALTA POCO cambio de texto y anular timers
+            }
+            using (MemoryStream ms = new MemoryStream(eventos[counter].Imagen))
+            {
+                pictureBoxEvento.Image = Image.FromStream(ms);
+            }
+            lblEventoActual.Text = eventos[counter].Nombre + " " + eventos[counter].Artista + " " + eventos[counter].Fecha;
+            counter = counter == eventos.Count-1 ? 0 : counter + 1;
+        }
+
+        private int colorIndex = 0;
+        private Color[] colors = { Color.Black, Color.DarkBlue, Color.White, Color.LightGray, Color.DarkGray };
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            lblFaltaPoco.ForeColor = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.Length;
+        }
     }
 }
+
 

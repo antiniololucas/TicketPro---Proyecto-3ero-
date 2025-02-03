@@ -3,14 +3,9 @@ using BLL;
 using Bunifu.UI.WinForms;
 using Bunifu.UI.WinForms.BunifuButton;
 using Services;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -21,6 +16,8 @@ namespace GUI
         protected readonly BusinessEventoBitacora _businessEventoBitacora;
         protected SessionManager _sessionManager;
         protected string nombre_modulo;
+        private BusinessDigitoVerificador _businessDigitoVerificador;
+
         public ServiceForm()
         {
             StartPosition = FormStartPosition.CenterScreen;
@@ -28,6 +25,7 @@ namespace GUI
 
             _businessEventoBitacora = new BusinessEventoBitacora();
             _businessIdioma = new BusinessIdioma();
+            _businessDigitoVerificador = new BusinessDigitoVerificador();
             InitializeComponent();
         }
 
@@ -47,11 +45,14 @@ namespace GUI
             dgv.DataSource = null;
             dgv.DataSource = data;
 
-            foreach (var column in columnsToHide)
+            if (columnsToHide != null)
             {
-                if (dgv.Columns[column] != null)
+                foreach (var column in columnsToHide)
                 {
-                    dgv.Columns[column].Visible = false;
+                    if (dgv.Columns[column] != null)
+                    {
+                        dgv.Columns[column].Visible = false;
+                    }
                 }
             }
 
@@ -62,7 +63,7 @@ namespace GUI
         protected void LLenarCmb<T>(ComboBox cmb, List<T> list, string Display)
         {
             cmb.DataSource = list;
-            cmb.DisplayMember = Display;
+            if (Display != null) cmb.DisplayMember = Display;
         }
 
         protected void EsconderLabelError(List<BunifuLabel> ListLbl)
@@ -82,7 +83,7 @@ namespace GUI
         {
             if (!respuesta.Ok)
             {
-                MessageBox.Show(SearchTraduccion( respuesta.Mensaje , idioma ), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(SearchTraduccion(respuesta.Mensaje, idioma), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if (respuesta.Ok && !string.IsNullOrEmpty(respuesta.Mensaje))
@@ -129,7 +130,7 @@ namespace GUI
         {
             _sessionManager = SessionManager.GetInstance();
             int user = _sessionManager.User.Id;
-            var response = _businessEventoBitacora.guardarEventoBitacora(user,this.nombre_modulo,evento,criticidad);
+            var response = _businessEventoBitacora.guardarEventoBitacora(user, this.nombre_modulo, evento, criticidad);
             if (!response.Ok) { MessageBox.Show("Error con la bitacora de eventos"); }
         }
 
@@ -157,13 +158,27 @@ namespace GUI
                     dataTable.Rows.Add(dataRow);
                 }
             }
-           
+
             if (dataTable.Columns.Contains("Id"))
             {
                 dataTable.Columns.Remove("Id");
             }
 
             return dataTable;
+        }
+
+        protected bool ValidarDigitoVerificador()
+        {
+            EntityDigitoVerificador digitoVerificadorCalculado = _businessDigitoVerificador.CalcularDigitoVerificador().Data;
+            EntityDigitoVerificador digitoVerificadorDB = _businessDigitoVerificador.BuscarDigitoVerificador().Data;
+
+            return string.Equals(digitoVerificadorCalculado.DVH, digitoVerificadorDB.DVH)
+                && string.Equals(digitoVerificadorCalculado.DVV, digitoVerificadorDB.DVV);
+        }
+
+        protected void UpdateDigitoVerificador()
+        {
+            _businessDigitoVerificador.ActualizarDigitoVerificador();
         }
     }
 }

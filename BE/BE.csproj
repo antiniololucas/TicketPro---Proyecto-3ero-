@@ -44,9 +44,11 @@
     <Compile Include="Entity.cs" />
     <Compile Include="EntityCliente.cs" />
     <Compile Include="EntityDetalle_Factura.cs" />
+    <Compile Include="EntityDigitoVerificador.cs" />
     <Compile Include="EntityEntrada.cs" />
     <Compile Include="EntityEvento.cs" />
     <Compile Include="EntityEventoBitacora.cs" />
+    <Compile Include="EntityEvento_C.cs" />
     <Compile Include="EntityFactura.cs" />
     <Compile Include="EntityFamilia.cs" />
     <Compile Include="EntityIdioma.cs" />
@@ -55,6 +57,8 @@
     <Compile Include="EntityUser.cs" />
     <Compile Include="IPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ubicacion.cs" />
+    <Compile Include="Ubicaciones.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

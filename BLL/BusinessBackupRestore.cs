@@ -1,9 +1,4 @@
 ﻿using DAL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -15,7 +10,7 @@ namespace BLL
         {
             bool ok = dalbackup.RealizarBackup(backupPath);
             string mensaje = ok is true ? "BackUpCompletado" : "Error";
-            return new BusinessResponse<bool> ( ok, false , mensaje );
+            return new BusinessResponse<bool>(ok, false, mensaje);
         }
         public BusinessResponse<bool> RealizarRestore(string restorePath)
         {

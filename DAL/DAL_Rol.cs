@@ -3,10 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-    
+
 namespace DAL
 {
     public class DAL_Rol
@@ -19,7 +16,7 @@ namespace DAL
             conn = DBConnection.GetInstance();
         }
 
-        public bool InsertRol (string nombre, List<IPermiso> permisos)
+        public bool InsertRol(string nombre, List<IPermiso> permisos)
         {
             SqlParameter[] parameters = new SqlParameter[]
            {
@@ -34,16 +31,16 @@ namespace DAL
             return true;
         }
 
-        public void insertRolPermiso(List<IPermiso> permisos, int newId) 
+        public void insertRolPermiso(List<IPermiso> permisos, int newId)
         {
             foreach (var permiso in permisos)
             {
                 SqlParameter[] parameters = new SqlParameter[]
-                {   
+                {
                     new SqlParameter("@In_IdPermiso" , SqlDbType.Int) { Value = permiso.Id },
                     new SqlParameter("@In_IdRol" , SqlDbType.Int) { Value = newId },
                 };
-                 conn.Write("SP_InsertRolPermiso", parameters);
+                conn.Write("SP_InsertRolPermiso", parameters);
             }
         }
 
@@ -74,8 +71,8 @@ namespace DAL
 
         public bool deleteRol(EntityRol rol)
         {
-            SqlParameter[] parameters = new SqlParameter[] 
-            { 
+            SqlParameter[] parameters = new SqlParameter[]
+            {
                 new SqlParameter("@In_IdRol" , SqlDbType.Int){ Value = rol.Id }
             };
             return conn.Write("SP_DeleteRol", parameters);

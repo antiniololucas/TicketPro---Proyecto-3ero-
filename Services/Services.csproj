@@ -127,6 +127,7 @@
     <Compile Include="IObserver.cs" />
     <Compile Include="IPublisher.cs" />
     <Compile Include="LanguageManager.cs" />
+    <Compile Include="MailSender.cs" />
     <Compile Include="PdfGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegexValidation.cs" />

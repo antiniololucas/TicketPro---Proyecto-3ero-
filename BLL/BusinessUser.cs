@@ -1,11 +1,7 @@
 ﻿using BE;
 using DAL;
 using Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -61,7 +57,7 @@ namespace BLL
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
-        public BusinessResponse<bool> CambiarClave (int id_User, string password)
+        public BusinessResponse<bool> CambiarClave(int id_User, string password)
         {
             password = CryptoManager.EncryptString(password);
             bool ok = dataAccess.UpdatePassword(password, id_User);
@@ -71,16 +67,16 @@ namespace BLL
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
-        public BusinessResponse<bool> EliminarUsuario (int id_user)
+        public BusinessResponse<bool> EliminarUsuario(int id_user)
         {
             bool ok = dataAccess.DeleteUser(id_user);
 
             string mensaje = ok ? "Borrada" : "Error";
 
-            return new BusinessResponse<bool>(ok , false, mensaje);
+            return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
-        public BusinessResponse<bool> AgregarUsuario ( EntityUser user)
+        public BusinessResponse<bool> AgregarUsuario(EntityUser user)
         {
             user.Password = CryptoManager.EncryptString(user.Dni.ToString() + user.Apellido.ToString());
             user.Username = user.Nombre + user.Apellido;
@@ -88,10 +84,10 @@ namespace BLL
 
             string mensaje = ok ? "Alta" : "Error";
 
-            return new BusinessResponse<bool> ( ok, false, mensaje );
+            return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
-        public BusinessResponse<bool> ModificarUsuario (EntityUser user) 
+        public BusinessResponse<bool> ModificarUsuario(EntityUser user)
         {
             bool ok = dataAccess.UpdateUser(user);
 

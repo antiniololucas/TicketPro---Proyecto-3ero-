@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DAL_BackupRestore.cs" />
     <Compile Include="DAL_Cliente.cs" />
+    <Compile Include="DAL_DigitoVerificador.cs" />
     <Compile Include="DAL_Entrada.cs" />
     <Compile Include="DAL_Evento.cs" />
     <Compile Include="DAL_EventoBitacora.cs" />

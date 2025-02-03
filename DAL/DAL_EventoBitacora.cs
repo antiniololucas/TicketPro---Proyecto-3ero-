@@ -1,12 +1,9 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
-using System.Diagnostics;
 
 namespace DAL
 {
@@ -32,7 +29,7 @@ namespace DAL
             return conn.Write("SP_InsertEventoBitacora", parameters);
         }
 
-        public List<EntityEventoBitacora> GetEventosBitacora(int usuario , DateTime fecha_inicio , DateTime fecha_fin , string modulo, string evento , int criticidad)
+        public List<EntityEventoBitacora> GetEventosBitacora(int usuario, DateTime fecha_inicio, DateTime fecha_fin, string modulo, string evento, int criticidad)
         {
             List<EntityEventoBitacora> eventos_bitacora = new List<EntityEventoBitacora>();
 

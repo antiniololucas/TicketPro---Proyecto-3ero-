@@ -83,7 +83,7 @@
             this.lblPrincipalCobrar.Location = new System.Drawing.Point(0, 0);
             this.lblPrincipalCobrar.Name = "lblPrincipalCobrar";
             this.lblPrincipalCobrar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrincipalCobrar.Size = new System.Drawing.Size(884, 112);
+            this.lblPrincipalCobrar.Size = new System.Drawing.Size(900, 112);
             this.lblPrincipalCobrar.TabIndex = 16;
             this.lblPrincipalCobrar.Text = "COBRAR FACTURA";
             this.lblPrincipalCobrar.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,7 +148,7 @@
             this.DG_Facturas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DG_Facturas.RowTemplate.Height = 40;
             this.DG_Facturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG_Facturas.Size = new System.Drawing.Size(860, 225);
+            this.DG_Facturas.Size = new System.Drawing.Size(876, 245);
             this.DG_Facturas.TabIndex = 17;
             this.DG_Facturas.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DG_Facturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Facturas_CellContentClick);
@@ -237,7 +237,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNombreTitular.OnIdleState = stateProperties4;
-            this.txtNombreTitular.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtNombreTitular.Padding = new System.Windows.Forms.Padding(3);
             this.txtNombreTitular.PasswordChar = '\0';
             this.txtNombreTitular.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNombreTitular.PlaceholderText = "Enter text";
@@ -311,7 +311,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNumTarjeta.OnIdleState = stateProperties8;
-            this.txtNumTarjeta.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.txtNumTarjeta.Padding = new System.Windows.Forms.Padding(3);
             this.txtNumTarjeta.PasswordChar = '\0';
             this.txtNumTarjeta.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNumTarjeta.PlaceholderText = "Enter text";
@@ -549,7 +549,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtFechaVto.OnIdleState = stateProperties12;
-            this.TxtFechaVto.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TxtFechaVto.Padding = new System.Windows.Forms.Padding(3);
             this.TxtFechaVto.PasswordChar = '\0';
             this.TxtFechaVto.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtFechaVto.PlaceholderText = "";
@@ -645,7 +645,7 @@
             this.panelCobrar.Controls.Add(this.txtNumTarjeta);
             this.panelCobrar.Controls.Add(this.txtNombreTitular);
             this.panelCobrar.Enabled = false;
-            this.panelCobrar.Location = new System.Drawing.Point(279, 370);
+            this.panelCobrar.Location = new System.Drawing.Point(288, 390);
             this.panelCobrar.Name = "panelCobrar";
             this.panelCobrar.ShowBorders = true;
             this.panelCobrar.Size = new System.Drawing.Size(318, 285);
@@ -698,7 +698,7 @@
             this.btnVolver.IdleIconLeftImage = null;
             this.btnVolver.IdleIconRightImage = null;
             this.btnVolver.IndicateFocus = false;
-            this.btnVolver.Location = new System.Drawing.Point(853, 0);
+            this.btnVolver.Location = new System.Drawing.Point(869, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnVolver.OnDisabledState.BorderRadius = 1;
@@ -746,7 +746,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.panelCobrar);
             this.Controls.Add(this.bunifuPanel1);

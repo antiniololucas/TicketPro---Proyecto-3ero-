@@ -84,10 +84,9 @@
             this.lblPrincipalBitacoraEventos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblPrincipalBitacoraEventos.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPrincipalBitacoraEventos.Location = new System.Drawing.Point(0, 0);
-            this.lblPrincipalBitacoraEventos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblPrincipalBitacoraEventos.Name = "lblPrincipalBitacoraEventos";
             this.lblPrincipalBitacoraEventos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrincipalBitacoraEventos.Size = new System.Drawing.Size(1200, 138);
+            this.lblPrincipalBitacoraEventos.Size = new System.Drawing.Size(900, 112);
             this.lblPrincipalBitacoraEventos.TabIndex = 1;
             this.lblPrincipalBitacoraEventos.Text = "BITACORA EVENTOS";
             this.lblPrincipalBitacoraEventos.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,8 +139,7 @@
             this.btnVolver.IdleIconLeftImage = null;
             this.btnVolver.IdleIconRightImage = null;
             this.btnVolver.IndicateFocus = false;
-            this.btnVolver.Location = new System.Drawing.Point(1159, 0);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Location = new System.Drawing.Point(869, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnVolver.OnDisabledState.BorderRadius = 1;
@@ -175,7 +173,7 @@
             this.btnVolver.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnVolver.OnPressedState.IconLeftImage = null;
             this.btnVolver.OnPressedState.IconRightImage = null;
-            this.btnVolver.Size = new System.Drawing.Size(41, 32);
+            this.btnVolver.Size = new System.Drawing.Size(31, 26);
             this.btnVolver.TabIndex = 30;
             this.btnVolver.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVolver.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -194,10 +192,9 @@
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.pictureBox2);
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(264, 138);
+            this.bunifuPanel1.Size = new System.Drawing.Size(198, 112);
             this.bunifuPanel1.TabIndex = 31;
             // 
             // pictureBox2
@@ -205,9 +202,8 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 138);
+            this.pictureBox2.Size = new System.Drawing.Size(198, 112);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -262,8 +258,7 @@
             this.DG_EventosBitacora.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.DG_EventosBitacora.HeaderBgColor = System.Drawing.Color.Empty;
             this.DG_EventosBitacora.HeaderForeColor = System.Drawing.Color.White;
-            this.DG_EventosBitacora.Location = new System.Drawing.Point(15, 185);
-            this.DG_EventosBitacora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DG_EventosBitacora.Location = new System.Drawing.Point(11, 150);
             this.DG_EventosBitacora.Name = "DG_EventosBitacora";
             this.DG_EventosBitacora.ReadOnly = true;
             this.DG_EventosBitacora.RowHeadersVisible = false;
@@ -271,7 +266,7 @@
             this.DG_EventosBitacora.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DG_EventosBitacora.RowTemplate.Height = 40;
             this.DG_EventosBitacora.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG_EventosBitacora.Size = new System.Drawing.Size(1168, 398);
+            this.DG_EventosBitacora.Size = new System.Drawing.Size(876, 323);
             this.DG_EventosBitacora.TabIndex = 32;
             this.DG_EventosBitacora.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DG_EventosBitacora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_EventosBitacora_CellContentClick);
@@ -279,10 +274,9 @@
             // cmbUsuarios
             // 
             this.cmbUsuarios.FormattingEnabled = true;
-            this.cmbUsuarios.Location = new System.Drawing.Point(20, 641);
-            this.cmbUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbUsuarios.Location = new System.Drawing.Point(15, 521);
             this.cmbUsuarios.Name = "cmbUsuarios";
-            this.cmbUsuarios.Size = new System.Drawing.Size(360, 24);
+            this.cmbUsuarios.Size = new System.Drawing.Size(271, 21);
             this.cmbUsuarios.TabIndex = 33;
             // 
             // dateDesde
@@ -303,11 +297,10 @@
             this.dateDesde.IconColor = System.Drawing.Color.WhiteSmoke;
             this.dateDesde.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dateDesde.LeftTextMargin = 5;
-            this.dateDesde.Location = new System.Drawing.Point(500, 142);
-            this.dateDesde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateDesde.Location = new System.Drawing.Point(340, 115);
             this.dateDesde.MinimumSize = new System.Drawing.Size(4, 32);
             this.dateDesde.Name = "dateDesde";
-            this.dateDesde.Size = new System.Drawing.Size(292, 32);
+            this.dateDesde.Size = new System.Drawing.Size(220, 32);
             this.dateDesde.TabIndex = 34;
             this.dateDesde.Value = new System.DateTime(2024, 8, 26, 16, 13, 0, 0);
             // 
@@ -329,30 +322,27 @@
             this.dateHasta.IconColor = System.Drawing.Color.WhiteSmoke;
             this.dateHasta.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dateHasta.LeftTextMargin = 5;
-            this.dateHasta.Location = new System.Drawing.Point(889, 142);
-            this.dateHasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateHasta.Location = new System.Drawing.Point(667, 115);
             this.dateHasta.MinimumSize = new System.Drawing.Size(4, 32);
             this.dateHasta.Name = "dateHasta";
-            this.dateHasta.Size = new System.Drawing.Size(292, 32);
+            this.dateHasta.Size = new System.Drawing.Size(220, 32);
             this.dateHasta.TabIndex = 35;
             this.dateHasta.Value = new System.DateTime(2024, 8, 26, 16, 13, 0, 0);
             // 
             // cmbEvento
             // 
             this.cmbEvento.FormattingEnabled = true;
-            this.cmbEvento.Location = new System.Drawing.Point(424, 706);
-            this.cmbEvento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEvento.Location = new System.Drawing.Point(318, 574);
             this.cmbEvento.Name = "cmbEvento";
-            this.cmbEvento.Size = new System.Drawing.Size(364, 24);
+            this.cmbEvento.Size = new System.Drawing.Size(274, 21);
             this.cmbEvento.TabIndex = 36;
             // 
             // cmbModulos
             // 
             this.cmbModulos.FormattingEnabled = true;
-            this.cmbModulos.Location = new System.Drawing.Point(20, 706);
-            this.cmbModulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbModulos.Location = new System.Drawing.Point(15, 574);
             this.cmbModulos.Name = "cmbModulos";
-            this.cmbModulos.Size = new System.Drawing.Size(360, 24);
+            this.cmbModulos.Size = new System.Drawing.Size(271, 21);
             this.cmbModulos.TabIndex = 37;
             // 
             // cmbCriticidad
@@ -364,10 +354,9 @@
             "3",
             "4",
             "5"});
-            this.cmbCriticidad.Location = new System.Drawing.Point(821, 706);
-            this.cmbCriticidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCriticidad.Location = new System.Drawing.Point(616, 574);
             this.cmbCriticidad.Name = "cmbCriticidad";
-            this.cmbCriticidad.Size = new System.Drawing.Size(360, 24);
+            this.cmbCriticidad.Size = new System.Drawing.Size(271, 21);
             this.cmbCriticidad.TabIndex = 38;
             // 
             // btnLimpiarBtc
@@ -417,8 +406,7 @@
             this.btnLimpiarBtc.IdleIconLeftImage = null;
             this.btnLimpiarBtc.IdleIconRightImage = null;
             this.btnLimpiarBtc.IndicateFocus = false;
-            this.btnLimpiarBtc.Location = new System.Drawing.Point(325, 786);
-            this.btnLimpiarBtc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarBtc.Location = new System.Drawing.Point(244, 639);
             this.btnLimpiarBtc.Name = "btnLimpiarBtc";
             this.btnLimpiarBtc.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLimpiarBtc.OnDisabledState.BorderRadius = 1;
@@ -452,7 +440,7 @@
             this.btnLimpiarBtc.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarBtc.OnPressedState.IconLeftImage = null;
             this.btnLimpiarBtc.OnPressedState.IconRightImage = null;
-            this.btnLimpiarBtc.Size = new System.Drawing.Size(167, 48);
+            this.btnLimpiarBtc.Size = new System.Drawing.Size(125, 39);
             this.btnLimpiarBtc.TabIndex = 107;
             this.btnLimpiarBtc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiarBtc.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -508,8 +496,7 @@
             this.btnAplicarFiltro.IdleIconLeftImage = null;
             this.btnAplicarFiltro.IdleIconRightImage = null;
             this.btnAplicarFiltro.IndicateFocus = false;
-            this.btnAplicarFiltro.Location = new System.Drawing.Point(715, 786);
-            this.btnAplicarFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAplicarFiltro.Location = new System.Drawing.Point(536, 639);
             this.btnAplicarFiltro.Name = "btnAplicarFiltro";
             this.btnAplicarFiltro.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAplicarFiltro.OnDisabledState.BorderRadius = 1;
@@ -543,7 +530,7 @@
             this.btnAplicarFiltro.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnAplicarFiltro.OnPressedState.IconLeftImage = null;
             this.btnAplicarFiltro.OnPressedState.IconRightImage = null;
-            this.btnAplicarFiltro.Size = new System.Drawing.Size(167, 48);
+            this.btnAplicarFiltro.Size = new System.Drawing.Size(125, 39);
             this.btnAplicarFiltro.TabIndex = 108;
             this.btnAplicarFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAplicarFiltro.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -599,8 +586,7 @@
             this.btnImprimir.IdleIconLeftImage = null;
             this.btnImprimir.IdleIconRightImage = null;
             this.btnImprimir.IndicateFocus = false;
-            this.btnImprimir.Location = new System.Drawing.Point(16, 145);
-            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImprimir.Location = new System.Drawing.Point(12, 118);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnImprimir.OnDisabledState.BorderRadius = 1;
@@ -634,7 +620,7 @@
             this.btnImprimir.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnImprimir.OnPressedState.IconLeftImage = null;
             this.btnImprimir.OnPressedState.IconRightImage = null;
-            this.btnImprimir.Size = new System.Drawing.Size(156, 36);
+            this.btnImprimir.Size = new System.Drawing.Size(117, 29);
             this.btnImprimir.TabIndex = 109;
             this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnImprimir.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -648,10 +634,9 @@
             this.lblCriticidadBtc.AutoSize = true;
             this.lblCriticidadBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCriticidadBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCriticidadBtc.Location = new System.Drawing.Point(817, 681);
-            this.lblCriticidadBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCriticidadBtc.Location = new System.Drawing.Point(613, 553);
             this.lblCriticidadBtc.Name = "lblCriticidadBtc";
-            this.lblCriticidadBtc.Size = new System.Drawing.Size(99, 22);
+            this.lblCriticidadBtc.Size = new System.Drawing.Size(76, 18);
             this.lblCriticidadBtc.TabIndex = 110;
             this.lblCriticidadBtc.Text = "Criticidad";
             // 
@@ -660,10 +645,9 @@
             this.lblEventoBtc.AutoSize = true;
             this.lblEventoBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEventoBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEventoBtc.Location = new System.Drawing.Point(420, 681);
-            this.lblEventoBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEventoBtc.Location = new System.Drawing.Point(315, 553);
             this.lblEventoBtc.Name = "lblEventoBtc";
-            this.lblEventoBtc.Size = new System.Drawing.Size(75, 22);
+            this.lblEventoBtc.Size = new System.Drawing.Size(59, 18);
             this.lblEventoBtc.TabIndex = 111;
             this.lblEventoBtc.Text = "Evento";
             // 
@@ -672,10 +656,9 @@
             this.lblModuloBtc.AutoSize = true;
             this.lblModuloBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModuloBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblModuloBtc.Location = new System.Drawing.Point(16, 681);
-            this.lblModuloBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModuloBtc.Location = new System.Drawing.Point(12, 553);
             this.lblModuloBtc.Name = "lblModuloBtc";
-            this.lblModuloBtc.Size = new System.Drawing.Size(80, 22);
+            this.lblModuloBtc.Size = new System.Drawing.Size(61, 18);
             this.lblModuloBtc.TabIndex = 112;
             this.lblModuloBtc.Text = "Modulo";
             // 
@@ -683,10 +666,9 @@
             // 
             this.lblDesde.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesde.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDesde.Location = new System.Drawing.Point(420, 142);
-            this.lblDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDesde.Location = new System.Drawing.Point(264, 115);
             this.lblDesde.Name = "lblDesde";
-            this.lblDesde.Size = new System.Drawing.Size(72, 39);
+            this.lblDesde.Size = new System.Drawing.Size(54, 32);
             this.lblDesde.TabIndex = 113;
             this.lblDesde.Text = "Desde";
             this.lblDesde.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -696,10 +678,9 @@
             this.lblLoginBtc.AutoSize = true;
             this.lblLoginBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLoginBtc.Location = new System.Drawing.Point(16, 615);
-            this.lblLoginBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoginBtc.Location = new System.Drawing.Point(12, 500);
             this.lblLoginBtc.Name = "lblLoginBtc";
-            this.lblLoginBtc.Size = new System.Drawing.Size(63, 22);
+            this.lblLoginBtc.Size = new System.Drawing.Size(48, 18);
             this.lblLoginBtc.TabIndex = 114;
             this.lblLoginBtc.Text = "Login";
             // 
@@ -707,10 +688,9 @@
             // 
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(817, 142);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(596, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 39);
+            this.label5.Size = new System.Drawing.Size(48, 32);
             this.label5.TabIndex = 115;
             this.label5.Text = "Hasta";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -720,10 +700,9 @@
             this.lblApellidoBtc.AutoSize = true;
             this.lblApellidoBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellidoBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblApellidoBtc.Location = new System.Drawing.Point(817, 615);
-            this.lblApellidoBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblApellidoBtc.Location = new System.Drawing.Point(613, 500);
             this.lblApellidoBtc.Name = "lblApellidoBtc";
-            this.lblApellidoBtc.Size = new System.Drawing.Size(85, 22);
+            this.lblApellidoBtc.Size = new System.Drawing.Size(65, 18);
             this.lblApellidoBtc.TabIndex = 116;
             this.lblApellidoBtc.Text = "Apellido";
             // 
@@ -732,10 +711,9 @@
             this.lblNombreBtc.AutoSize = true;
             this.lblNombreBtc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreBtc.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNombreBtc.Location = new System.Drawing.Point(420, 615);
-            this.lblNombreBtc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombreBtc.Location = new System.Drawing.Point(315, 500);
             this.lblNombreBtc.Name = "lblNombreBtc";
-            this.lblNombreBtc.Size = new System.Drawing.Size(83, 22);
+            this.lblNombreBtc.Size = new System.Drawing.Size(64, 18);
             this.lblNombreBtc.TabIndex = 117;
             this.lblNombreBtc.Text = "Nombre";
             // 
@@ -767,8 +745,7 @@
             this.txtNombre.IconRight = null;
             this.txtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.Lines = new string[0];
-            this.txtNombre.Location = new System.Drawing.Point(424, 641);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(318, 521);
             this.txtNombre.MaxLength = 32767;
             this.txtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNombre.Modified = false;
@@ -794,7 +771,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtNombre.OnIdleState = stateProperties4;
-            this.txtNombre.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Padding = new System.Windows.Forms.Padding(3);
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtNombre.PlaceholderText = "Enter text";
@@ -804,7 +781,7 @@
             this.txtNombre.SelectionLength = 0;
             this.txtNombre.SelectionStart = 0;
             this.txtNombre.ShortcutsEnabled = true;
-            this.txtNombre.Size = new System.Drawing.Size(365, 26);
+            this.txtNombre.Size = new System.Drawing.Size(274, 21);
             this.txtNombre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNombre.TabIndex = 118;
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -843,8 +820,7 @@
             this.txtApellido.IconRight = null;
             this.txtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellido.Lines = new string[0];
-            this.txtApellido.Location = new System.Drawing.Point(821, 641);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Location = new System.Drawing.Point(616, 521);
             this.txtApellido.MaxLength = 32767;
             this.txtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtApellido.Modified = false;
@@ -870,7 +846,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtApellido.OnIdleState = stateProperties8;
-            this.txtApellido.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Padding = new System.Windows.Forms.Padding(3);
             this.txtApellido.PasswordChar = '\0';
             this.txtApellido.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtApellido.PlaceholderText = "Enter text";
@@ -880,7 +856,7 @@
             this.txtApellido.SelectionLength = 0;
             this.txtApellido.SelectionStart = 0;
             this.txtApellido.ShortcutsEnabled = true;
-            this.txtApellido.Size = new System.Drawing.Size(361, 26);
+            this.txtApellido.Size = new System.Drawing.Size(271, 21);
             this.txtApellido.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtApellido.TabIndex = 119;
             this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -893,10 +869,10 @@
             // 
             // FormBitacoraEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1200, 862);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombreBtc);
@@ -920,7 +896,6 @@
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.lblPrincipalBitacoraEventos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormBitacoraEventos";
             this.Text = "FormBitacoraEventos";
             this.bunifuPanel1.ResumeLayout(false);

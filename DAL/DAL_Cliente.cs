@@ -1,11 +1,7 @@
 ﻿using BE;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -25,6 +21,7 @@ namespace DAL
                 new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = cliente.Nombre},
                 new SqlParameter("@In_Apellido" , SqlDbType.NVarChar) { Value = cliente.Apellido },
                 new SqlParameter("@In_Mail" , SqlDbType.NVarChar) { Value = cliente.Mail},
+                new SqlParameter("@In_Is_Planificador" , SqlDbType.NVarChar) { Value = cliente.Is_Planificador},
             };
 
             return conn.Write("SP_InsertCliente", parameters);

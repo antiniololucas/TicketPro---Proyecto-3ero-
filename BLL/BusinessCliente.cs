@@ -1,13 +1,7 @@
 ﻿using BE;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using Services;
-using System.Net.Http.Headers;
-using System.Net;
+using System.Collections.Generic;
 
 namespace BLL
 {
@@ -41,7 +35,7 @@ namespace BLL
             }
             Mail = CryptoManager.ReversibleEncrypt(Mail);
 
-            EntityCliente cliente = new EntityCliente() {Id = id, DNI = DNI, Apellido = Apellido, Nombre = Nombre, Mail = Mail };
+            EntityCliente cliente = new EntityCliente() { Id = id, DNI = DNI, Apellido = Apellido, Nombre = Nombre, Mail = Mail };
 
             bool ok = dataAccess.UpdateCliente(cliente);
             string mensaje = ok == true ? "Modificada" : "Error"; //Nombre del control
@@ -49,14 +43,14 @@ namespace BLL
             return new BusinessResponse<bool>(ok, false, mensaje);
         }
 
-        public BusinessResponse<EntityCliente> RegistrarCliente( string dni ,string Nombre, string Apellido, string Mail)
+        public BusinessResponse<EntityCliente> RegistrarCliente(string dni, string Nombre, string Apellido, string Mail, bool Is_Planificador)
         {
 
             if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Apellido) || string.IsNullOrEmpty(Mail))
             {
                 return new BusinessResponse<EntityCliente>(false, null, "Campos_Incompletos");
             }
-            if (!int.TryParse(dni , out int DNI))
+            if (!int.TryParse(dni, out int DNI))
             {
                 return new BusinessResponse<EntityCliente>(false, null, "FormatoIncorrecto");
             }
@@ -66,7 +60,7 @@ namespace BLL
             }
             Mail = CryptoManager.ReversibleEncrypt(Mail);
 
-            EntityCliente cliente = new EntityCliente() { DNI = DNI, Apellido = Apellido, Nombre = Nombre, Mail = Mail };
+            EntityCliente cliente = new EntityCliente() { DNI = DNI, Apellido = Apellido, Nombre = Nombre, Mail = Mail, Is_Planificador = Is_Planificador };
 
             bool ok = dataAccess.Insert_Cliente(cliente);
             string mensaje = ok == true ? "Alta" : "Error";

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BE
 {
@@ -21,5 +17,11 @@ namespace BE
         public TimeSpan Horario { get; set; }
 
         public byte[] Imagen { get; set; }
+
+        public int Id_Planificador { get; set; }
+
+        public bool Is_Paga { get; set; }
+
+        public string PublicoObjetivo { get; set; }
     }
 }

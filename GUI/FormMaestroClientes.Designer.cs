@@ -86,10 +86,9 @@
             this.lblPrincipalGestionClientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblPrincipalGestionClientes.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPrincipalGestionClientes.Location = new System.Drawing.Point(0, 0);
-            this.lblPrincipalGestionClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblPrincipalGestionClientes.Name = "lblPrincipalGestionClientes";
             this.lblPrincipalGestionClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrincipalGestionClientes.Size = new System.Drawing.Size(1200, 138);
+            this.lblPrincipalGestionClientes.Size = new System.Drawing.Size(900, 112);
             this.lblPrincipalGestionClientes.TabIndex = 16;
             this.lblPrincipalGestionClientes.Text = "Gestion Clientes";
             this.lblPrincipalGestionClientes.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,10 +104,9 @@
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.pictureBox2);
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(264, 138);
+            this.bunifuPanel1.Size = new System.Drawing.Size(198, 112);
             this.bunifuPanel1.TabIndex = 17;
             // 
             // pictureBox2
@@ -116,9 +114,8 @@
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(264, 138);
+            this.pictureBox2.Size = new System.Drawing.Size(198, 112);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -170,8 +167,7 @@
             this.btnInicio.IdleIconLeftImage = null;
             this.btnInicio.IdleIconRightImage = null;
             this.btnInicio.IndicateFocus = false;
-            this.btnInicio.Location = new System.Drawing.Point(1159, 0);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInicio.Location = new System.Drawing.Point(869, 0);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnInicio.OnDisabledState.BorderRadius = 1;
@@ -205,7 +201,7 @@
             this.btnInicio.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnInicio.OnPressedState.IconLeftImage = null;
             this.btnInicio.OnPressedState.IconRightImage = null;
-            this.btnInicio.Size = new System.Drawing.Size(41, 32);
+            this.btnInicio.Size = new System.Drawing.Size(31, 26);
             this.btnInicio.TabIndex = 59;
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInicio.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -261,8 +257,7 @@
             this.btnLimpiarSeleccion.IdleIconLeftImage = null;
             this.btnLimpiarSeleccion.IdleIconRightImage = null;
             this.btnLimpiarSeleccion.IndicateFocus = false;
-            this.btnLimpiarSeleccion.Location = new System.Drawing.Point(945, 692);
-            this.btnLimpiarSeleccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarSeleccion.Location = new System.Drawing.Point(709, 562);
             this.btnLimpiarSeleccion.Name = "btnLimpiarSeleccion";
             this.btnLimpiarSeleccion.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLimpiarSeleccion.OnDisabledState.BorderRadius = 1;
@@ -296,7 +291,7 @@
             this.btnLimpiarSeleccion.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnLimpiarSeleccion.OnPressedState.IconLeftImage = null;
             this.btnLimpiarSeleccion.OnPressedState.IconRightImage = null;
-            this.btnLimpiarSeleccion.Size = new System.Drawing.Size(200, 48);
+            this.btnLimpiarSeleccion.Size = new System.Drawing.Size(150, 39);
             this.btnLimpiarSeleccion.TabIndex = 71;
             this.btnLimpiarSeleccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLimpiarSeleccion.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -310,10 +305,9 @@
             this.lblCantClientes.AutoSize = true;
             this.lblCantClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantClientes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCantClientes.Location = new System.Drawing.Point(261, 181);
-            this.lblCantClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantClientes.Location = new System.Drawing.Point(196, 147);
             this.lblCantClientes.Name = "lblCantClientes";
-            this.lblCantClientes.Size = new System.Drawing.Size(109, 22);
+            this.lblCantClientes.Size = new System.Drawing.Size(80, 18);
             this.lblCantClientes.TabIndex = 69;
             this.lblCantClientes.Text = "xxxxxxxxx";
             // 
@@ -322,10 +316,9 @@
             this.lblNumeroClientes.AutoSize = true;
             this.lblNumeroClientes.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroClientes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNumeroClientes.Location = new System.Drawing.Point(44, 181);
-            this.lblNumeroClientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumeroClientes.Location = new System.Drawing.Point(33, 147);
             this.lblNumeroClientes.Name = "lblNumeroClientes";
-            this.lblNumeroClientes.Size = new System.Drawing.Size(198, 22);
+            this.lblNumeroClientes.Size = new System.Drawing.Size(153, 18);
             this.lblNumeroClientes.TabIndex = 68;
             this.lblNumeroClientes.Text = "Numero de Clientes:";
             // 
@@ -376,8 +369,7 @@
             this.btnModificar.IdleIconLeftImage = null;
             this.btnModificar.IdleIconRightImage = null;
             this.btnModificar.IndicateFocus = false;
-            this.btnModificar.Location = new System.Drawing.Point(945, 623);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Location = new System.Drawing.Point(709, 506);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnModificar.OnDisabledState.BorderRadius = 1;
@@ -411,7 +403,7 @@
             this.btnModificar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnModificar.OnPressedState.IconLeftImage = null;
             this.btnModificar.OnPressedState.IconRightImage = null;
-            this.btnModificar.Size = new System.Drawing.Size(200, 48);
+            this.btnModificar.Size = new System.Drawing.Size(150, 39);
             this.btnModificar.TabIndex = 67;
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnModificar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -447,8 +439,7 @@
             this.txtMail.IconRight = null;
             this.txtMail.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMail.Lines = new string[0];
-            this.txtMail.Location = new System.Drawing.Point(48, 769);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Location = new System.Drawing.Point(36, 625);
             this.txtMail.MaxLength = 32767;
             this.txtMail.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMail.Modified = false;
@@ -474,7 +465,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtMail.OnIdleState = stateProperties4;
-            this.txtMail.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMail.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtMail.PasswordChar = '\0';
             this.txtMail.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtMail.PlaceholderText = "Correo";
@@ -484,7 +475,7 @@
             this.txtMail.SelectionLength = 0;
             this.txtMail.SelectionStart = 0;
             this.txtMail.ShortcutsEnabled = true;
-            this.txtMail.Size = new System.Drawing.Size(864, 46);
+            this.txtMail.Size = new System.Drawing.Size(648, 37);
             this.txtMail.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtMail.TabIndex = 64;
             this.txtMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -522,8 +513,7 @@
             this.TxtDni.IconRight = null;
             this.TxtDni.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDni.Lines = new string[0];
-            this.TxtDni.Location = new System.Drawing.Point(48, 610);
-            this.TxtDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDni.Location = new System.Drawing.Point(36, 496);
             this.TxtDni.MaxLength = 32767;
             this.TxtDni.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDni.Modified = false;
@@ -549,7 +539,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtDni.OnIdleState = stateProperties8;
-            this.TxtDni.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtDni.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.TxtDni.PasswordChar = '\0';
             this.TxtDni.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtDni.PlaceholderText = "DNI";
@@ -559,7 +549,7 @@
             this.TxtDni.SelectionLength = 0;
             this.TxtDni.SelectionStart = 0;
             this.TxtDni.ShortcutsEnabled = true;
-            this.TxtDni.Size = new System.Drawing.Size(864, 46);
+            this.TxtDni.Size = new System.Drawing.Size(648, 37);
             this.TxtDni.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtDni.TabIndex = 63;
             this.TxtDni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -597,8 +587,7 @@
             this.TxtApellido.IconRight = null;
             this.TxtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.Lines = new string[0];
-            this.TxtApellido.Location = new System.Drawing.Point(48, 716);
-            this.TxtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtApellido.Location = new System.Drawing.Point(36, 582);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtApellido.Modified = false;
@@ -624,7 +613,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtApellido.OnIdleState = stateProperties12;
-            this.TxtApellido.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtApellido.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.TxtApellido.PasswordChar = '\0';
             this.TxtApellido.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtApellido.PlaceholderText = "Apellido";
@@ -634,7 +623,7 @@
             this.TxtApellido.SelectionLength = 0;
             this.TxtApellido.SelectionStart = 0;
             this.TxtApellido.ShortcutsEnabled = true;
-            this.TxtApellido.Size = new System.Drawing.Size(864, 46);
+            this.TxtApellido.Size = new System.Drawing.Size(648, 37);
             this.TxtApellido.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtApellido.TabIndex = 62;
             this.TxtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -672,8 +661,7 @@
             this.TxtNombre.IconRight = null;
             this.TxtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.Lines = new string[0];
-            this.TxtNombre.Location = new System.Drawing.Point(48, 663);
-            this.TxtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNombre.Location = new System.Drawing.Point(36, 539);
             this.TxtNombre.MaxLength = 32767;
             this.TxtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtNombre.Modified = false;
@@ -699,7 +687,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.TxtNombre.OnIdleState = stateProperties16;
-            this.TxtNombre.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtNombre.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.TxtNombre.PasswordChar = '\0';
             this.TxtNombre.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.TxtNombre.PlaceholderText = "Nombre";
@@ -709,7 +697,7 @@
             this.TxtNombre.SelectionLength = 0;
             this.TxtNombre.SelectionStart = 0;
             this.TxtNombre.ShortcutsEnabled = true;
-            this.TxtNombre.Size = new System.Drawing.Size(864, 46);
+            this.TxtNombre.Size = new System.Drawing.Size(648, 37);
             this.TxtNombre.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.TxtNombre.TabIndex = 61;
             this.TxtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -771,8 +759,7 @@
             this.DG_Clientes.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.DG_Clientes.HeaderBgColor = System.Drawing.Color.Empty;
             this.DG_Clientes.HeaderForeColor = System.Drawing.Color.White;
-            this.DG_Clientes.Location = new System.Drawing.Point(48, 207);
-            this.DG_Clientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DG_Clientes.Location = new System.Drawing.Point(27, 168);
             this.DG_Clientes.MultiSelect = false;
             this.DG_Clientes.Name = "DG_Clientes";
             this.DG_Clientes.ReadOnly = true;
@@ -781,7 +768,7 @@
             this.DG_Clientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DG_Clientes.RowTemplate.Height = 40;
             this.DG_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG_Clientes.Size = new System.Drawing.Size(1097, 382);
+            this.DG_Clientes.Size = new System.Drawing.Size(823, 310);
             this.DG_Clientes.TabIndex = 60;
             this.DG_Clientes.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DG_Clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_Clientes_CellContentClick);
@@ -833,8 +820,7 @@
             this.btnChangeEncrypt.IdleIconLeftImage = null;
             this.btnChangeEncrypt.IdleIconRightImage = null;
             this.btnChangeEncrypt.IndicateFocus = false;
-            this.btnChangeEncrypt.Location = new System.Drawing.Point(859, 166);
-            this.btnChangeEncrypt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeEncrypt.Location = new System.Drawing.Point(644, 135);
             this.btnChangeEncrypt.Name = "btnChangeEncrypt";
             this.btnChangeEncrypt.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnChangeEncrypt.OnDisabledState.BorderRadius = 1;
@@ -868,7 +854,7 @@
             this.btnChangeEncrypt.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnChangeEncrypt.OnPressedState.IconLeftImage = null;
             this.btnChangeEncrypt.OnPressedState.IconRightImage = null;
-            this.btnChangeEncrypt.Size = new System.Drawing.Size(287, 37);
+            this.btnChangeEncrypt.Size = new System.Drawing.Size(215, 30);
             this.btnChangeEncrypt.TabIndex = 72;
             this.btnChangeEncrypt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnChangeEncrypt.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -924,8 +910,7 @@
             this.btnDeserializar.IdleIconLeftImage = null;
             this.btnDeserializar.IdleIconRightImage = null;
             this.btnDeserializar.IndicateFocus = false;
-            this.btnDeserializar.Location = new System.Drawing.Point(584, 162);
-            this.btnDeserializar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeserializar.Location = new System.Drawing.Point(438, 132);
             this.btnDeserializar.Name = "btnDeserializar";
             this.btnDeserializar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDeserializar.OnDisabledState.BorderRadius = 1;
@@ -959,7 +944,7 @@
             this.btnDeserializar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnDeserializar.OnPressedState.IconLeftImage = null;
             this.btnDeserializar.OnPressedState.IconRightImage = null;
-            this.btnDeserializar.Size = new System.Drawing.Size(153, 37);
+            this.btnDeserializar.Size = new System.Drawing.Size(115, 30);
             this.btnDeserializar.TabIndex = 73;
             this.btnDeserializar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDeserializar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1015,8 +1000,7 @@
             this.btnSerializar.IdleIconLeftImage = null;
             this.btnSerializar.IdleIconRightImage = null;
             this.btnSerializar.IndicateFocus = false;
-            this.btnSerializar.Location = new System.Drawing.Point(409, 162);
-            this.btnSerializar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSerializar.Location = new System.Drawing.Point(307, 132);
             this.btnSerializar.Name = "btnSerializar";
             this.btnSerializar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSerializar.OnDisabledState.BorderRadius = 1;
@@ -1050,7 +1034,7 @@
             this.btnSerializar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSerializar.OnPressedState.IconLeftImage = null;
             this.btnSerializar.OnPressedState.IconRightImage = null;
-            this.btnSerializar.Size = new System.Drawing.Size(153, 37);
+            this.btnSerializar.Size = new System.Drawing.Size(115, 30);
             this.btnSerializar.TabIndex = 74;
             this.btnSerializar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSerializar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1061,10 +1045,10 @@
             // 
             // FormMaestroClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1200, 862);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.btnSerializar);
             this.Controls.Add(this.btnDeserializar);
             this.Controls.Add(this.btnChangeEncrypt);
@@ -1080,7 +1064,6 @@
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.lblPrincipalGestionClientes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMaestroClientes";
             this.Text = "FormMaestroClientes";
             this.bunifuPanel1.ResumeLayout(false);

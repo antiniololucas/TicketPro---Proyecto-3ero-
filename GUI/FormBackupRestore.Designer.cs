@@ -41,11 +41,11 @@
             this.txtRestorePath = new System.Windows.Forms.TextBox();
             this.txtBackupPath = new System.Windows.Forms.TextBox();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblPrincipalRestore = new Bunifu.UI.WinForms.BunifuLabel();
             this.btnInicio = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSeleccionarRestore = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSeleccionarBackUp = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +97,8 @@
             this.btnRealizarRest.IdleIconLeftImage = null;
             this.btnRealizarRest.IdleIconRightImage = null;
             this.btnRealizarRest.IndicateFocus = false;
-            this.btnRealizarRest.Location = new System.Drawing.Point(262, 440);
+            this.btnRealizarRest.Location = new System.Drawing.Point(277, 459);
+            this.btnRealizarRest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRealizarRest.Name = "btnRealizarRest";
             this.btnRealizarRest.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRealizarRest.OnDisabledState.BorderRadius = 1;
@@ -131,7 +132,7 @@
             this.btnRealizarRest.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnRealizarRest.OnPressedState.IconLeftImage = null;
             this.btnRealizarRest.OnPressedState.IconRightImage = null;
-            this.btnRealizarRest.Size = new System.Drawing.Size(150, 39);
+            this.btnRealizarRest.Size = new System.Drawing.Size(112, 32);
             this.btnRealizarRest.TabIndex = 70;
             this.btnRealizarRest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRealizarRest.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -187,7 +188,8 @@
             this.btnRealizarBack.IdleIconLeftImage = null;
             this.btnRealizarBack.IdleIconRightImage = null;
             this.btnRealizarBack.IndicateFocus = false;
-            this.btnRealizarBack.Location = new System.Drawing.Point(258, 286);
+            this.btnRealizarBack.Location = new System.Drawing.Point(277, 315);
+            this.btnRealizarBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRealizarBack.Name = "btnRealizarBack";
             this.btnRealizarBack.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnRealizarBack.OnDisabledState.BorderRadius = 1;
@@ -221,7 +223,7 @@
             this.btnRealizarBack.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnRealizarBack.OnPressedState.IconLeftImage = null;
             this.btnRealizarBack.OnPressedState.IconRightImage = null;
-            this.btnRealizarBack.Size = new System.Drawing.Size(150, 39);
+            this.btnRealizarBack.Size = new System.Drawing.Size(112, 32);
             this.btnRealizarBack.TabIndex = 69;
             this.btnRealizarBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRealizarBack.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -235,10 +237,9 @@
             this.lblBackup.AutoSize = true;
             this.lblBackup.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackup.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBackup.Location = new System.Drawing.Point(258, 210);
-            this.lblBackup.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBackup.Location = new System.Drawing.Point(277, 232);
             this.lblBackup.Name = "lblBackup";
-            this.lblBackup.Size = new System.Drawing.Size(82, 22);
+            this.lblBackup.Size = new System.Drawing.Size(63, 18);
             this.lblBackup.TabIndex = 68;
             this.lblBackup.Text = "BackUp";
             // 
@@ -247,27 +248,24 @@
             this.lblRestore.AutoSize = true;
             this.lblRestore.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRestore.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRestore.Location = new System.Drawing.Point(258, 351);
-            this.lblRestore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRestore.Location = new System.Drawing.Point(277, 374);
             this.lblRestore.Name = "lblRestore";
-            this.lblRestore.Size = new System.Drawing.Size(82, 22);
+            this.lblRestore.Size = new System.Drawing.Size(65, 18);
             this.lblRestore.TabIndex = 67;
             this.lblRestore.Text = "Restore";
             // 
             // txtRestorePath
             // 
-            this.txtRestorePath.Location = new System.Drawing.Point(262, 387);
-            this.txtRestorePath.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRestorePath.Location = new System.Drawing.Point(279, 408);
             this.txtRestorePath.Name = "txtRestorePath";
-            this.txtRestorePath.Size = new System.Drawing.Size(368, 22);
+            this.txtRestorePath.Size = new System.Drawing.Size(277, 20);
             this.txtRestorePath.TabIndex = 21;
             // 
             // txtBackupPath
             // 
-            this.txtBackupPath.Location = new System.Drawing.Point(258, 246);
-            this.txtBackupPath.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBackupPath.Location = new System.Drawing.Point(277, 274);
             this.txtBackupPath.Name = "txtBackupPath";
-            this.txtBackupPath.Size = new System.Drawing.Size(372, 22);
+            this.txtBackupPath.Size = new System.Drawing.Size(280, 20);
             this.txtBackupPath.TabIndex = 20;
             // 
             // bunifuPanel1
@@ -280,22 +278,11 @@
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.pictureBox2);
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(200, 138);
+            this.bunifuPanel1.Size = new System.Drawing.Size(198, 112);
             this.bunifuPanel1.TabIndex = 18;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(200, 138);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // lblPrincipalRestore
             // 
@@ -308,10 +295,9 @@
             this.lblPrincipalRestore.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblPrincipalRestore.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPrincipalRestore.Location = new System.Drawing.Point(0, 0);
-            this.lblPrincipalRestore.Margin = new System.Windows.Forms.Padding(4);
             this.lblPrincipalRestore.Name = "lblPrincipalRestore";
             this.lblPrincipalRestore.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPrincipalRestore.Size = new System.Drawing.Size(900, 138);
+            this.lblPrincipalRestore.Size = new System.Drawing.Size(900, 112);
             this.lblPrincipalRestore.TabIndex = 17;
             this.lblPrincipalRestore.Text = "BACKUP RESTORE";
             this.lblPrincipalRestore.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,8 +350,7 @@
             this.btnInicio.IdleIconLeftImage = null;
             this.btnInicio.IdleIconRightImage = null;
             this.btnInicio.IndicateFocus = false;
-            this.btnInicio.Location = new System.Drawing.Point(859, 0);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInicio.Location = new System.Drawing.Point(869, 0);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnInicio.OnDisabledState.BorderRadius = 1;
@@ -399,7 +384,7 @@
             this.btnInicio.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnInicio.OnPressedState.IconLeftImage = null;
             this.btnInicio.OnPressedState.IconRightImage = null;
-            this.btnInicio.Size = new System.Drawing.Size(41, 32);
+            this.btnInicio.Size = new System.Drawing.Size(31, 26);
             this.btnInicio.TabIndex = 71;
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnInicio.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -455,8 +440,7 @@
             this.btnSeleccionarRestore.IdleIconLeftImage = null;
             this.btnSeleccionarRestore.IdleIconRightImage = null;
             this.btnSeleccionarRestore.IndicateFocus = false;
-            this.btnSeleccionarRestore.Location = new System.Drawing.Point(648, 383);
-            this.btnSeleccionarRestore.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeleccionarRestore.Location = new System.Drawing.Point(569, 405);
             this.btnSeleccionarRestore.Name = "btnSeleccionarRestore";
             this.btnSeleccionarRestore.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSeleccionarRestore.OnDisabledState.BorderRadius = 1;
@@ -490,7 +474,7 @@
             this.btnSeleccionarRestore.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarRestore.OnPressedState.IconLeftImage = null;
             this.btnSeleccionarRestore.OnPressedState.IconRightImage = null;
-            this.btnSeleccionarRestore.Size = new System.Drawing.Size(80, 26);
+            this.btnSeleccionarRestore.Size = new System.Drawing.Size(60, 21);
             this.btnSeleccionarRestore.TabIndex = 82;
             this.btnSeleccionarRestore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSeleccionarRestore.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -546,8 +530,7 @@
             this.btnSeleccionarBackUp.IdleIconLeftImage = null;
             this.btnSeleccionarBackUp.IdleIconRightImage = null;
             this.btnSeleccionarBackUp.IndicateFocus = false;
-            this.btnSeleccionarBackUp.Location = new System.Drawing.Point(648, 246);
-            this.btnSeleccionarBackUp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeleccionarBackUp.Location = new System.Drawing.Point(569, 274);
             this.btnSeleccionarBackUp.Name = "btnSeleccionarBackUp";
             this.btnSeleccionarBackUp.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSeleccionarBackUp.OnDisabledState.BorderRadius = 1;
@@ -581,7 +564,7 @@
             this.btnSeleccionarBackUp.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarBackUp.OnPressedState.IconLeftImage = null;
             this.btnSeleccionarBackUp.OnPressedState.IconRightImage = null;
-            this.btnSeleccionarBackUp.Size = new System.Drawing.Size(80, 26);
+            this.btnSeleccionarBackUp.Size = new System.Drawing.Size(60, 21);
             this.btnSeleccionarBackUp.TabIndex = 83;
             this.btnSeleccionarBackUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSeleccionarBackUp.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -590,9 +573,20 @@
             this.btnSeleccionarBackUp.UseDefaultRadiusAndThickness = true;
             this.btnSeleccionarBackUp.Click += new System.EventHandler(this.btnSeleccionarBackUp_Click_1);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(198, 112);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormBackupRestore
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(900, 700);
@@ -607,6 +601,7 @@
             this.Controls.Add(this.txtBackupPath);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.lblPrincipalRestore);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormBackupRestore";
             this.Text = "FormBackupRestore";
             this.bunifuPanel1.ResumeLayout(false);
@@ -620,7 +615,6 @@
 
         private Bunifu.UI.WinForms.BunifuLabel lblPrincipalRestore;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtRestorePath;
         private System.Windows.Forms.TextBox txtBackupPath;
         private System.Windows.Forms.Label lblRestore;
@@ -630,5 +624,6 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnInicio;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSeleccionarRestore;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSeleccionarBackUp;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

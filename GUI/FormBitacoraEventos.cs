@@ -4,16 +4,10 @@ using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TheArtOfDev.HtmlRenderer.Adapters;
 
 namespace GUI
 {
@@ -25,8 +19,9 @@ namespace GUI
             ChangeTranslation();
             _businessEventoBitacora = new BusinessEventoBitacora();
             _businessUser = new BusinessUser();
-            completar_DG();
             cargarFiltros();
+            completar_DG();
+            this.nombre_modulo = "Bitacora de Eventos";
         }
 
         private void cargarFiltros()
@@ -44,8 +39,11 @@ namespace GUI
             cmbModulos.SelectedIndex = -1;
             cmbUsuarios.SelectedIndex = -1;
             cmbCriticidad.SelectedIndex = -1;
-            dateDesde.Value = DateTime.Now;
+            dateDesde.Value = (DateTime.Now.AddDays(-2));
             dateHasta.Value = DateTime.Now;
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            _eventos = _businessEventoBitacora.buscarEventosBitacora(0, (DateTime.Now.AddDays(-2)), DateTime.Now, 0).Data;
         }
 
         private BusinessEventoBitacora _businessEventoBitacora;
@@ -54,7 +52,6 @@ namespace GUI
 
         public void completar_DG()
         {
-            _eventos = _businessEventoBitacora.buscarEventosBitacora(0, (DateTime.Now.AddDays(-3)), DateTime.Now, 0).Data;
             LlenarDG(DG_EventosBitacora, _eventos, new List<string>() { "Id" });
         }
 
@@ -65,6 +62,12 @@ namespace GUI
 
         private void btnAplicarFiltro_Click(object sender, EventArgs e)
         {
+            if (dateDesde.Value > dateHasta.Value)
+            {
+                MessageBox.Show(SearchTraduccion("Error"));
+                dateDesde.Value = DateTime.Now.AddDays(-2);
+                return;
+            }
             int usuarioId = (cmbUsuarios.SelectedItem as EntityUser)?.Id ?? 0;
             DateTime fechaInicio = dateDesde.Value;
             DateTime fechaFin = dateHasta.Value;
@@ -89,9 +92,10 @@ namespace GUI
             txtApellido.Text = _Evento_Actual.Login.Apellido;
             txtNombre.Text = _Evento_Actual.Login.Nombre;
         }
+
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-           
+
             DataTable dataTable = DataGridViewToDataTable(DG_EventosBitacora);
 
             if (dataTable.Rows.Count == 0)
@@ -100,6 +104,8 @@ namespace GUI
                 RevisarRespuestaServicio(new BusinessResponse<bool>(false, false, "MessageNoHayDatosGenerarReporteBitacoraEventos"));
                 return;
             }
+
+            guardarEventoBitacora("PDF de bitacora", 4);
 
             // Crear un documento PDF
             PdfDocument pdfDocument = new PdfDocument();

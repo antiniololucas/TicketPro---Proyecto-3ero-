@@ -3,10 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -150,7 +146,7 @@ namespace DAL
                 new SqlParameter("@In_Nombre", SqlDbType.NVarChar) { Value =  familiaActual.Nombre}
             };
                 bool result = conn.Write("SP_InsertFamilia", parameters2);
-                if(!result) ok = false;
+                if (!result) ok = false;
             }
             return ok;
         }

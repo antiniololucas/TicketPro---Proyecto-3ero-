@@ -1,12 +1,12 @@
 ﻿using BE;
+using ClosedXML.Excel;
+using QRCoder;
 using System;
+using System.Data; // Agregar la referencia a QRCoder para generar códigos QR
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
-using QRCoder;
-using ClosedXML.Excel;
-using System.Data; // Agregar la referencia a QRCoder para generar códigos QR
 
 public static class PDFGenerator
 {
@@ -20,7 +20,7 @@ public static class PDFGenerator
             Document = printDocument,
             Width = 900,
             Height = 700,
-            StartPosition = FormStartPosition.CenterScreen, 
+            StartPosition = FormStartPosition.CenterScreen,
             FormBorderStyle = FormBorderStyle.SizableToolWindow,
         };
 
@@ -53,7 +53,7 @@ public static class PDFGenerator
         yPos += infoFont.GetHeight(e.Graphics) + 5;
         e.Graphics.DrawString($"{evento.Fecha} - {evento.Horario} - {evento.Ubicacion}", infoFont, Brushes.Black, leftMargin + 80, yPos); // Ajustar sangría
         yPos += infoFont.GetHeight(e.Graphics) + 5;
-        int spacing = 100; 
+        int spacing = 100;
         e.Graphics.DrawString("Factura N°  ", titleFont, Brushes.Black, leftMargin, yPos);
         e.Graphics.DrawString(factura.Id.ToString(), infoFont, Brushes.Black, leftMargin + spacing, yPos); // Ajustar sangría con más espacio
         yPos += infoFont.GetHeight(e.Graphics) + 5;
@@ -92,11 +92,25 @@ public static class PDFGenerator
     }
 
 
-    public static void SaveToExcel(DataTable dataTable, string filePath)
+    public static void SaveToExcel(DataTable dataTable, string nombreArchivo)
     {
-        using (XLWorkbook workbook = new XLWorkbook())
+        using (var workbook = new XLWorkbook())
         {
-            workbook.Worksheets.Add(dataTable, "Sheet1");
+            var worksheet = workbook.Worksheets.Add("Reporte comprobantes");
+
+            // Agregar el DataTable al worksheet
+            worksheet.Cell(1, 1).InsertTable(dataTable);
+            worksheet.AutoFilter.Clear();
+
+            // Ajusto columnas a contenidos
+            worksheet.Columns().AdjustToContents();
+
+            // Obtener la ruta del escritorio
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string fileName = $"{nombreArchivo}.xlsx";
+            string filePath = Path.Combine(desktopPath, fileName);
+
+            // Guardar el archivo en el escritorio
             workbook.SaveAs(filePath);
         }
     }

@@ -1,12 +1,7 @@
 ﻿using BE;
-using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -37,7 +32,7 @@ namespace DAL
                 new SqlParameter ("@In_Nombre" , SqlDbType.NVarChar){ Value = user.Nombre},
                 new SqlParameter("@In_Username" , SqlDbType.NVarChar) { Value = user.Username},
                 new SqlParameter("@In_Password" , SqlDbType.NVarChar) {Value = user.Password},
-                new SqlParameter("@In_Rol" , SqlDbType.Int) {Value = user.Rol.Id } 
+                new SqlParameter("@In_Rol" , SqlDbType.Int) {Value = user.Rol.Id }
             };
 
             return conn.Write("SP_InsertUser", parameters);
@@ -77,7 +72,7 @@ namespace DAL
             return conn.Write("SP_BlockUser", parameters);
         }
 
-        public bool UpdatePassword(string password, int id_user) 
+        public bool UpdatePassword(string password, int id_user)
         {
             SqlParameter[] parameters = new SqlParameter[]
             {

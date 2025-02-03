@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DAL
+﻿namespace DAL
 {
     public class DAL_BackupRestore
     {
@@ -19,7 +13,7 @@ namespace DAL
         }
         public bool RealizarRestore(string backupFilePath)
         {
-           return conn.RealizarRestore(backupFilePath);
+            return conn.RealizarRestore(backupFilePath);
         }
 
 

@@ -1,10 +1,6 @@
 ﻿using BE;
 using DAL;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -15,6 +11,14 @@ namespace BLL
         public BusinessEntrada()
         {
             dataAccess = new DAL_Entrada();
+        }
+
+        public BusinessResponse<bool> AgregarEntrada(EntityEntrada item)
+        {
+            bool ok = dataAccess.InsertEntrada(item);
+            string mensaje = ok is true ? "Alta" : "Error";
+
+            return new BusinessResponse<bool>(ok, ok, mensaje);
         }
 
         public List<EntityEntrada> BuscarEntradas(EntityEvento evento)

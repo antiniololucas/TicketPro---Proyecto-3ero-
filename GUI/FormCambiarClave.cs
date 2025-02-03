@@ -3,13 +3,6 @@ using BLL;
 using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -39,18 +32,18 @@ namespace GUI
             EsconderLabelError(new List<Bunifu.UI.WinForms.BunifuLabel> { lblErrorActual, lblErrorNueva, lblErrorRepetida });
             //Campos vacíos
             MessageBox.Show(SearchTraduccion("Campos_Incompletos"));
-            if (string.IsNullOrEmpty(TxtPasswordVieja.Text)) { MostrarLabelError( lblErrorActual); huboError = true; }
-            if (string.IsNullOrEmpty(TxtPasswordNueva.Text)) { MostrarLabelError( lblErrorNueva); huboError = true; }
-            if (string.IsNullOrEmpty(TxtPasswordRepetida.Text)) { MostrarLabelError( lblErrorRepetida); huboError = true; }
+            if (string.IsNullOrEmpty(TxtPasswordVieja.Text)) { MostrarLabelError(lblErrorActual); huboError = true; }
+            if (string.IsNullOrEmpty(TxtPasswordNueva.Text)) { MostrarLabelError(lblErrorNueva); huboError = true; }
+            if (string.IsNullOrEmpty(TxtPasswordRepetida.Text)) { MostrarLabelError(lblErrorRepetida); huboError = true; }
 
-            if(huboError) { return; }
+            if (huboError) { return; }
 
             //Contraseñas nuevas no coinciden
             if (TxtPasswordNueva.Text != TxtPasswordRepetida.Text)
             {
                 MessageBox.Show(SearchTraduccion("ContraseñasDiferentes"));
-                MostrarLabelError( lblErrorNueva);
-                MostrarLabelError( lblErrorRepetida);
+                MostrarLabelError(lblErrorNueva);
+                MostrarLabelError(lblErrorRepetida);
                 return;
             }
 
@@ -58,8 +51,8 @@ namespace GUI
             if (!RegexValidation.IsValidPassword(TxtPasswordNueva.Text))
             {
                 MessageBox.Show(SearchTraduccion("FormatoIncorrecto"));
-                MostrarLabelError( lblErrorNueva);
-                MostrarLabelError( lblErrorRepetida);
+                MostrarLabelError(lblErrorNueva);
+                MostrarLabelError(lblErrorRepetida);
                 return;
             }
 
@@ -67,7 +60,7 @@ namespace GUI
             if (CryptoManager.EncryptString(TxtPasswordVieja.Text) != user.Password)
             {
                 MessageBox.Show(SearchTraduccion("ContraOriginal"));
-                MostrarLabelError( lblErrorActual); return;
+                MostrarLabelError(lblErrorActual); return;
             }
 
             var response = _businessUser.CambiarClave(user.Id, TxtPasswordNueva.Text);

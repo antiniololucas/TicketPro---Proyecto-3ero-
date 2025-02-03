@@ -130,7 +130,7 @@
             this.DGusers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DGusers.RowTemplate.Height = 40;
             this.DGusers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGusers.Size = new System.Drawing.Size(648, 310);
+            this.DGusers.Size = new System.Drawing.Size(648, 348);
             this.DGusers.TabIndex = 0;
             this.DGusers.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.DGusers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGusers_CellContentClick);
@@ -148,7 +148,7 @@
             this.bunifuLabel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(884, 112);
+            this.bunifuLabel1.Size = new System.Drawing.Size(900, 112);
             this.bunifuLabel1.TabIndex = 1;
             this.bunifuLabel1.Text = "GESTIÓN DE USUARIOS";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -453,7 +453,7 @@
             this.TxtDni.IconRight = null;
             this.TxtDni.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDni.Lines = new string[0];
-            this.TxtDni.Location = new System.Drawing.Point(27, 468);
+            this.TxtDni.Location = new System.Drawing.Point(27, 505);
             this.TxtDni.MaxLength = 32767;
             this.TxtDni.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtDni.Modified = false;
@@ -527,7 +527,7 @@
             this.TxtApellido.IconRight = null;
             this.TxtApellido.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.Lines = new string[0];
-            this.TxtApellido.Location = new System.Drawing.Point(27, 554);
+            this.TxtApellido.Location = new System.Drawing.Point(27, 591);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtApellido.Modified = false;
@@ -601,7 +601,7 @@
             this.TxtNombre.IconRight = null;
             this.TxtNombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.Lines = new string[0];
-            this.TxtNombre.Location = new System.Drawing.Point(27, 511);
+            this.TxtNombre.Location = new System.Drawing.Point(27, 548);
             this.TxtNombre.MaxLength = 32767;
             this.TxtNombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.TxtNombre.Modified = false;
@@ -808,7 +808,7 @@
             this.btnLimpiarSeleccion.IdleIconLeftImage = null;
             this.btnLimpiarSeleccion.IdleIconRightImage = null;
             this.btnLimpiarSeleccion.IndicateFocus = false;
-            this.btnLimpiarSeleccion.Location = new System.Drawing.Point(700, 534);
+            this.btnLimpiarSeleccion.Location = new System.Drawing.Point(700, 548);
             this.btnLimpiarSeleccion.Name = "btnLimpiarSeleccion";
             this.btnLimpiarSeleccion.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLimpiarSeleccion.OnDisabledState.BorderRadius = 1;
@@ -898,7 +898,7 @@
             this.btnInicio.IdleIconLeftImage = null;
             this.btnInicio.IdleIconRightImage = null;
             this.btnInicio.IndicateFocus = false;
-            this.btnInicio.Location = new System.Drawing.Point(853, 0);
+            this.btnInicio.Location = new System.Drawing.Point(869, 0);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnInicio.OnDisabledState.BorderRadius = 1;
@@ -970,7 +970,7 @@
             // cmbRoles
             // 
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(27, 597);
+            this.cmbRoles.Location = new System.Drawing.Point(27, 634);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(648, 21);
             this.cmbRoles.TabIndex = 30;
@@ -981,7 +981,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(28)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(900, 700);
             this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.bunifuPanel1);
             this.Controls.Add(this.btnInicio);

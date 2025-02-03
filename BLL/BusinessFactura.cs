@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BE;
 using DAL;
-using BE;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace BLL
 {
@@ -17,13 +14,13 @@ namespace BLL
         {
             dataAcces = new DAL_Factura();
         }
-            
+
         public BusinessResponse<EntityDetalle_Factura> getDetalleFactura(EntityFactura factura)
         {
             var data = dataAcces.getDetalle(factura);
             bool ok = data is null;
             string mensaje = ok is true ? "Obtenido" : "Error";
-            return new BusinessResponse<EntityDetalle_Factura> ( ok, data, mensaje );
+            return new BusinessResponse<EntityDetalle_Factura>(ok, data, mensaje);
         }
         public BusinessResponse<List<EntityFactura>> BuscarFacturas()
         {
@@ -35,7 +32,7 @@ namespace BLL
 
         public BusinessResponse<bool> RegistrarFactura(EntityFactura factura, List<EntityDetalle_Factura> detalles)
         {
-            bool ok = dataAcces.Registrar(factura , detalles);
+            bool ok = dataAcces.Registrar(factura, detalles);
 
             string mensaje = ok == true ? "Alta" : "Error";
 
@@ -43,7 +40,7 @@ namespace BLL
         }
 
         public BusinessResponse<bool> ModificarFactura(EntityFactura factura, bool isCobranza)
-        {   
+        {
             bool ok = dataAcces.Update(factura);
             string Mensaje = ok == true ? isCobranza == true ? "Cobrada" : "Modificada" : "Error";
             return new BusinessResponse<bool>(ok, false, Mensaje);

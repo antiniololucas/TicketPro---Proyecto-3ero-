@@ -3,13 +3,8 @@ using BLL;
 using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -20,7 +15,7 @@ namespace GUI
         {
             InitializeComponent();
             GetFacturasSinCobrarConDNI();
-            LlenarDG(DG_Facturas, _facturas, new List<string> { "Id", "Id_Cliente" , "Is_Cobrada" });
+            LlenarDG(DG_Facturas, _facturas, new List<string> { "Id", "Id_Cliente", "Is_Cobrada" });
             AcceptButton = btnCobrarFactura;
             ChangeTranslation();
             this.nombre_modulo = "Cobranza";
@@ -59,7 +54,7 @@ namespace GUI
                 if (textBox.Text.Length == 2 && !textBox.Text.Contains("/"))
                 {
                     textBox.Text = textBox.Text.Insert(2, "/");
-                    textBox.SelectionStart = textBox.Text.Length; 
+                    textBox.SelectionStart = textBox.Text.Length;
                 }
             }
         }
@@ -96,16 +91,16 @@ namespace GUI
             bool hayError = false;
 
             //Errores inputs vacios.
-            if (string.IsNullOrEmpty(TxtFechaVto.Text)) { MostrarLabelError( lblErrorFecha); hayError = true; }
-            if (string.IsNullOrEmpty(txtNumTarjeta.Text)) { MostrarLabelError( lblErrorNumero); hayError = true; }
-            if (string.IsNullOrEmpty(txtNombreTitular.Text)) { MostrarLabelError( lblErrorNombre); hayError = true; }
+            if (string.IsNullOrEmpty(TxtFechaVto.Text)) { MostrarLabelError(lblErrorFecha); hayError = true; }
+            if (string.IsNullOrEmpty(txtNumTarjeta.Text)) { MostrarLabelError(lblErrorNumero); hayError = true; }
+            if (string.IsNullOrEmpty(txtNombreTitular.Text)) { MostrarLabelError(lblErrorNombre); hayError = true; }
             if (hayError) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
-            
+
 
             //Errores inputs invalidos.
-            if (!RegexValidation.IsValidCardNumber(txtNumTarjeta.Text)) { MostrarLabelError( lblErrorNumero); hayError = true; }
-            if (!validarFecha()) { MostrarLabelError( lblErrorFecha); hayError = true; }
-            if (!RegexValidation.IsValidName(txtNombreTitular.Text)) { MostrarLabelError( lblErrorNombre); hayError = true; }
+            if (!RegexValidation.IsValidCardNumber(txtNumTarjeta.Text)) { MostrarLabelError(lblErrorNumero); hayError = true; }
+            if (!validarFecha()) { MostrarLabelError(lblErrorFecha); hayError = true; }
+            if (!RegexValidation.IsValidName(txtNombreTitular.Text)) { MostrarLabelError(lblErrorNombre); hayError = true; }
             if (hayError) { MessageBox.Show(SearchTraduccion("FormatoIncorrecto")); return; }
 
             //Confirmación de solicitud.
@@ -116,10 +111,11 @@ namespace GUI
             facturaActual.Is_Cobrada = true;
             var response = _businessFactura.ModificarFactura(facturaActual, true);
             RevisarRespuestaServicio(response);
-            if (response.Ok) 
-            { 
+            if (response.Ok)
+            {
                 FormCobrarFactura frm = new FormCobrarFactura(); frm.Show(); this.Close();
                 guardarEventoBitacora("Factura Cobrada", 4);
+                UpdateDigitoVerificador();
             }
             EntityDetalle_Factura detalle = _businessFactura.getDetalleFactura(facturaActual).Data;
             EntityEntrada entrada = businessEntrada.selectAllEntrads().Find(E => E.Id == detalle.Id_Entrada);

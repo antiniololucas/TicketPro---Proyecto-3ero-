@@ -1,15 +1,9 @@
 ﻿using BE;
 using BLL;
-using Services;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -28,7 +22,7 @@ namespace GUI
         }
 
         BusinessCliente _businessCliente = new BusinessCliente();
-        
+
 
         public FormRegistrarCliente(FormGenerarFactura formGenerarFactura)
         {
@@ -40,17 +34,18 @@ namespace GUI
 
         private void btnRegistarCliente_Click(object sender, EventArgs e)
         {
-            var response = _businessCliente.RegistrarCliente(txtDni.Text, txtNombre.Text, txtApellido.Text, txtMail.Text);
+            var response = _businessCliente.RegistrarCliente(txtDni.Text, txtNombre.Text, txtApellido.Text, txtMail.Text, false);
             RevisarRespuestaServicio(response);
             if (_formVolver != null)
             {
-                List<EntityCliente> clientes = _businessCliente.BuscarClientes();
+                List<EntityCliente> clientes = _businessCliente.BuscarClientes().Where(C => C.Is_Planificador is false).ToList();
                 LlenarDG(_formVolver.DG_Clientes, clientes, new List<string>() { "ID" });
                 LLenarCmb(_formVolver.cmbClientes, clientes, "DNI");
             }
             if (response.Ok)
             {
                 guardarEventoBitacora("Registro de un Cliente", 4);
+                UpdateDigitoVerificador();
                 txtDni.Text = "";
                 txtNombre.Text = "";
                 txtApellido.Text = "";

@@ -1,11 +1,7 @@
 ﻿using BE;
-using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -34,7 +30,7 @@ namespace DAL
         public string SelectTraduccion(EntityIdioma idioma, string controlName)
         {
             SqlParameter[] parameters = new SqlParameter[]
-            { 
+            {
                 new SqlParameter("@In_IdIdioma", SqlDbType.Int){ Value = idioma.Id },
                 new SqlParameter("@In_NombreControl", SqlDbType.NVarChar){ Value = controlName }
             };

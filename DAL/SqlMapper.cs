@@ -1,11 +1,6 @@
 ﻿using BE;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -43,6 +38,9 @@ namespace DAL
             Fecha = DateTime.Parse(row["Fecha"].ToString()),
             Horario = TimeSpan.Parse(row["Horario"].ToString()),
             Imagen = (byte[])row["Imagen"],
+            Id_Planificador = int.Parse(row["Id_Planificador"].ToString()),
+            Is_Paga = bool.Parse(row["Is_Paga"].ToString()),
+            PublicoObjetivo = row["PublicoObjetivo"].ToString()
         };
 
         public static EntityEntrada MapEntrada(DataRow row) => new EntityEntrada()
@@ -61,6 +59,7 @@ namespace DAL
             Nombre = row["Nombre"].ToString(),
             Apellido = row["Apellido"].ToString(),
             Mail = row["Mail"].ToString(),
+            Is_Planificador = bool.Parse(row["Is_Planificador"].ToString())
         };
 
         internal static EntityFactura MapFactura(DataRow row) => new EntityFactura()
@@ -87,7 +86,7 @@ namespace DAL
 
         internal static EntityDetalle_Factura MapDetalleFactura(DataRow row) => new EntityDetalle_Factura()
         {
-            Id_Detalle = Convert.ToInt32( row["Id_detalle"].ToString()),
+            Id_Detalle = Convert.ToInt32(row["Id_detalle"].ToString()),
             Id_Factura = Convert.ToInt32(row["Id_Factura"].ToString()),
             Id_Entrada = Convert.ToInt32(row["Id_Entrada"].ToString()),
             Cantidad_Entradas = Convert.ToInt32(row["Cantidad_Entradas"].ToString()),
@@ -117,6 +116,30 @@ namespace DAL
                 Nombre = row["Nombre"].ToString(),
                 Apellido = row["Apellido"].ToString()
             }
+        };
+
+        public static EntityEvento_C MapEvento_C(DataRow row) => new EntityEvento_C()
+        {
+            Id = Convert.ToInt32(row["ID"]),
+            Nombre = row["Nombre"].ToString(),
+            Descripcion = row["Descripcion"].ToString(),
+            Artista = row["Artista"].ToString(),
+            Ubicacion = row["Ubicacion"].ToString(),
+            Fecha = DateTime.Parse(row["Fecha"].ToString()),
+            Horario = TimeSpan.Parse(row["Horario"].ToString()),
+            Imagen = (byte[])row["Imagen"],
+            Id_Planificador = int.Parse(row["Id_Planificador"].ToString()),
+            Is_Paga = bool.Parse(row["Is_Paga"].ToString()),
+            Act = bool.Parse(row["Act"].ToString()),
+            Fecha_Modificacion = DateTime.Parse(row["Fecha_Modificacion"].ToString()),
+            PublicoObjetivo = row["PublicoObjetivo"].ToString()
+        };
+
+        public static EntityDigitoVerificador MapDigitoVerificador(DataRow row) => new EntityDigitoVerificador()
+        {
+            Id = Convert.ToInt32(row["ID"]),
+            DVH = row["DVH"].ToString(),
+            DVV = row["DVV"].ToString()
         };
     }
 }

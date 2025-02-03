@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BusinessBackupRestore.cs" />
     <Compile Include="BusinessCliente.cs" />
+    <Compile Include="BusinessDigitoVerificador.cs" />
     <Compile Include="BusinessEntrada.cs" />
     <Compile Include="BusinessEvento.cs" />
     <Compile Include="BusinessEventoBitacora.cs" />

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace Services
 {
@@ -36,7 +29,7 @@ namespace Services
 
             string pattern = @"^(?:4[0-9]{12}(?:[0-9]{3})?|   # Visa
                             5[1-5][0-9]{14}|              # MasterCard
-                            3[47][0-9]{13})$";           
+                            3[47][0-9]{13})$";
 
             return Regex.IsMatch(cardNumber, pattern, RegexOptions.IgnorePatternWhitespace);
         }

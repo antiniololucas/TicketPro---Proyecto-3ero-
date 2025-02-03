@@ -1,11 +1,8 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace DAL
 {
@@ -37,7 +34,7 @@ namespace DAL
                 new SqlParameter("@In_IdFactura", SqlDbType.Int) {Value =  factura.Id}
             };
             DataTable DR = conn.Read("SP_GetDetalle", parameters);
-            foreach(DataRow item in DR.Rows)
+            foreach (DataRow item in DR.Rows)
             {
                 detalle = SqlMapper.MapDetalleFactura(item);
             }
@@ -67,7 +64,7 @@ namespace DAL
             {
                 InsertarDetalleFactura(newId, detalle);
             }
-       
+
             return true;
         }
 
@@ -82,7 +79,7 @@ namespace DAL
                  new SqlParameter("@In_Is_Cobrada", SqlDbType.Bit) { Value = factura.Is_Cobrada },
            };
 
-           return conn.Write("SP_UpdateFactura", parameters);
+            return conn.Write("SP_UpdateFactura", parameters);
         }
 
         //Seguir con detalle

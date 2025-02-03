@@ -1,12 +1,7 @@
 ﻿using BE;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -46,6 +41,19 @@ namespace DAL
                 Entradas.Add(entrada);
             }
             return Entradas;
+        }
+
+        public bool InsertEntrada(EntityEntrada item)
+        {
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@In_Id_Evento", SqlDbType.Int) { Value = item.Id_Evento },
+                new SqlParameter("@In_Tipo", SqlDbType.NVarChar) { Value = item.Tipo },
+                new SqlParameter("@In_Costo", SqlDbType.Money) { Value = item.Costo_Unitario } ,
+                new SqlParameter("@In_Cantidad", SqlDbType.Int) { Value = item.Cantidad_Disponible }
+            };
+
+            return conn.Write("SP_InsertEntrada", parameters);
         }
     }
 }

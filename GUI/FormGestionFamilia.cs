@@ -53,7 +53,7 @@ namespace GUI
 
             // Obtener todos los permisos de las familias en la familia elegida
             var permisosDeFamiliasRolElegido = _permisosFamiliaElegida.OfType<EntityFamilia>()
-                .SelectMany(f => f.Permisos) 
+                .SelectMany(f => f.Permisos)
                 .ToList();
 
             // Filtrar los permisos para excluir los que están en los permisos de las familias del rol elegido
@@ -121,19 +121,23 @@ namespace GUI
             bool changeName = false;
             if (!string.IsNullOrEmpty(txtNombre.Text)) _familiaActual.Nombre = txtNombre.Text; changeName = true;
             _familiaActual.Permisos = _permisosFamiliaElegida;
-            RevisarRespuestaServicio(_businessPermiso.ModificarFamilia(_familiaActual, changeName)); //Crear metodo update
+            var response = _businessPermiso.ModificarFamilia(_familiaActual, changeName);
+            RevisarRespuestaServicio(response); //Crear metodo update
             llenarDG_Pantalla();
             setData();
+            if (response.Ok) guardarEventoBitacora("Se modificó una familia de permisos", 2);
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            if(_permisosExistentes.OfType<EntityFamilia>().Any(F => F.Nombre  == txtNombre.Text)) 
+            if (_permisosExistentes.OfType<EntityFamilia>().Any(F => F.Nombre == txtNombre.Text))
             { MessageBox.Show("FamiliaRepetida"); return; }
             if (_permisosFamiliaElegida.Count < 1) { MessageBox.Show(SearchTraduccion("Campos_Incompletos")); return; }
             if (string.IsNullOrEmpty(txtNombre.Text)) { MessageBox.Show(SearchTraduccion("Campos_Incompletos"), "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; }
-            RevisarRespuestaServicio(_businessPermiso.RegistrarFamilia(_permisosFamiliaElegida, txtNombre.Text));
+            var response = _businessPermiso.RegistrarFamilia(_permisosFamiliaElegida, txtNombre.Text);
+            RevisarRespuestaServicio(response);
             setData();
+            if (response.Ok) guardarEventoBitacora("Se creó una familia de permisos", 2);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -167,10 +171,12 @@ namespace GUI
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro") , "", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show(SearchTraduccion("ConfirmacionSeguro"), "", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                RevisarRespuestaServicio(_businessPermiso.EliminarFamilia(_familiaActual));
+                var response = _businessPermiso.EliminarFamilia(_familiaActual);
+                RevisarRespuestaServicio(response);
+                if (response.Ok) guardarEventoBitacora("Se eliminó una familia de permisos", 1);
                 setData();
             }
             return;

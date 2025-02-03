@@ -1,23 +1,17 @@
 ﻿using BLL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class FormBackupRestore : ServiceForm
 
-    { 
+    {
         public FormBackupRestore()
         {
             InitializeComponent();
             ChangeTranslation();
+            this.nombre_modulo = "BackupRestore";
         }
         private BusinessBackupRestore _bllBackupRestore = new BusinessBackupRestore();
 
@@ -26,12 +20,14 @@ namespace GUI
         {
             if (!string.IsNullOrEmpty(txtBackupPath.Text))
             {
-                RevisarRespuestaServicio(_bllBackupRestore.RealizarBackup(txtBackupPath.Text));
+                var response = _bllBackupRestore.RealizarBackup(txtBackupPath.Text);
+                RevisarRespuestaServicio(response);
+                if (response.Ok) guardarEventoBitacora("Backup Realizado", 3);
                 txtBackupPath.Text = "";
             }
             else
             {
-                MessageBox.Show(SearchTraduccion( "PathIncompleto"));
+                MessageBox.Show(SearchTraduccion("PathIncompleto"));
             }
         }
 
@@ -39,9 +35,11 @@ namespace GUI
         {
             if (!string.IsNullOrEmpty(txtRestorePath.Text))
             {
-               RevisarRespuestaServicio(_bllBackupRestore.RealizarRestore(txtRestorePath.Text));
-               txtRestorePath.Text = "";
-               
+                var response = _bllBackupRestore.RealizarRestore(txtRestorePath.Text);
+                RevisarRespuestaServicio(response);
+                if (response.Ok) guardarEventoBitacora("Restore Realizado", 3);
+                txtRestorePath.Text = "";
+
             }
             else
             {
